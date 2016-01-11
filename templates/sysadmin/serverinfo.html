@@ -1,0 +1,83 @@
+{include file="sysadmin/header.tpl"}
+<div class="wrap map"> 
+    <dl> 
+        <dt>客服信息设置</dt> 
+        <dd> 
+        </dd> 
+   </dl> 
+</div> 
+
+
+{if $action eq ""}
+<div class="wrap title"> 
+	<dl> 
+    	<dt>设置</dt> 
+        <dd>        
+        </dd> 
+    </dl>
+</div> 
+
+<div class="wrap">
+<form id="form1" name="form1" method="post" action="?action=edit"> 
+<table class="add"> 
+<tr> 
+	<th>客服邮箱：</th>
+    <td> 
+        <input name="email" maxlength="50" type="text" class="input" id="mail_user" style="width:400px;" value="{$mailInfo['email']}" /> 
+        <span>邮箱账号</span> 
+    </td>
+</tr> 
+
+<tr>
+	<th></th>
+    <td>
+    <input name="btnSubmit" type="submit" id="btnSubmit" value="确定修改" /> 
+    </td>
+</tr>
+</table>
+</form> 
+
+</div> 
+
+{/if}
+
+{literal}
+<script type="text/javascript"> 
+function ToTest(){
+	var email = $("#toEmail").val();
+	if(emailCheck(email)){
+		$.ajax({
+			type:"get",
+			url :"email.php",
+			data:{action:"testTo",mail_smtp:$("#mail_smtp").val(),mail_port:$("#mail_port").val(),mail_user:$("#mail_user").val(),mail_password:$("#mail_password").val(),toEmail:$("#toEmail").val()},
+			beforeSend :function(){
+				$("#txtTest").html("<img src='images/onload.gif' align='absmiddle' />&nbsp;正在发送...");
+			},
+			success: function(msg){
+				if(msg=="1"){
+					alert('发送成功');
+				}else{
+					alert('发送失败');
+				}
+				$("#txtTest").html("<a href=\"#\" onclick=\"ToTest();\" id=\"txtTest\"><u>点我发送测试邮件</u></a>");
+			},
+			error: function(){
+				alert('发生错误');
+				$("#txtTest").html("<a href=\"#\" onclick=\"ToTest();\" id=\"txtTest\"><u>点我发送测试邮件</u></a>");
+			}
+		})
+	}else{
+		alert("Email输入错误");
+	}
+}
+
+function emailCheck (emailStr) {
+	var emailPat=/^(.+)@(.+)$/;
+	var matchArray=emailStr.match(emailPat);
+	if (matchArray==null) {
+		return false;
+	}
+	return true;
+}
+</script> 
+{/literal}

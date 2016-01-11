@@ -1,0 +1,164 @@
+{include file="sysadmin/header.tpl"}
+<div class="wrap map"> 
+    <dl> 
+        <dt>会员系统 &gt;&gt; 会员信息</dt> 
+        <dd> 
+            <a href="?" class="link">会员信息</a>
+            <!-- <a href="?action=tj" class="link">添加会员</a>  -->
+        </dd> 
+   </dl> 
+</div> 
+
+{if $action eq ""}
+<form action="" method="get" id="searchForm"> 
+<div class="wrap title"> 
+	<dl> 
+    	<dt style="padding-top:5px">会员信息</dt>
+        <dd>        
+        <input type="text" name="keyword" id="keyword" value="{$keyword}" title="根据邮箱或用户名搜索" onFocus="this.value='';" />
+        <input type="submit" name="button" id="btnSearch" value=" 搜 索 " /> 
+        </dd> 
+    </dl>
+</div> 
+</form> 
+
+<div class="wrap"> 
+<form method="post" action="?action=delete" id="form1"> 
+  <table width="100%" cellpadding="0" cellspacing="0" class="list"> 
+    <thead> 
+    <tr> 
+      <th><input type="checkbox" id="all" /></th> 
+      <th>姓名</th>
+      <th>手机</th>
+      <th>邮箱</th>
+      <th>标题</th>
+      <th>常用联系方式</th>
+      <th>留言时间</th>
+      <th>操作</th> 
+    </tr>  
+     </thead> 
+    <tbody> 
+    {section name=list loop=$userList}
+    <tr onclick="show({$userList[list].id});" style="cursor:pointer"> 
+      <td><input type="checkbox" name="id[]" value="{$userList[list].id}" /></td> 
+      <td>{$userList[list].truename}</td>
+      <td>{$userList[list].phone}</td>
+        <td>{$userList[list].email}</td>
+        <td>{$userList[list].title}</td>
+        <td>{if $userList[list].changyong==0}邮箱{else}电话{/if}</td>
+      <td>{$userList[list].time|date_format:"%Y-%m-%d %H:%M:%S"}</td> 
+      <td><a href="?action=bj&id={$userList[list].id}" class="edit">查看</a></td> 
+    </tr> 
+    {sectionelse}
+    <tr>
+        <td colspan="8"><div class="notext">没有相关信息</div></td>
+    </tr>
+    {/section}
+    
+  
+     </tbody> 
+    </table> 
+ 	
+    <div class="page"> 
+        <dl> 
+            <dt><input type="submit" name="btnDelete" value="删除" onClick="return listDelete(this.form.name);" id="btnDelete" /></dt> 
+            <dd> 
+            {$pager}        
+			</dd> 
+        </dl>  
+    </div> 
+         
+</form> 
+<div class="desc"></div>
+</div> 
+{elseif $action eq "bj"}
+
+<div class="wrap title"> 
+	<dl> 
+    	<dt>查看会员信息</dt> 
+        <dd>        
+      
+        </dd> 
+    </dl>
+</div> 
+
+<div class="wrap" style=" position:relative;">
+<form id="form1" name="form1" method="post" action="?action=edit"> 
+<input type="hidden" name="id" value="{$user.id}" /> 
+<table class="add">
+
+<tr><th>名字：</th><td>{$user.truename}</td></tr>
+<tr><th>email：</th><td>{$user.email}</td></tr>
+    <tr><th>手机：</th><td>{$user.phone}</td></tr>
+    <tr><th>mobile：</th><td>{$user.mobile}</td></tr>
+    <tr><th>skype：</th><td>{$user.skype}</td></tr>
+    <tr><th>whatsapp：</th><td>{$user.whatsapp}</td></tr>
+    <tr><th>链接：</th><td>{$user.url}</td></tr>
+    <tr><th>国家：</th><td>{$user.city}</td></tr>
+    <tr><th>公司：</th><td>{$user.company}</td></tr>
+    <tr><th>留言时间：</th><td>{$user.time|date_format:"%Y-%m-%d %H:%M:%S"}</td></tr>
+    <tr><th>常用联系方式：</th><td>{if $user.changyong==0}邮箱{else}电话{/if}</td></tr>
+    <tr><th>标题：</th><td>{$user.title}</td></tr>
+    <tr><th>内容：</th><td>{$user.content}</td></tr>
+
+<tr>
+	<th></th>
+	<td>
+ 
+    <input name="btnBack" type="button" id="btnBack" value="返回" />
+    </td>
+</tr>
+
+</table>
+
+</form> 
+</div>
+{/if}
+
+{literal} 
+<script type="text/javascript"> 
+$(document).ready(function() {
+	//表单验证
+	$("#form2").validate({
+		rules: {
+			title: {required: true},
+			contents: {required:true},
+			level:"required"
+		},
+		errorPlacement: function(error, element) { //指定错误信息位置
+            if (element.is(':radio') || element.is(':checkbox')) {  //如果是radio或checkbox
+                var eid = element.attr('name');  //获取元素的name属性
+                error.appendTo(element.parent());    //将错误信息添加当前元素的父结点后面
+            } else {
+                error.insertAfter(element);
+            }
+        },
+		submitHandler: function (form) {
+			$("#btnSubmit").attr("disabled",true);
+			form.submit();
+		}
+
+	});		
+})
+
+$(document).ready(function() {
+	$("#form1").validate({
+		rules: {
+			user_id: { required: true,minlength:5 },
+			password:{required:true,minlength:5},
+			confirmpassword:{required:true,equalTo: "#password"},
+			uname:{required:true},
+			ads:{required:true},
+			tel:{required:true},
+			email:{required:true,email:true},
+			role_id:{required:true},
+			state_id:{required:true}
+		},
+		submitHandler:function(form){
+			$("#btnSubmit").attr("disabled",true);
+			form.submit();
+		}
+	});
+})
+</script> 
+{/literal}

@@ -1,0 +1,431 @@
+{include file="sysadmin/header.tpl"}
+<div class="wrap map"> 
+    <dl> 
+        <dt>留言系统 &gt;&gt; 留言管理</dt> 
+   </dl> 
+</div> 
+
+{if $action eq ""}
+<form action="" method="get" id="searchForm">
+    <input type="hidden" id="tid" value="" />
+<div class="wrap title"> 
+	<dl> 
+    	<dt>留言信息</dt> 
+        <dd>        
+    
+
+        </dd> 
+    </dl>
+</div> 
+</form> 
+ 
+<div class="wrap"> 
+<form method="post" action="?action=delete" id="form1"> 
+  <table width="100%" cellpadding="0" cellspacing="0" class="list"> 
+    <thead> 
+    <tr>
+        <th style="width:50px;"><input type="checkbox" id="all" /></th>
+        <th class="text-left">姓名</th>
+
+        <th>申请日期</th>
+        <th>操作</th>
+    </tr>  
+     </thead> 
+    <tbody  id="charu">
+    {section name=list loop=$list}
+    <tr> 
+      <td><input type="checkbox" name="id[]" value="{$list[list].id}" /></td> 
+      <td style="text-align:left;">{$list[list].name}</td> 
+      <td>{$list[list].time|date_format:"%Y/%m/%d"}</td>
+      <td><a href="?action=bj&id={$list[list].id}" class="edit">查看</a></td>
+    </tr> 
+    {sectionelse}
+    <tr>
+        <td colspan="9"><div class="notext">没有相关信息</div></td>
+    </tr>
+    {/section}
+     </tbody> 
+    </table> 
+    <div class="page"> 
+        <dl> 
+            <dt>
+            <input type="submit" name="btnDelete" value="删除" onclick="return listsc(this.form.name);" id="btnDelete" />
+                <input type="hidden" name="yincang" id="yincang" />
+            </dt>
+            <dd> 
+            {$pager}        
+			</dd> 
+        </dl> 
+    </div> 
+         
+</form> 
+<div class="desc">*</div> 
+</div>
+
+
+
+
+{elseif $action eq "bj"}
+<div class="wrap title"> 
+	<dl> 
+    	<dt>申请信息</dt> 
+
+    </dl>
+</div> 
+
+<div class="wrap">
+<form id="form1" name="form1" method="post" action="?action=edit"> 
+<input type="hidden" name="id" value="{$list.id}" /> 
+<table class="add">
+<tr>
+    <th>申请人姓名：</th>
+    <td>
+    <input readonly="readonly"  name="title" maxlength="50" type="text" class="input" id="title" style="width:400px;" value="{$list.name}" /> 
+    </td>
+</tr>
+<tr >
+        <th>性别：</th>
+        <td>
+           <input readonly="readonly"  type="text" name="time1" value=" {$list.gender}" style="width:400px;"/>
+        </td>
+    </tr>
+    <tr >
+        <th>出生日期：</th>
+        <td>
+           <input readonly="readonly"  type="text" name="time1" value=" {$list.year}年{$list.month}月{$list.day}日" style="width:400px;"/>
+        </td>
+    </tr>
+    <tr >
+        <th>民族：</th>
+        <td>
+           <input readonly="readonly"  type="text" name="time1" value=" {$list.national}" style="width:400px;"/>
+        </td>
+    </tr>
+    <tr >
+        <th>政治面貌：</th>
+        <td>
+           <input readonly="readonly"  type="text" name="time1" value=" {$list.face}" style="width:400px;"/>
+        </td>
+    </tr>
+    <tr >
+        <th>宗教：</th>
+        <td>
+           <input readonly="readonly"  type="text" name="time1" value=" {$list.religious}" style="width:400px;"/>
+        </td>
+    </tr>
+     <tr >
+        <th>身份证：</th>
+        <td>
+           <input readonly="readonly"  type="text" name="time1" value=" {$list.card}" style="width:400px;"/>
+        </td>
+    </tr>
+     <tr >
+        <th>家庭住址：</th>
+        <td>
+           <input readonly="readonly"  type="text" name="time1" value=" {$list.familyaddress}" style="width:400px;"/>
+        </td>
+    </tr>
+     <tr >
+        <th>邮编：</th>
+        <td>
+           <input readonly="readonly"  type="text" name="time1" value=" {$list.code}" style="width:400px;"/>
+        </td>
+    </tr>
+     <tr >
+        <th>手机：</th>
+        <td>
+           <input readonly="readonly"  type="text" name="time1" value=" {$list.phone}" style="width:400px;"/>
+        </td>
+    </tr>
+     <tr >
+        <th>工作：</th>
+        <td>
+           <input readonly="readonly"  type="text" name="time1" value=" {$list.work}" style="width:400px;"/>
+        </td>
+    </tr>
+     <tr >
+        <th>单位：</th>
+        <td>
+           <input readonly="readonly"  type="text" name="time1" value=" {$list.company}" style="width:400px;"/>
+        </td>
+    </tr>
+    <tr >
+        <th>职务：</th>
+        <td>
+           <input readonly="readonly"  type="text" name="time1" value=" {$list.position}" style="width:400px;"/>
+        </td>
+    </tr>
+    
+<tr >
+        <th>资格证书：</th>
+        <td>
+           <input readonly="readonly"  type="text" name="time1" value=" {$list.certificate}" style="width:400px;"/>
+        </td>
+    </tr>
+
+   <tr >
+        <th>工作地址：</th>
+        <td>
+           <input readonly="readonly"  type="text" name="time1" value=" {$list.workaddress}" style="width:400px;"/>
+        </td>
+    </tr>
+    
+       <tr >
+        <th>邮箱：</th>
+        <td>
+           <input readonly="readonly"  type="text" name="time1" value=" {$list.email}" style="width:400px;"/>
+        </td>
+    </tr>
+       <tr >
+        <th>投入的服务时间长度：</th>
+        <td>
+           <input readonly="readonly"  type="text" name="time1" value=" {$list.servicetime}" style="width:400px;"/>
+        </td>
+    </tr>
+       <tr >
+        <th>就任的服务岗位是：</th>
+        <td>
+           <input readonly="readonly"  type="text" name="time1" value=" {$list.jobs}" style="width:400px;"/>
+        </td>
+    </tr>
+       <tr >
+        <th>参与的医院：</th>
+        <td>
+           <input readonly="readonly"  type="text" name="time1" value=" {$list.hospital}" style="width:400px;"/>
+        </td>
+    </tr>
+    {if $list.service=='其他'}
+    <tr >
+        <th>【其他】时间：</th>
+        <td>
+           <input readonly="readonly"  type="text" name="time1" value=" {$list.othertime}" style="width:400px;"/>
+        </td>
+    </tr>
+    {else}
+       <tr >
+        <th>参与的项目：</th>
+        <td>
+           <input readonly="readonly"  type="text" name="time1" value=" {$list.service}" style="width:400px;"/>
+        </td>
+    </tr>
+    {/if}
+    <tr >
+        <th>留言时间：</th>
+        <td>
+           <input readonly="readonly"  type="text" name="time1" value=" {$list.time|date_format:"%Y-%m-%d"}" style="width:400px;"/>
+        </td>
+    </tr>
+
+  
+<tr>
+	<th></th>
+    <td>
+    <input name="btnSubmit" type="submit" id="btnSubmit" value="回复" /> 
+    <input name="btnReset" type="reset" id="btnReset" value="清除" /> 
+    <input name="btnBack" type="button" id="btnBack" value="返回" /> 
+    </td>
+</tr>
+</table>
+</form> 
+</div> 
+
+
+{/if}
+
+
+{literal} 
+<script type="text/javascript">
+
+    $(document).ready(function() {
+        //表单验证
+        $("#form1").validate({
+            rules: {
+                title: {required: true},
+  				type_id:{ required:true},
+  				sort:{ required:true}
+            },
+			submitHandler: function (form) {
+				$("#btnSubmit").attr("disabled",true);
+				$("#contents").val(editor.html());	//解决shosen.jquery冲突，取不到值
+				form.submit();
+			}
+        });
+    })
+   var editor1;
+KindEditor.ready(function(K) {
+	editor1 = K.create('textarea[name="contents"]', {
+		allowFileManager : true,
+		filterMode:false
+	});
+}); 
+    $(function() {
+		$('#simage_upload').uploadify({
+		  'uploader'  : 'jquery/uploadify/uploadify.swf',
+		  'script'    : 'jquery/uploadify/uploadify.php',
+		  'folder'	  : '../uploads/product/',
+		  'cancelImg' : 'jquery/uploadify/cancel.png',
+		  'removeCompleted' : true,
+		  'auto':true,
+		  'buttonText': 'SELECT IMAGE',
+		  'fileExt'     : '*.jpg; *.gif; *.png',
+		  'fileDesc'    : 'Select Files *.jpg; *.gif; *.png',
+		  'onCancel'    : function(event,ID,fileObj,data) {
+      		  $("#btnSubmit").attr("disabled",false);
+    	  },
+		  'onSelect':function(event,ID,fileObj) {
+			  $("#btnSubmit").attr("disabled",true);
+		  },
+		  'onComplete' :function(event,queueID,fileObj,response,data){
+			   $("#simage").val(response);
+			   $("#spic").attr("src",'../'+response);
+			   $("#btnSubmit").attr("disabled",false);
+		  }
+		});
+		showSmallImg($("#autoSimg").attr("checked"));
+	});
+
+function showSmallImg(isbool){
+	$("#image_upload").next("object").remove();
+	$("#image_upload").next("#image_uploadQueue").remove();
+	if(isbool){
+			$('#image_upload').uploadify({
+			  'uploader'  : 'jquery/uploadify/uploadify.swf',
+			  'script'    : 'jquery/uploadify/uploadify.php?simg=true_300_300',
+			  'folder'	  : '../uploads/product/',
+			  'cancelImg' : 'jquery/uploadify/cancel.png',
+			  'removeCompleted' : true,
+			  'auto':true,
+			  'buttonText': 'SELECT IMAGE',
+			  'fileExt'     : '*.jpg; *.gif; *.png',
+			  'fileDesc'    : 'Select Files *.jpg; *.gif; *.png',
+			  'onCancel'    : function(event,ID,fileObj,data) {
+	      		  $("#btnSubmit").attr("disabled",false);
+	    	  },
+			  'onSelect':function(event,ID,fileObj) {
+				  $("#btnSubmit").attr("disabled",true);
+			  },
+			  'onComplete' :function(event,queueID,fileObj,response,data){
+				   $("#image").val(response);
+				   $("#pic").attr("src",'../'+response);
+				   $("#simage").val(response.replace(".","_s."));
+				   $("#btnSubmit").attr("disabled",false);
+			  }
+			});
+		$("#small_img").hide();
+	}else{
+		$("#small_img").show();
+		$('#image_upload').uploadify({
+			  'uploader'  : 'jquery/uploadify/uploadify.swf',
+			  'script'    : 'jquery/uploadify/uploadify.php',
+			  'folder'	  : '../uploads/product/',
+			  'cancelImg' : 'jquery/uploadify/cancel.png',
+			  'removeCompleted' : true,
+			  'auto':true,
+			  'buttonText': 'SELECT IMAGE',
+			  'fileExt'     : '*.jpg; *.gif; *.png',
+			  'fileDesc'    : 'Select Files *.jpg; *.gif; *.png',
+			  'onCancel'    : function(event,ID,fileObj,data) {
+	      		  $("#btnSubmit").attr("disabled",false);
+	    	  },
+			  'onSelect':function(event,ID,fileObj) {
+				  $("#btnSubmit").attr("disabled",true);
+			  },
+			  'onComplete' :function(event,queueID,fileObj,response,data){
+				   $("#image").val(response);
+				   $("#pic").attr("src",'../'+response);
+				   $("#btnSubmit").attr("disabled",false);
+			  }
+			});	
+	}
+}
+    function px_shang(obj){
+        var dangqian="";
+        $(obj).parent().parent().find("input[type=checkbox]").each(function(i){
+            dangqian=$(this).val();
+            //alert("sdasadas");
+            $(this).attr("checked", false);
+        });
+        //ajax begin
+        $.ajax({
+            //async: false,
+            type:"post",
+            data:("xuhao="+dangqian+"&table="+$("#table").val()+"&weizhi=up&pageno="+$("#pageno").val()+"&tid="+$("#tid").val()),
+            url:"paixu.php",
+            success: function(data){
+                if(data==1)
+                {
+                    alert("非正常访问");
+                }
+                else if(data==2){
+                    alert("排序失败");
+                }
+                else if(data==3){
+                    alert("已至顶");
+                }
+                else{
+                    panduanshuju(data);
+                }
+            }
+        })
+        //ajaxend
+    }
+    function px_xia(obj){
+        var dangqian="";
+        $(obj).parent().parent().find("input[type=checkbox]").each(function(i){
+            dangqian=$(this).val();
+            //alert("sdasadas");
+            $(this).attr("checked", false);
+        });
+        //ajax begin
+        $.ajax({
+            async: false,
+            type:"post",
+            data:("xuhao="+dangqian+"&table="+$("#table").val()+"&weizhi=down&pageno="+$("#pageno").val()+"&tid="+$("#tid").val()),
+            url:"paixu.php",
+            success: function(data){
+                if(data==1)
+                {
+                    alert("非正常访问");
+                }
+                else if(data==2){
+                    alert("排序失败");
+                }
+                else if(data==3){
+                    alert("已至顶");
+                }
+                else{
+                    panduanshuju(data);
+                }
+            }
+        })
+    }
+
+    function panduanshuju(obj){
+        var newarray=new Array();
+        newarray=obj.split('*');
+        var newarray2=new Array();
+        for(var i=0;i<newarray.length;i++)
+        {
+            newarray2[i]=newarray[i].split("|");
+        }
+        $("#charu").html("");
+        //<!--<td><img src=\"images/pic.gif\" onmouseover=\"javascript:ddrivetip('<img width=120 src=../"+newarray2[i][3]+">','#ffffff', 120)\" onmouseout=\"hideddrivetip()\" /></td>-->
+        for(var i=0;i<newarray2.length;i++){
+            var guodu="<tr><td><input type=\"checkbox\" name=\"id[]\" value="+newarray2[i][0]+" /></td><td style=\"text-align:left;\">"+newarray2[i][1]+"</td><td>"+newarray2[i][2]+"</td>"
+                    +"<td style=\"display:none\"><img src=\"images/pic.gif\" onmouseover=\"javascript:ddrivetip('<img width=120 src=../"+newarray2[i][4]+">','#ffffff', 120)\" onmouseout=\"hideddrivetip()\" /></td>"
+                    +"<td>"+newarray2[i][5]+"</td><td><span name=\"pxs[]\" onclick=\"px_shang(this)\"><img src=\"top.png\" /></span></td><td><span name=\"pxx[]\" onclick=\"px_xia(this)\"><img src=\"down.png\" /></span></td>"
+                    +"<td>"+newarray2[i][3]+"</td><td><a href=\"?action=bj&type_id="+newarray2[i][6]+"&id="+newarray2[i][0]+"\" class=\"edit\">修改</a></td></tr>";
+
+            $("#charu").append(guodu);
+        }
+        // $("#charu").append("<tr><td colspan=\"8\"><div class=\"notext\">没有相关信息</div></td></tr>");
+        //alert($("#charu").html());
+    }
+
+    //-=-----------------------------------
+
+</script> 
+{/literal}
+
+ 
+ 

@@ -1,0 +1,10 @@
+ 无法提供服务受影响的几个点
+
+一：TypeText.php
+//require_once("../configs/db.inc.php");
+
+二：TypeParent.php
+//require_once('WxUtil.php'); 
+
+三：TypeEvent.php
+//require_once("../configs/db.inc.php");

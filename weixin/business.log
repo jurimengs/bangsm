@@ -1,0 +1,528 @@
+20151231145626:  index.php newwxindex=====> 
+20151231145626:  checkSignature =====> token验证成功
+20151231145626: saveMsg =======>
+20151231145626: getWxTokenFromDB=====> 6047
+20151231145627:  RequestUtil.php httpGet =====> {"access_token":"7J2l0cNKO08jFjr9HSKcv1SgU22Y4azuCXnz6noMUd_ZzOKuDnha3-J46Zsz6nN0CEvbJCKX9gW1yYq1ewajw9zCoAT2u4HDupodftIO1ugJWObAIAANF","expires_in":7200}
+20151231145627:  RequestUtil.php httpGet =====> {"errcode":0,"errmsg":"ok","ticket":"kgt8ON7yVITDhtdwci0qeYpJ9Yds4uvs9QrNJLVtpQktSv8o1iHN4em3m9OvEWnH0c9dXVeibeETLgWdKbPSdg","expires_in":7200}
+20151231145627:  RequestUtil.php httpPost =====> {"errcode":0,"errmsg":"ok"}
+20151231145739:  index.php newwxindex=====> 
+20151231145739:  checkSignature =====> token验证成功
+20151231145739: saveMsg =======>
+20151231145739: getWxTokenFromDB=====> 72
+20151231145739:  RequestUtil.php httpPost =====> {"errcode":0,"errmsg":"ok"}
+20151231161513:  index.php newwxindex=====> 
+20151231161513:  checkSignature =====> token验证成功
+20151231161513: saveMsg =======>
+20151231161513: getWxTokenFromDB=====> 4786
+20151231161514:  RequestUtil.php httpPost =====> {"errcode":0,"errmsg":"ok"}
+20151231161514:  index.php newwxindex=====> 
+20151231161514:  checkSignature =====> token验证成功
+20151231161514: saveMsg =======>
+20151231161514: getWxTokenFromDB=====> 4787
+20151231161514:  RequestUtil.php httpPost =====> {"errcode":0,"errmsg":"ok"}
+20151231161516:  index.php newwxindex=====> 
+20151231161516:  checkSignature =====> token验证成功
+20151231161516: saveMsg =======>
+20151231161516: getWxTokenFromDB=====> 4789
+20151231161516:  RequestUtil.php httpPost =====> {"errcode":0,"errmsg":"ok"}
+20151231161517:  index.php newwxindex=====> 
+20151231161517:  checkSignature =====> token验证成功
+20151231161517: saveMsg =======>
+20151231161517: getWxTokenFromDB=====> 4790
+20151231161517:  RequestUtil.php httpPost =====> {"errcode":0,"errmsg":"ok"}
+20151231161518:  index.php newwxindex=====> 
+20151231161518:  checkSignature =====> token验证成功
+20151231161518: saveMsg =======>
+20151231161519: getWxTokenFromDB=====> 4792
+20151231161519:  RequestUtil.php httpPost =====> {"errcode":0,"errmsg":"ok"}
+20151231161520:  index.php newwxindex=====> 
+20151231161520:  checkSignature =====> token验证成功
+20151231161520: saveMsg =======>
+20151231161520: getWxTokenFromDB=====> 4793
+20151231161521:  RequestUtil.php httpPost =====> {"errcode":0,"errmsg":"ok"}
+20151231161522:  index.php newwxindex=====> 
+20151231161522:  checkSignature =====> token验证成功
+20151231161522: saveMsg =======>
+20151231161522: getWxTokenFromDB=====> 4795
+20151231161523:  RequestUtil.php httpPost =====> {"errcode":0,"errmsg":"ok"}
+20151231164759:  index.php newwxindex=====> 
+20151231164759:  checkSignature =====> token验证成功
+20151231164759: saveMsg =======>
+20151231164759:  index.php newwxindex=====> 
+20151231164759:  checkSignature =====> token验证成功
+20151231164759: TypeText Content 已存在消息，忽略本次请求 ====>
+20151231164800:  index.php newwxindex=====> 
+20151231164800:  checkSignature =====> token验证成功
+20151231164800: TypeText Content 已存在消息，忽略本次请求 ====>
+20151231164801:  index.php newwxindex=====> 
+20151231164801:  checkSignature =====> token验证成功
+20151231164801: saveMsg =======>
+20151231164803:  index.php newwxindex=====> 
+20151231164803:  checkSignature =====> token验证成功
+20151231164803: saveMsg =======>
+20151231164804:  index.php newwxindex=====> 
+20151231164804:  checkSignature =====> token验证成功
+20151231164804: saveMsg =======>
+20151231164806:  index.php newwxindex=====> 
+20151231164806:  checkSignature =====> token验证成功
+20151231164806: saveMsg =======>
+20151231164808:  index.php newwxindex=====> 
+20151231164808:  checkSignature =====> token验证成功
+20151231164808: saveMsg =======>
+20151231164810:  index.php newwxindex=====> 
+20151231164810:  checkSignature =====> token验证成功
+20151231164810: saveMsg =======>
+20151231164815:  index.php newwxindex=====> 
+20151231164815:  checkSignature =====> token验证成功
+20151231164815: saveMsg =======>
+20151231164829: getWxTokenFromDB=====> 6782
+20151231164830:  RequestUtil.php httpGet =====> {"access_token":"S2Q9vKFNKZFuUeCrTGYb5JR7V_EBHdRGJt1maEL4TUlDAubhths5NvllxbID_fdPvBZ7h6z8zCE2b35Wxf2JTOeybSJLXAD9bdmlPysa2fEFGFiAFAXYX","expires_in":7200}
+20151231164830:  RequestUtil.php httpGet =====> {"errcode":0,"errmsg":"ok","ticket":"kgt8ON7yVITDhtdwci0qeYpJ9Yds4uvs9QrNJLVtpQneql-ErIfhNwYcscEV9GD1iG_3nQksWLx-I3goEjLeDQ","expires_in":7200}
+20151231164830:  RequestUtil.php httpPost =====> {"errcode":0,"errmsg":"ok"}
+20151231164830: saveMsg =======>
+20151231164920: getWxTokenFromDB=====> 50
+20151231164920:  RequestUtil.php httpPost =====> {"errcode":0,"errmsg":"ok"}
+20151231164920: saveMsg =======>
+20151231165357: getWxTokenFromDB=====> 327
+20151231165357:  RequestUtil.php httpPost =====> {"errcode":0,"errmsg":"ok"}
+20151231165357: saveMsg =======>
+20151231165721: getWxTokenFromDB=====> 531
+20151231165721:  RequestUtil.php httpPost =====> {"errcode":0,"errmsg":"ok"}
+20151231165721: saveMsg =======>
+20151231170049: getWxTokenFromDB=====> 739
+20151231170049:  RequestUtil.php httpPost =====> {"errcode":0,"errmsg":"ok"}
+20151231170049: saveMsg =======>
+20160101204736:  index.php newwxindex=====> 
+20160101204736:  checkSignature =====> token验证成功
+20160101204736:  TypeEvent EventKey nodb=====> Array
+(
+    [ToUserName] => gh_b4c1774a1ef7
+    [FromUserName] => osp6swkdED28-Bo9k0zV1TBfAVwM
+    [CreateTime] => 1451652455
+    [MsgType] => event
+    [Event] => CLICK
+    [EventKey] => enterChatingroom
+)
+
+20160101204736:  TypeEvent EventKey nodb=====> enterChatingroom
+20160101204743:  index.php newwxindex=====> 
+20160101204743:  checkSignature =====> token验证成功
+20160101204743: saveMsg =======>
+20160101204805:  index.php newwxindex=====> 
+20160101204805:  checkSignature =====> token验证成功
+20160101204805:  TypeEvent EventKey nodb=====> Array
+(
+    [ToUserName] => gh_b4c1774a1ef7
+    [FromUserName] => osp6swkdED28-Bo9k0zV1TBfAVwM
+    [CreateTime] => 1451652484
+    [MsgType] => event
+    [Event] => VIEW
+    [EventKey] => http://www.alsovalue.com/case.php
+    [MenuId] => 401705355
+)
+
+20160101204805:  TypeEvent EventKey nodb=====> http://www.alsovalue.com/case.php
+20160101204813:  index.php newwxindex=====> 
+20160101204813:  checkSignature =====> token验证成功
+20160101204813:  TypeEvent EventKey nodb=====> Array
+(
+    [ToUserName] => gh_b4c1774a1ef7
+    [FromUserName] => osp6swkdED28-Bo9k0zV1TBfAVwM
+    [CreateTime] => 1451652492
+    [MsgType] => event
+    [Event] => VIEW
+    [EventKey] => http://www.alsovalue.com/case.php
+    [MenuId] => 401705355
+)
+
+20160101204813:  TypeEvent EventKey nodb=====> http://www.alsovalue.com/case.php
+20160101204825:  index.php newwxindex=====> 
+20160101204825:  checkSignature =====> token验证成功
+20160101204825:  TypeEvent EventKey nodb=====> Array
+(
+    [ToUserName] => gh_b4c1774a1ef7
+    [FromUserName] => osp6swkdED28-Bo9k0zV1TBfAVwM
+    [CreateTime] => 1451652504
+    [MsgType] => event
+    [Event] => VIEW
+    [EventKey] => http://www.alsovalue.com/contactus.php
+    [MenuId] => 401705355
+)
+
+20160101204825:  TypeEvent EventKey nodb=====> http://www.alsovalue.com/contactus.php
+20160101204843:  index.php newwxindex=====> 
+20160101204843:  checkSignature =====> token验证成功
+20160101204843:  TypeEvent EventKey nodb=====> Array
+(
+    [ToUserName] => gh_b4c1774a1ef7
+    [FromUserName] => osp6swkdED28-Bo9k0zV1TBfAVwM
+    [CreateTime] => 1451652519
+    [MsgType] => event
+    [Event] => VIEW
+    [EventKey] => http://www.rsbk.cc
+    [MenuId] => 401705355
+)
+
+20160101204843:  TypeEvent EventKey nodb=====> http://www.rsbk.cc
+20160101204847:  index.php newwxindex=====> 
+20160101204847:  checkSignature =====> token验证成功
+20160101204847:  TypeEvent EventKey nodb=====> Array
+(
+    [ToUserName] => gh_b4c1774a1ef7
+    [FromUserName] => osp6swkdED28-Bo9k0zV1TBfAVwM
+    [CreateTime] => 1451652526
+    [MsgType] => event
+    [Event] => VIEW
+    [EventKey] => http://www.alsovalue.com/case.php
+    [MenuId] => 401705355
+)
+
+20160101204847:  TypeEvent EventKey nodb=====> http://www.alsovalue.com/case.php
+20160101205650:  index.php newwxindex=====> 
+20160101205650:  checkSignature =====> token验证成功
+20160101205650:  TypeEvent EventKey nodb=====> Array
+(
+    [ToUserName] => gh_b4c1774a1ef7
+    [FromUserName] => osp6swkdED28-Bo9k0zV1TBfAVwM
+    [CreateTime] => 1451653009
+    [MsgType] => event
+    [Event] => unsubscribe
+    [EventKey] => 
+)
+
+20160101205650:  TypeEvent EventKey nodb=====> 
+20160101205650: getWxTokenFromDB=====> 15164
+20160101205650:  RequestUtil.php httpGet =====> {"access_token":"9e84eycRbY_2TBpxO0c2iDJKYHdKFE8cZhw-SajWWpO4XZlytqgzrNo5_m5fUPW7P3oWHn04ybiLX82G4Jb3-DEZgjhaNF6rSZvNW-8sNicRCHdAFAFQV","expires_in":7200}
+20160101205650:  RequestUtil.php httpGet =====> {"errcode":0,"errmsg":"ok","ticket":"kgt8ON7yVITDhtdwci0qeYpJ9Yds4uvs9QrNJLVtpQk0GJc_f862VpcNd1SBGv3SJOiQyoDxpkJ26ieJOQ-viQ","expires_in":7200}
+20160101205650:  RequestUtil.php httpGet =====> {"subscribe":0,"openid":"osp6swkdED28-Bo9k0zV1TBfAVwM"}
+20160101205650:  TypeEvent unsubscribe userInfo=====> Array
+(
+    [subscribe] => 0
+    [openid] => osp6swkdED28-Bo9k0zV1TBfAVwM
+)
+
+20160101205650: TypeEvent synchronizedUserInfo update=====> 
+20160101205805:  index.php newwxindex=====> 
+20160101205805:  checkSignature =====> token验证成功
+20160101205805:  TypeEvent EventKey nodb=====> Array
+(
+    [ToUserName] => gh_b4c1774a1ef7
+    [FromUserName] => osp6swkdED28-Bo9k0zV1TBfAVwM
+    [CreateTime] => 1451653084
+    [MsgType] => event
+    [Event] => subscribe
+    [EventKey] => 
+)
+
+20160101205805:  TypeEvent EventKey nodb=====> 
+20160101205805: getWxTokenFromDB=====> 75
+20160101205805:  RequestUtil.php httpGet =====> {"subscribe":1,"openid":"osp6swkdED28-Bo9k0zV1TBfAVwM","nickname":"Micky","sex":1,"language":"zh_CN","city":"虹口","province":"上海","country":"中国","headimgurl":"http:\/\/wx.qlogo.cn\/mmopen\/ajNVdqHZLLCSia4mdyKs81nDHN5pR87niacFpJ8g65PaTCTT30Ze7Ok0GeU4bticJxW8cPkCOpY2UibKCXcQ6Y08UA\/0","subscribe_time":1451653084,"remark":"","groupid":0}
+20160101205805:  TypeEvent subscribe userInfo=====> Array
+(
+    [subscribe] => 1
+    [openid] => osp6swkdED28-Bo9k0zV1TBfAVwM
+    [nickname] => Micky
+    [sex] => 1
+    [language] => zh_CN
+    [city] => 虹口
+    [province] => 上海
+    [country] => 中国
+    [headimgurl] => http://wx.qlogo.cn/mmopen/ajNVdqHZLLCSia4mdyKs81nDHN5pR87niacFpJ8g65PaTCTT30Ze7Ok0GeU4bticJxW8cPkCOpY2UibKCXcQ6Y08UA/0
+    [subscribe_time] => 1451653084
+    [remark] => 
+    [groupid] => 0
+)
+
+20160101205805: TypeEvent synchronizedUserInfo insert=====> 
+20160101205805: TypeEvent.php synchronizedUserInfo  ：nickname ====>Micky
+20160101205828:  index.php newwxindex=====> 
+20160101205828:  checkSignature =====> token验证成功
+20160101205828:  TypeEvent EventKey nodb=====> Array
+(
+    [ToUserName] => gh_b4c1774a1ef7
+    [FromUserName] => osp6swkdED28-Bo9k0zV1TBfAVwM
+    [CreateTime] => 1451653107
+    [MsgType] => event
+    [Event] => CLICK
+    [EventKey] => enterChatingroom
+)
+
+20160101205828:  TypeEvent EventKey nodb=====> enterChatingroom
+20160101205835:  index.php newwxindex=====> 
+20160101205835:  checkSignature =====> token验证成功
+20160101205835: saveMsg =======>
+20160101205835: getWxTokenFromDB=====> 105
+20160101205835:  RequestUtil.php httpPost =====> {"errcode":0,"errmsg":"ok"}
+20160101205853: getWxTokenFromDB=====> 123
+20160101205853:  RequestUtil.php httpPost =====> {"errcode":0,"errmsg":"ok"}
+20160101205853: saveMsg =======>
+20160105090729: getWxTokenFromDB=====> 44631
+20160105090734:  RequestUtil.php httpGet =====> {"access_token":"kG3uNJnGbtz-29xj4VQwVH7xBSFLCDYah5G9RsDpSbA-3dLMyuGBTYcQmK90WKCigLB3ARU_87aZtBIJGSh_EwitadN5HA0r55VARSZdJbkMZDbADAUHL","expires_in":7200}
+20160105090735:  RequestUtil.php httpGet =====> {"errcode":0,"errmsg":"ok","ticket":"kgt8ON7yVITDhtdwci0qeYpJ9Yds4uvs9QrNJLVtpQm-4fMIphVEo2-osMeUkfAFMW3Ci5iji1lRh7l61C6TAQ","expires_in":7200}
+20160105090735:  RequestUtil.php httpPost =====> {"errcode":45015,"errmsg":"response out of time limit or subscription is canceled hint: [c0uaEa0056age3]"}
+20160105090735: saveMsg =======>
+20160105103948:  index.php newwxindex=====> 
+20160105103948:  checkSignature =====> token验证成功
+20160105103949: saveMsg =======>
+20160105103956:  index.php newwxindex=====> 
+20160105103956:  checkSignature =====> token验证成功
+20160105103956:  TypeEvent EventKey nodb=====> Array
+(
+    [ToUserName] => gh_b4c1774a1ef7
+    [FromUserName] => osp6swrNZiWtEuTy-Gj1cBVA1l38
+    [CreateTime] => 1451961595
+    [MsgType] => event
+    [Event] => CLICK
+    [EventKey] => enterChatingroom
+)
+
+20160105103956:  TypeEvent EventKey nodb=====> enterChatingroom
+20160105104001:  index.php newwxindex=====> 
+20160105104001:  checkSignature =====> token验证成功
+20160105104001: saveMsg =======>
+20160105104011: getWxTokenFromDB=====> 5616
+20160105104011:  RequestUtil.php httpPost =====> {"errcode":0,"errmsg":"ok"}
+20160105104011: saveMsg =======>
+20160105151631:  index.php newwxindex=====> 
+20160105151631:  checkSignature =====> token验证成功
+20160105151631:  TypeEvent EventKey nodb=====> Array
+(
+    [ToUserName] => gh_b4c1774a1ef7
+    [FromUserName] => osp6swrNZiWtEuTy-Gj1cBVA1l38
+    [CreateTime] => 1451978191
+    [MsgType] => event
+    [Event] => VIEW
+    [EventKey] => http://www.alsovalue.com/case.php
+    [MenuId] => 401705355
+)
+
+20160105151631:  TypeEvent EventKey nodb=====> http://www.alsovalue.com/case.php
+20160105161814: getWxTokenFromDB=====> 26259
+20160105161814:  RequestUtil.php httpGet =====> {"access_token":"MIEWlWu5AdqeKmIitSQSjuc4UlZWLzwumKHnTxTSoj4jd1hXTyeR0N9sYaf59wu3F9EBKLszquU72ESwjT3BZvCd9jVRCxo9iYnWxZjQ7V0YZWhAFAFGD","expires_in":7200}
+20160105161814:  RequestUtil.php httpGet =====> {"errcode":0,"errmsg":"ok","ticket":"kgt8ON7yVITDhtdwci0qeYpJ9Yds4uvs9QrNJLVtpQkGrqU8B4Rhz9CawNBmY_6gZjVlPi_zaIrMMKnGfo6hhw","expires_in":7200}
+20160105161814:  RequestUtil.php httpPost =====> {"total":8,"count":8,"data":{"openid":["osp6swkdED28-Bo9k0zV1TBfAVwM","osp6swsMgghqE9kB-58Jd_411bCg","osp6swk9_DfmWZ093q8ShHchMjdM","osp6swoC_jT04slc3TKFddSgO45c","osp6swnBLWkDJWivjzzvg4wi_fZY","osp6swlTQrl7KzkgaQTsjPcTIrB8","osp6swrNZiWtEuTy-Gj1cBVA1l38","osp6swkgabGhn7_Jqt7zGU90095A"]},"next_openid":"osp6swkgabGhn7_Jqt7zGU90095A"}
+20160105162726: getWxTokenFromDB=====> 552
+20160105162726:  RequestUtil.php httpPost =====> {"total":8,"count":8,"data":{"openid":["osp6swkdED28-Bo9k0zV1TBfAVwM","osp6swsMgghqE9kB-58Jd_411bCg","osp6swk9_DfmWZ093q8ShHchMjdM","osp6swoC_jT04slc3TKFddSgO45c","osp6swnBLWkDJWivjzzvg4wi_fZY","osp6swlTQrl7KzkgaQTsjPcTIrB8","osp6swrNZiWtEuTy-Gj1cBVA1l38","osp6swkgabGhn7_Jqt7zGU90095A"]},"next_openid":"osp6swkgabGhn7_Jqt7zGU90095A"}
+20160105162814: getWxTokenFromDB=====> 600
+20160105162814:  RequestUtil.php httpPost =====> {"total":8,"count":8,"data":{"openid":["osp6swkdED28-Bo9k0zV1TBfAVwM","osp6swsMgghqE9kB-58Jd_411bCg","osp6swk9_DfmWZ093q8ShHchMjdM","osp6swoC_jT04slc3TKFddSgO45c","osp6swnBLWkDJWivjzzvg4wi_fZY","osp6swlTQrl7KzkgaQTsjPcTIrB8","osp6swrNZiWtEuTy-Gj1cBVA1l38","osp6swkgabGhn7_Jqt7zGU90095A"]},"next_openid":"osp6swkgabGhn7_Jqt7zGU90095A"}
+20160105163115: getWxTokenFromDB=====> 781
+20160105163115:  RequestUtil.php httpPost =====> {"total":8,"count":8,"data":{"openid":["osp6swkdED28-Bo9k0zV1TBfAVwM","osp6swsMgghqE9kB-58Jd_411bCg","osp6swk9_DfmWZ093q8ShHchMjdM","osp6swoC_jT04slc3TKFddSgO45c","osp6swnBLWkDJWivjzzvg4wi_fZY","osp6swlTQrl7KzkgaQTsjPcTIrB8","osp6swrNZiWtEuTy-Gj1cBVA1l38","osp6swkgabGhn7_Jqt7zGU90095A"]},"next_openid":"osp6swkgabGhn7_Jqt7zGU90095A"}
+20160105163251: getWxTokenFromDB=====> 877
+20160105163251:  RequestUtil.php httpPost =====> {"total":8,"count":8,"data":{"openid":["osp6swkdED28-Bo9k0zV1TBfAVwM","osp6swsMgghqE9kB-58Jd_411bCg","osp6swk9_DfmWZ093q8ShHchMjdM","osp6swoC_jT04slc3TKFddSgO45c","osp6swnBLWkDJWivjzzvg4wi_fZY","osp6swlTQrl7KzkgaQTsjPcTIrB8","osp6swrNZiWtEuTy-Gj1cBVA1l38","osp6swkgabGhn7_Jqt7zGU90095A"]},"next_openid":"osp6swkgabGhn7_Jqt7zGU90095A"}
+20160105163547: getWxTokenFromDB=====> 1053
+20160105163547:  RequestUtil.php httpPost =====> {"total":8,"count":8,"data":{"openid":["osp6swkdED28-Bo9k0zV1TBfAVwM","osp6swsMgghqE9kB-58Jd_411bCg","osp6swk9_DfmWZ093q8ShHchMjdM","osp6swoC_jT04slc3TKFddSgO45c","osp6swnBLWkDJWivjzzvg4wi_fZY","osp6swlTQrl7KzkgaQTsjPcTIrB8","osp6swrNZiWtEuTy-Gj1cBVA1l38","osp6swkgabGhn7_Jqt7zGU90095A"]},"next_openid":"osp6swkgabGhn7_Jqt7zGU90095A"}
+20160105163919: getWxTokenFromDB=====> 1265
+20160105163919:  RequestUtil.php httpPost =====> {"total":8,"count":8,"data":{"openid":["osp6swkdED28-Bo9k0zV1TBfAVwM","osp6swsMgghqE9kB-58Jd_411bCg","osp6swk9_DfmWZ093q8ShHchMjdM","osp6swoC_jT04slc3TKFddSgO45c","osp6swnBLWkDJWivjzzvg4wi_fZY","osp6swlTQrl7KzkgaQTsjPcTIrB8","osp6swrNZiWtEuTy-Gj1cBVA1l38","osp6swkgabGhn7_Jqt7zGU90095A"]},"next_openid":"osp6swkgabGhn7_Jqt7zGU90095A"}
+20160105163945: getWxTokenFromDB=====> 1291
+20160105163945:  RequestUtil.php httpPost =====> {"total":8,"count":8,"data":{"openid":["osp6swkdED28-Bo9k0zV1TBfAVwM","osp6swsMgghqE9kB-58Jd_411bCg","osp6swk9_DfmWZ093q8ShHchMjdM","osp6swoC_jT04slc3TKFddSgO45c","osp6swnBLWkDJWivjzzvg4wi_fZY","osp6swlTQrl7KzkgaQTsjPcTIrB8","osp6swrNZiWtEuTy-Gj1cBVA1l38","osp6swkgabGhn7_Jqt7zGU90095A"]},"next_openid":"osp6swkgabGhn7_Jqt7zGU90095A"}
+20160105164103: getWxTokenFromDB=====> 1369
+20160105164104:  RequestUtil.php httpPost =====> {"total":8,"count":8,"data":{"openid":["osp6swkdED28-Bo9k0zV1TBfAVwM","osp6swsMgghqE9kB-58Jd_411bCg","osp6swk9_DfmWZ093q8ShHchMjdM","osp6swoC_jT04slc3TKFddSgO45c","osp6swnBLWkDJWivjzzvg4wi_fZY","osp6swlTQrl7KzkgaQTsjPcTIrB8","osp6swrNZiWtEuTy-Gj1cBVA1l38","osp6swkgabGhn7_Jqt7zGU90095A"]},"next_openid":"osp6swkgabGhn7_Jqt7zGU90095A"}
+20160105164156: getWxTokenFromDB=====> 1422
+20160105164156:  RequestUtil.php httpPost =====> {"total":8,"count":8,"data":{"openid":["osp6swkdED28-Bo9k0zV1TBfAVwM","osp6swsMgghqE9kB-58Jd_411bCg","osp6swk9_DfmWZ093q8ShHchMjdM","osp6swoC_jT04slc3TKFddSgO45c","osp6swnBLWkDJWivjzzvg4wi_fZY","osp6swlTQrl7KzkgaQTsjPcTIrB8","osp6swrNZiWtEuTy-Gj1cBVA1l38","osp6swkgabGhn7_Jqt7zGU90095A"]},"next_openid":"osp6swkgabGhn7_Jqt7zGU90095A"}
+20160105164258: getWxTokenFromDB=====> 1484
+20160105164258:  RequestUtil.php httpPost =====> {"total":8,"count":8,"data":{"openid":["osp6swkdED28-Bo9k0zV1TBfAVwM","osp6swsMgghqE9kB-58Jd_411bCg","osp6swk9_DfmWZ093q8ShHchMjdM","osp6swoC_jT04slc3TKFddSgO45c","osp6swnBLWkDJWivjzzvg4wi_fZY","osp6swlTQrl7KzkgaQTsjPcTIrB8","osp6swrNZiWtEuTy-Gj1cBVA1l38","osp6swkgabGhn7_Jqt7zGU90095A"]},"next_openid":"osp6swkgabGhn7_Jqt7zGU90095A"}
+20160105164448: getWxTokenFromDB=====> 1594
+20160105164448:  RequestUtil.php httpPost =====> {"total":8,"count":8,"data":{"openid":["osp6swkdED28-Bo9k0zV1TBfAVwM","osp6swsMgghqE9kB-58Jd_411bCg","osp6swk9_DfmWZ093q8ShHchMjdM","osp6swoC_jT04slc3TKFddSgO45c","osp6swnBLWkDJWivjzzvg4wi_fZY","osp6swlTQrl7KzkgaQTsjPcTIrB8","osp6swrNZiWtEuTy-Gj1cBVA1l38","osp6swkgabGhn7_Jqt7zGU90095A"]},"next_openid":"osp6swkgabGhn7_Jqt7zGU90095A"}
+20160105164516: getWxTokenFromDB=====> 1622
+20160105164516:  RequestUtil.php httpPost =====> {"total":8,"count":8,"data":{"openid":["osp6swkdED28-Bo9k0zV1TBfAVwM","osp6swsMgghqE9kB-58Jd_411bCg","osp6swk9_DfmWZ093q8ShHchMjdM","osp6swoC_jT04slc3TKFddSgO45c","osp6swnBLWkDJWivjzzvg4wi_fZY","osp6swlTQrl7KzkgaQTsjPcTIrB8","osp6swrNZiWtEuTy-Gj1cBVA1l38","osp6swkgabGhn7_Jqt7zGU90095A"]},"next_openid":"osp6swkgabGhn7_Jqt7zGU90095A"}
+20160105164855: getWxTokenFromDB=====> 1841
+20160105164855:  RequestUtil.php httpPost =====> {"total":8,"count":8,"data":{"openid":["osp6swkdED28-Bo9k0zV1TBfAVwM","osp6swsMgghqE9kB-58Jd_411bCg","osp6swk9_DfmWZ093q8ShHchMjdM","osp6swoC_jT04slc3TKFddSgO45c","osp6swnBLWkDJWivjzzvg4wi_fZY","osp6swlTQrl7KzkgaQTsjPcTIrB8","osp6swrNZiWtEuTy-Gj1cBVA1l38","osp6swkgabGhn7_Jqt7zGU90095A"]},"next_openid":"osp6swkgabGhn7_Jqt7zGU90095A"}
+20160105165001: getWxTokenFromDB=====> 1907
+20160105165001:  RequestUtil.php httpPost =====> {"total":8,"count":8,"data":{"openid":["osp6swkdED28-Bo9k0zV1TBfAVwM","osp6swsMgghqE9kB-58Jd_411bCg","osp6swk9_DfmWZ093q8ShHchMjdM","osp6swoC_jT04slc3TKFddSgO45c","osp6swnBLWkDJWivjzzvg4wi_fZY","osp6swlTQrl7KzkgaQTsjPcTIrB8","osp6swrNZiWtEuTy-Gj1cBVA1l38","osp6swkgabGhn7_Jqt7zGU90095A"]},"next_openid":"osp6swkgabGhn7_Jqt7zGU90095A"}
+20160105165310: getWxTokenFromDB=====> 2096
+20160105165310:  RequestUtil.php httpPost =====> {"total":8,"count":8,"data":{"openid":["osp6swkdED28-Bo9k0zV1TBfAVwM","osp6swsMgghqE9kB-58Jd_411bCg","osp6swk9_DfmWZ093q8ShHchMjdM","osp6swoC_jT04slc3TKFddSgO45c","osp6swnBLWkDJWivjzzvg4wi_fZY","osp6swlTQrl7KzkgaQTsjPcTIrB8","osp6swrNZiWtEuTy-Gj1cBVA1l38","osp6swkgabGhn7_Jqt7zGU90095A"]},"next_openid":"osp6swkgabGhn7_Jqt7zGU90095A"}
+20160105165404: getWxTokenFromDB=====> 2150
+20160105165409:  RequestUtil.php httpPost =====> {"total":8,"count":8,"data":{"openid":["osp6swkdED28-Bo9k0zV1TBfAVwM","osp6swsMgghqE9kB-58Jd_411bCg","osp6swk9_DfmWZ093q8ShHchMjdM","osp6swoC_jT04slc3TKFddSgO45c","osp6swnBLWkDJWivjzzvg4wi_fZY","osp6swlTQrl7KzkgaQTsjPcTIrB8","osp6swrNZiWtEuTy-Gj1cBVA1l38","osp6swkgabGhn7_Jqt7zGU90095A"]},"next_openid":"osp6swkgabGhn7_Jqt7zGU90095A"}
+20160105165518: getWxTokenFromDB=====> 2224
+20160105165518:  RequestUtil.php httpPost =====> {"total":8,"count":8,"data":{"openid":["osp6swkdED28-Bo9k0zV1TBfAVwM","osp6swsMgghqE9kB-58Jd_411bCg","osp6swk9_DfmWZ093q8ShHchMjdM","osp6swoC_jT04slc3TKFddSgO45c","osp6swnBLWkDJWivjzzvg4wi_fZY","osp6swlTQrl7KzkgaQTsjPcTIrB8","osp6swrNZiWtEuTy-Gj1cBVA1l38","osp6swkgabGhn7_Jqt7zGU90095A"]},"next_openid":"osp6swkgabGhn7_Jqt7zGU90095A"}
+20160105165548: getWxTokenFromDB=====> 2254
+20160105165548:  RequestUtil.php httpPost =====> {"total":8,"count":8,"data":{"openid":["osp6swkdED28-Bo9k0zV1TBfAVwM","osp6swsMgghqE9kB-58Jd_411bCg","osp6swk9_DfmWZ093q8ShHchMjdM","osp6swoC_jT04slc3TKFddSgO45c","osp6swnBLWkDJWivjzzvg4wi_fZY","osp6swlTQrl7KzkgaQTsjPcTIrB8","osp6swrNZiWtEuTy-Gj1cBVA1l38","osp6swkgabGhn7_Jqt7zGU90095A"]},"next_openid":"osp6swkgabGhn7_Jqt7zGU90095A"}
+20160105165726: getWxTokenFromDB=====> 2352
+20160105165726:  RequestUtil.php httpPost =====> {"total":8,"count":8,"data":{"openid":["osp6swkdED28-Bo9k0zV1TBfAVwM","osp6swsMgghqE9kB-58Jd_411bCg","osp6swk9_DfmWZ093q8ShHchMjdM","osp6swoC_jT04slc3TKFddSgO45c","osp6swnBLWkDJWivjzzvg4wi_fZY","osp6swlTQrl7KzkgaQTsjPcTIrB8","osp6swrNZiWtEuTy-Gj1cBVA1l38","osp6swkgabGhn7_Jqt7zGU90095A"]},"next_openid":"osp6swkgabGhn7_Jqt7zGU90095A"}
+20160105165857: getWxTokenFromDB=====> 2443
+20160105165902:  RequestUtil.php httpPost =====> {"total":8,"count":8,"data":{"openid":["osp6swkdED28-Bo9k0zV1TBfAVwM","osp6swsMgghqE9kB-58Jd_411bCg","osp6swk9_DfmWZ093q8ShHchMjdM","osp6swoC_jT04slc3TKFddSgO45c","osp6swnBLWkDJWivjzzvg4wi_fZY","osp6swlTQrl7KzkgaQTsjPcTIrB8","osp6swrNZiWtEuTy-Gj1cBVA1l38","osp6swkgabGhn7_Jqt7zGU90095A"]},"next_openid":"osp6swkgabGhn7_Jqt7zGU90095A"}
+20160105170018: getWxTokenFromDB=====> 2524
+20160105170018:  RequestUtil.php httpPost =====> {"total":8,"count":8,"data":{"openid":["osp6swkdED28-Bo9k0zV1TBfAVwM","osp6swsMgghqE9kB-58Jd_411bCg","osp6swk9_DfmWZ093q8ShHchMjdM","osp6swoC_jT04slc3TKFddSgO45c","osp6swnBLWkDJWivjzzvg4wi_fZY","osp6swlTQrl7KzkgaQTsjPcTIrB8","osp6swrNZiWtEuTy-Gj1cBVA1l38","osp6swkgabGhn7_Jqt7zGU90095A"]},"next_openid":"osp6swkgabGhn7_Jqt7zGU90095A"}
+20160105170121: getWxTokenFromDB=====> 2587
+20160105170121:  RequestUtil.php httpPost =====> {"total":8,"count":8,"data":{"openid":["osp6swkdED28-Bo9k0zV1TBfAVwM","osp6swsMgghqE9kB-58Jd_411bCg","osp6swk9_DfmWZ093q8ShHchMjdM","osp6swoC_jT04slc3TKFddSgO45c","osp6swnBLWkDJWivjzzvg4wi_fZY","osp6swlTQrl7KzkgaQTsjPcTIrB8","osp6swrNZiWtEuTy-Gj1cBVA1l38","osp6swkgabGhn7_Jqt7zGU90095A"]},"next_openid":"osp6swkgabGhn7_Jqt7zGU90095A"}
+20160105170204: getWxTokenFromDB=====> 2630
+20160105170205:  RequestUtil.php httpPost =====> {"total":8,"count":8,"data":{"openid":["osp6swkdED28-Bo9k0zV1TBfAVwM","osp6swsMgghqE9kB-58Jd_411bCg","osp6swk9_DfmWZ093q8ShHchMjdM","osp6swoC_jT04slc3TKFddSgO45c","osp6swnBLWkDJWivjzzvg4wi_fZY","osp6swlTQrl7KzkgaQTsjPcTIrB8","osp6swrNZiWtEuTy-Gj1cBVA1l38","osp6swkgabGhn7_Jqt7zGU90095A"]},"next_openid":"osp6swkgabGhn7_Jqt7zGU90095A"}
+20160105170401: getWxTokenFromDB=====> 2747
+20160105170401:  RequestUtil.php httpPost =====> {"total":8,"count":8,"data":{"openid":["osp6swkdED28-Bo9k0zV1TBfAVwM","osp6swsMgghqE9kB-58Jd_411bCg","osp6swk9_DfmWZ093q8ShHchMjdM","osp6swoC_jT04slc3TKFddSgO45c","osp6swnBLWkDJWivjzzvg4wi_fZY","osp6swlTQrl7KzkgaQTsjPcTIrB8","osp6swrNZiWtEuTy-Gj1cBVA1l38","osp6swkgabGhn7_Jqt7zGU90095A"]},"next_openid":"osp6swkgabGhn7_Jqt7zGU90095A"}
+20160105170516: getWxTokenFromDB=====> 2822
+20160105170521:  RequestUtil.php httpPost =====> {"total":8,"count":8,"data":{"openid":["osp6swkdED28-Bo9k0zV1TBfAVwM","osp6swsMgghqE9kB-58Jd_411bCg","osp6swk9_DfmWZ093q8ShHchMjdM","osp6swoC_jT04slc3TKFddSgO45c","osp6swnBLWkDJWivjzzvg4wi_fZY","osp6swlTQrl7KzkgaQTsjPcTIrB8","osp6swrNZiWtEuTy-Gj1cBVA1l38","osp6swkgabGhn7_Jqt7zGU90095A"]},"next_openid":"osp6swkgabGhn7_Jqt7zGU90095A"}
+20160105170639: getWxTokenFromDB=====> 2905
+20160105170639:  RequestUtil.php httpPost =====> {"total":8,"count":8,"data":{"openid":["osp6swkdED28-Bo9k0zV1TBfAVwM","osp6swsMgghqE9kB-58Jd_411bCg","osp6swk9_DfmWZ093q8ShHchMjdM","osp6swoC_jT04slc3TKFddSgO45c","osp6swnBLWkDJWivjzzvg4wi_fZY","osp6swlTQrl7KzkgaQTsjPcTIrB8","osp6swrNZiWtEuTy-Gj1cBVA1l38","osp6swkgabGhn7_Jqt7zGU90095A"]},"next_openid":"osp6swkgabGhn7_Jqt7zGU90095A"}
+20160105170744: getWxTokenFromDB=====> 2970
+20160105170745:  RequestUtil.php httpPost =====> {"total":8,"count":8,"data":{"openid":["osp6swkdED28-Bo9k0zV1TBfAVwM","osp6swsMgghqE9kB-58Jd_411bCg","osp6swk9_DfmWZ093q8ShHchMjdM","osp6swoC_jT04slc3TKFddSgO45c","osp6swnBLWkDJWivjzzvg4wi_fZY","osp6swlTQrl7KzkgaQTsjPcTIrB8","osp6swrNZiWtEuTy-Gj1cBVA1l38","osp6swkgabGhn7_Jqt7zGU90095A"]},"next_openid":"osp6swkgabGhn7_Jqt7zGU90095A"}
+20160105171114: getWxTokenFromDB=====> 3180
+20160105171114:  RequestUtil.php httpPost =====> {"total":8,"count":8,"data":{"openid":["osp6swkdED28-Bo9k0zV1TBfAVwM","osp6swsMgghqE9kB-58Jd_411bCg","osp6swk9_DfmWZ093q8ShHchMjdM","osp6swoC_jT04slc3TKFddSgO45c","osp6swnBLWkDJWivjzzvg4wi_fZY","osp6swlTQrl7KzkgaQTsjPcTIrB8","osp6swrNZiWtEuTy-Gj1cBVA1l38","osp6swkgabGhn7_Jqt7zGU90095A"]},"next_openid":"osp6swkgabGhn7_Jqt7zGU90095A"}
+20160105171215: getWxTokenFromDB=====> 3241
+20160105171216:  RequestUtil.php httpPost =====> {"total":8,"count":8,"data":{"openid":["osp6swkdED28-Bo9k0zV1TBfAVwM","osp6swsMgghqE9kB-58Jd_411bCg","osp6swk9_DfmWZ093q8ShHchMjdM","osp6swoC_jT04slc3TKFddSgO45c","osp6swnBLWkDJWivjzzvg4wi_fZY","osp6swlTQrl7KzkgaQTsjPcTIrB8","osp6swrNZiWtEuTy-Gj1cBVA1l38","osp6swkgabGhn7_Jqt7zGU90095A"]},"next_openid":"osp6swkgabGhn7_Jqt7zGU90095A"}
+20160105171305: getWxTokenFromDB=====> 3291
+20160105171305:  RequestUtil.php httpPost =====> {"total":8,"count":8,"data":{"openid":["osp6swkdED28-Bo9k0zV1TBfAVwM","osp6swsMgghqE9kB-58Jd_411bCg","osp6swk9_DfmWZ093q8ShHchMjdM","osp6swoC_jT04slc3TKFddSgO45c","osp6swnBLWkDJWivjzzvg4wi_fZY","osp6swlTQrl7KzkgaQTsjPcTIrB8","osp6swrNZiWtEuTy-Gj1cBVA1l38","osp6swkgabGhn7_Jqt7zGU90095A"]},"next_openid":"osp6swkgabGhn7_Jqt7zGU90095A"}
+20160105171504: getWxTokenFromDB=====> 3410
+20160105171509:  RequestUtil.php httpPost =====> {"total":8,"count":8,"data":{"openid":["osp6swkdED28-Bo9k0zV1TBfAVwM","osp6swsMgghqE9kB-58Jd_411bCg","osp6swk9_DfmWZ093q8ShHchMjdM","osp6swoC_jT04slc3TKFddSgO45c","osp6swnBLWkDJWivjzzvg4wi_fZY","osp6swlTQrl7KzkgaQTsjPcTIrB8","osp6swrNZiWtEuTy-Gj1cBVA1l38","osp6swkgabGhn7_Jqt7zGU90095A"]},"next_openid":"osp6swkgabGhn7_Jqt7zGU90095A"}
+20160105171700: getWxTokenFromDB=====> 3526
+20160105171700:  RequestUtil.php httpPost =====> {"total":8,"count":8,"data":{"openid":["osp6swkdED28-Bo9k0zV1TBfAVwM","osp6swsMgghqE9kB-58Jd_411bCg","osp6swk9_DfmWZ093q8ShHchMjdM","osp6swoC_jT04slc3TKFddSgO45c","osp6swnBLWkDJWivjzzvg4wi_fZY","osp6swlTQrl7KzkgaQTsjPcTIrB8","osp6swrNZiWtEuTy-Gj1cBVA1l38","osp6swkgabGhn7_Jqt7zGU90095A"]},"next_openid":"osp6swkgabGhn7_Jqt7zGU90095A"}
+20160105171825: getWxTokenFromDB=====> 3671
+20160105171826:  RequestUtil.php httpPost =====> {"total":8,"count":8,"data":{"openid":["osp6swkdED28-Bo9k0zV1TBfAVwM","osp6swsMgghqE9kB-58Jd_411bCg","osp6swk9_DfmWZ093q8ShHchMjdM","osp6swoC_jT04slc3TKFddSgO45c","osp6swnBLWkDJWivjzzvg4wi_fZY","osp6swlTQrl7KzkgaQTsjPcTIrB8","osp6swrNZiWtEuTy-Gj1cBVA1l38","osp6swkgabGhn7_Jqt7zGU90095A"]},"next_openid":"osp6swkgabGhn7_Jqt7zGU90095A"}
+20160105171845: getWxTokenFromDB=====> 3691
+20160105171845:  RequestUtil.php httpPost =====> {"total":8,"count":8,"data":{"openid":["osp6swkdED28-Bo9k0zV1TBfAVwM","osp6swsMgghqE9kB-58Jd_411bCg","osp6swk9_DfmWZ093q8ShHchMjdM","osp6swoC_jT04slc3TKFddSgO45c","osp6swnBLWkDJWivjzzvg4wi_fZY","osp6swlTQrl7KzkgaQTsjPcTIrB8","osp6swrNZiWtEuTy-Gj1cBVA1l38","osp6swkgabGhn7_Jqt7zGU90095A"]},"next_openid":"osp6swkgabGhn7_Jqt7zGU90095A"}
+20160105174249: getWxTokenFromDB=====> 5135
+20160105174249:  RequestUtil.php httpPost =====> {"total":8,"count":8,"data":{"openid":["osp6swkdED28-Bo9k0zV1TBfAVwM","osp6swsMgghqE9kB-58Jd_411bCg","osp6swk9_DfmWZ093q8ShHchMjdM","osp6swoC_jT04slc3TKFddSgO45c","osp6swnBLWkDJWivjzzvg4wi_fZY","osp6swlTQrl7KzkgaQTsjPcTIrB8","osp6swrNZiWtEuTy-Gj1cBVA1l38","osp6swkgabGhn7_Jqt7zGU90095A"]},"next_openid":"osp6swkgabGhn7_Jqt7zGU90095A"}
+20160105174554: getWxTokenFromDB=====> 5320
+20160105174554:  RequestUtil.php httpPost =====> {"total":8,"count":8,"data":{"openid":["osp6swkdED28-Bo9k0zV1TBfAVwM","osp6swsMgghqE9kB-58Jd_411bCg","osp6swk9_DfmWZ093q8ShHchMjdM","osp6swoC_jT04slc3TKFddSgO45c","osp6swnBLWkDJWivjzzvg4wi_fZY","osp6swlTQrl7KzkgaQTsjPcTIrB8","osp6swrNZiWtEuTy-Gj1cBVA1l38","osp6swkgabGhn7_Jqt7zGU90095A"]},"next_openid":"osp6swkgabGhn7_Jqt7zGU90095A"}
+20160105174554: getWxTokenFromDB=====> 5320
+20160105174554:  RequestUtil.php httpPost =====> {"errcode":40032,"errmsg":"invalid openid list size hint: [qQi10a0153vr18]"}
+20160105174851: getWxTokenFromDB=====> 5497
+20160105174851:  RequestUtil.php httpPost =====> {"total":8,"count":8,"data":{"openid":["osp6swkdED28-Bo9k0zV1TBfAVwM","osp6swsMgghqE9kB-58Jd_411bCg","osp6swk9_DfmWZ093q8ShHchMjdM","osp6swoC_jT04slc3TKFddSgO45c","osp6swnBLWkDJWivjzzvg4wi_fZY","osp6swlTQrl7KzkgaQTsjPcTIrB8","osp6swrNZiWtEuTy-Gj1cBVA1l38","osp6swkgabGhn7_Jqt7zGU90095A"]},"next_openid":"osp6swkgabGhn7_Jqt7zGU90095A"}
+20160105174851: getWxTokenFromDB=====> 5497
+20160105174851:  RequestUtil.php httpPost =====> {"errcode":40032,"errmsg":"invalid openid list size hint: [L3jV.A0330vr21]"}
+20160105175409: getWxTokenFromDB=====> 5815
+20160105175409:  RequestUtil.php httpPost =====> {"total":8,"count":8,"data":{"openid":["osp6swkdED28-Bo9k0zV1TBfAVwM","osp6swsMgghqE9kB-58Jd_411bCg","osp6swk9_DfmWZ093q8ShHchMjdM","osp6swoC_jT04slc3TKFddSgO45c","osp6swnBLWkDJWivjzzvg4wi_fZY","osp6swlTQrl7KzkgaQTsjPcTIrB8","osp6swrNZiWtEuTy-Gj1cBVA1l38","osp6swkgabGhn7_Jqt7zGU90095A"]},"next_openid":"osp6swkgabGhn7_Jqt7zGU90095A"}
+20160105175409: getWxTokenFromDB=====> 5815
+20160105175409:  RequestUtil.php httpPost =====> {"user_info_list":[{"subscribe":1,"openid":"osp6swsMgghqE9kB-58Jd_411bCg","nickname":"游鱼","sex":1,"language":"zh_CN","city":"Suzhou","province":"Jiangsu","country":"China","headimgurl":"http:\/\/wx.qlogo.cn\/mmopen\/PiajxSqBRaEK0HwtMKtnjEiciaUwuTbMGMABMOic24QibhfenFFaLsaxjY8d1FFUv09FRqY6J4I3o1EiaXqU739u4H1g\/0","subscribe_time":1447926510,"remark":"","groupid":0},{"subscribe":1,"openid":"osp6swk9_DfmWZ093q8ShHchMjdM","nickname":"Sweety","sex":0,"language":"zh_CN","city":"","province":"","country":"","headimgurl":"http:\/\/wx.qlogo.cn\/mmopen\/83bILTuwr6Zpzrabp3QYeMa2ibuExVSrUSc6XiaEQ8yssS39ARvQf9rFOJiahyrZiavMx5CibZ5PWrHa4licMB5SEPiaoOSpdqHOPC1\/0","subscribe_time":1448067317,"remark":"","groupid":0},{"subscribe":1,"openid":"osp6swlTQrl7KzkgaQTsjPcTIrB8","nickname":"小怪兽","sex":1,"language":"zh_CN","city":"Pudong New District","province":"Shanghai","country":"China","headimgurl":"http:\/\/wx.qlogo.cn\/mmopen\/83bILTuwr6aU1U25J1gp1khSmAKtIrBcXicE58IMP3Y0FongtCLzJDcYe6fTRibNqVuTrcaMBr34oFhcKbVkBwnCQuRxfguib4t\/0","subscribe_time":1450077640,"remark":"","groupid":0}]}
+20160105175513: getWxTokenFromDB=====> 5879
+20160105175513:  RequestUtil.php httpPost =====> {"total":8,"count":8,"data":{"openid":["osp6swkdED28-Bo9k0zV1TBfAVwM","osp6swsMgghqE9kB-58Jd_411bCg","osp6swk9_DfmWZ093q8ShHchMjdM","osp6swoC_jT04slc3TKFddSgO45c","osp6swnBLWkDJWivjzzvg4wi_fZY","osp6swlTQrl7KzkgaQTsjPcTIrB8","osp6swrNZiWtEuTy-Gj1cBVA1l38","osp6swkgabGhn7_Jqt7zGU90095A"]},"next_openid":"osp6swkgabGhn7_Jqt7zGU90095A"}
+20160105175513: getWxTokenFromDB=====> 5879
+20160105175513:  RequestUtil.php httpPost =====> {"user_info_list":[{"subscribe":1,"openid":"osp6swsMgghqE9kB-58Jd_411bCg","nickname":"游鱼","sex":1,"language":"zh_CN","city":"Suzhou","province":"Jiangsu","country":"China","headimgurl":"http:\/\/wx.qlogo.cn\/mmopen\/PiajxSqBRaEK0HwtMKtnjEiciaUwuTbMGMABMOic24QibhfenFFaLsaxjY8d1FFUv09FRqY6J4I3o1EiaXqU739u4H1g\/0","subscribe_time":1447926510,"remark":"","groupid":0},{"subscribe":1,"openid":"osp6swk9_DfmWZ093q8ShHchMjdM","nickname":"Sweety","sex":0,"language":"zh_CN","city":"","province":"","country":"","headimgurl":"http:\/\/wx.qlogo.cn\/mmopen\/83bILTuwr6Zpzrabp3QYeMa2ibuExVSrUSc6XiaEQ8yssS39ARvQf9rFOJiahyrZiavMx5CibZ5PWrHa4licMB5SEPiaoOSpdqHOPC1\/0","subscribe_time":1448067317,"remark":"","groupid":0},{"subscribe":1,"openid":"osp6swlTQrl7KzkgaQTsjPcTIrB8","nickname":"小怪兽","sex":1,"language":"zh_CN","city":"Pudong New District","province":"Shanghai","country":"China","headimgurl":"http:\/\/wx.qlogo.cn\/mmopen\/83bILTuwr6aU1U25J1gp1khSmAKtIrBcXicE58IMP3Y0FongtCLzJDcYe6fTRibNqVuTrcaMBr34oFhcKbVkBwnCQuRxfguib4t\/0","subscribe_time":1450077640,"remark":"","groupid":0}]}
+20160105180720: getWxTokenFromDB=====> 6606
+20160105180720:  RequestUtil.php httpGet =====> {"access_token":"HgXJkHVIDthTEQEH_VDGDaCN_3Kms2LEfeb_vCqX4zlPmTFZ-LADqGtBbSmd1wmPKwndpdfuFua1LLu1FSzUOeLy5SjkACftQ2Xh0sQeXngVBAcAHAQWV","expires_in":7200}
+20160105180720:  RequestUtil.php httpGet =====> {"errcode":0,"errmsg":"ok","ticket":"kgt8ON7yVITDhtdwci0qeYpJ9Yds4uvs9QrNJLVtpQlFvgGQjYSA-z9DAlNsIWGkTknurymgXJvrrYyuYf14KA","expires_in":7200}
+20160105180720:  RequestUtil.php httpPost =====> {"total":8,"count":8,"data":{"openid":["osp6swkdED28-Bo9k0zV1TBfAVwM","osp6swsMgghqE9kB-58Jd_411bCg","osp6swk9_DfmWZ093q8ShHchMjdM","osp6swoC_jT04slc3TKFddSgO45c","osp6swnBLWkDJWivjzzvg4wi_fZY","osp6swlTQrl7KzkgaQTsjPcTIrB8","osp6swrNZiWtEuTy-Gj1cBVA1l38","osp6swkgabGhn7_Jqt7zGU90095A"]},"next_openid":"osp6swkgabGhn7_Jqt7zGU90095A"}
+20160105180720: getWxTokenFromDB=====> 0
+20160105180720:  RequestUtil.php httpPost =====> {"user_info_list":[{"subscribe":1,"openid":"osp6swsMgghqE9kB-58Jd_411bCg","nickname":"游鱼","sex":1,"language":"zh_CN","city":"Suzhou","province":"Jiangsu","country":"China","headimgurl":"http:\/\/wx.qlogo.cn\/mmopen\/PiajxSqBRaEK0HwtMKtnjEiciaUwuTbMGMABMOic24QibhfenFFaLsaxjY8d1FFUv09FRqY6J4I3o1EiaXqU739u4H1g\/0","subscribe_time":1447926510,"remark":"","groupid":0},{"subscribe":1,"openid":"osp6swk9_DfmWZ093q8ShHchMjdM","nickname":"Sweety","sex":0,"language":"zh_CN","city":"","province":"","country":"","headimgurl":"http:\/\/wx.qlogo.cn\/mmopen\/83bILTuwr6Zpzrabp3QYeMa2ibuExVSrUSc6XiaEQ8yssS39ARvQf9rFOJiahyrZiavMx5CibZ5PWrHa4licMB5SEPiaoOSpdqHOPC1\/0","subscribe_time":1448067317,"remark":"","groupid":0},{"subscribe":1,"openid":"osp6swlTQrl7KzkgaQTsjPcTIrB8","nickname":"小怪兽","sex":1,"language":"zh_CN","city":"Pudong New District","province":"Shanghai","country":"China","headimgurl":"http:\/\/wx.qlogo.cn\/mmopen\/83bILTuwr6aU1U25J1gp1khSmAKtIrBcXicE58IMP3Y0FongtCLzJDcYe6fTRibNqVuTrcaMBr34oFhcKbVkBwnCQuRxfguib4t\/0","subscribe_time":1450077640,"remark":"","groupid":0}]}
+20160105180726: getWxTokenFromDB=====> 6
+20160105180726:  RequestUtil.php httpPost =====> {"total":8,"count":8,"data":{"openid":["osp6swkdED28-Bo9k0zV1TBfAVwM","osp6swsMgghqE9kB-58Jd_411bCg","osp6swk9_DfmWZ093q8ShHchMjdM","osp6swoC_jT04slc3TKFddSgO45c","osp6swnBLWkDJWivjzzvg4wi_fZY","osp6swlTQrl7KzkgaQTsjPcTIrB8","osp6swrNZiWtEuTy-Gj1cBVA1l38","osp6swkgabGhn7_Jqt7zGU90095A"]},"next_openid":"osp6swkgabGhn7_Jqt7zGU90095A"}
+20160105180727: getWxTokenFromDB=====> 6
+20160105180727:  RequestUtil.php httpPost =====> {"user_info_list":[{"subscribe":1,"openid":"osp6swsMgghqE9kB-58Jd_411bCg","nickname":"游鱼","sex":1,"language":"zh_CN","city":"Suzhou","province":"Jiangsu","country":"China","headimgurl":"http:\/\/wx.qlogo.cn\/mmopen\/PiajxSqBRaEK0HwtMKtnjEiciaUwuTbMGMABMOic24QibhfenFFaLsaxjY8d1FFUv09FRqY6J4I3o1EiaXqU739u4H1g\/0","subscribe_time":1447926510,"remark":"","groupid":0},{"subscribe":1,"openid":"osp6swk9_DfmWZ093q8ShHchMjdM","nickname":"Sweety","sex":0,"language":"zh_CN","city":"","province":"","country":"","headimgurl":"http:\/\/wx.qlogo.cn\/mmopen\/83bILTuwr6Zpzrabp3QYeMa2ibuExVSrUSc6XiaEQ8yssS39ARvQf9rFOJiahyrZiavMx5CibZ5PWrHa4licMB5SEPiaoOSpdqHOPC1\/0","subscribe_time":1448067317,"remark":"","groupid":0},{"subscribe":1,"openid":"osp6swlTQrl7KzkgaQTsjPcTIrB8","nickname":"小怪兽","sex":1,"language":"zh_CN","city":"Pudong New District","province":"Shanghai","country":"China","headimgurl":"http:\/\/wx.qlogo.cn\/mmopen\/83bILTuwr6aU1U25J1gp1khSmAKtIrBcXicE58IMP3Y0FongtCLzJDcYe6fTRibNqVuTrcaMBr34oFhcKbVkBwnCQuRxfguib4t\/0","subscribe_time":1450077640,"remark":"","groupid":0}]}
+20160105180814: getWxTokenFromDB=====> 54
+20160105180815:  RequestUtil.php httpPost =====> {"total":8,"count":8,"data":{"openid":["osp6swkdED28-Bo9k0zV1TBfAVwM","osp6swsMgghqE9kB-58Jd_411bCg","osp6swk9_DfmWZ093q8ShHchMjdM","osp6swoC_jT04slc3TKFddSgO45c","osp6swnBLWkDJWivjzzvg4wi_fZY","osp6swlTQrl7KzkgaQTsjPcTIrB8","osp6swrNZiWtEuTy-Gj1cBVA1l38","osp6swkgabGhn7_Jqt7zGU90095A"]},"next_openid":"osp6swkgabGhn7_Jqt7zGU90095A"}
+20160105180815: getWxTokenFromDB=====> 55
+20160105180815:  RequestUtil.php httpPost =====> {"user_info_list":[{"subscribe":1,"openid":"osp6swsMgghqE9kB-58Jd_411bCg","nickname":"游鱼","sex":1,"language":"zh_CN","city":"Suzhou","province":"Jiangsu","country":"China","headimgurl":"http:\/\/wx.qlogo.cn\/mmopen\/PiajxSqBRaEK0HwtMKtnjEiciaUwuTbMGMABMOic24QibhfenFFaLsaxjY8d1FFUv09FRqY6J4I3o1EiaXqU739u4H1g\/0","subscribe_time":1447926510,"remark":"","groupid":0},{"subscribe":1,"openid":"osp6swk9_DfmWZ093q8ShHchMjdM","nickname":"Sweety","sex":0,"language":"zh_CN","city":"","province":"","country":"","headimgurl":"http:\/\/wx.qlogo.cn\/mmopen\/83bILTuwr6Zpzrabp3QYeMa2ibuExVSrUSc6XiaEQ8yssS39ARvQf9rFOJiahyrZiavMx5CibZ5PWrHa4licMB5SEPiaoOSpdqHOPC1\/0","subscribe_time":1448067317,"remark":"","groupid":0},{"subscribe":1,"openid":"osp6swlTQrl7KzkgaQTsjPcTIrB8","nickname":"小怪兽","sex":1,"language":"zh_CN","city":"Pudong New District","province":"Shanghai","country":"China","headimgurl":"http:\/\/wx.qlogo.cn\/mmopen\/83bILTuwr6aU1U25J1gp1khSmAKtIrBcXicE58IMP3Y0FongtCLzJDcYe6fTRibNqVuTrcaMBr34oFhcKbVkBwnCQuRxfguib4t\/0","subscribe_time":1450077640,"remark":"","groupid":0}]}
+20160106134547:  index.php newwxindex=====> 
+20160106134547:  checkSignature =====> token验证成功
+20160106134547: saveMsg =======>
+20160106134556:  index.php newwxindex=====> 
+20160106134556:  checkSignature =====> token验证成功
+20160106134556: saveMsg =======>
+20160106134951: getWxTokenFromDB=====> 72091
+20160106134951:  RequestUtil.php httpGet =====> {"access_token":"BQIJrXOHgyqfuonniIoc02WighDbaJgPqNSppEyUpXEFMWqRNRXaDSFQfkkdTXXgd8HW2ci3ltIGX-QI0mVW6MeWcxEjqRGfAHLbqgyaOhcBTLiACASKC","expires_in":7200}
+20160106134951:  RequestUtil.php httpGet =====> {"errcode":0,"errmsg":"ok","ticket":"kgt8ON7yVITDhtdwci0qeYpJ9Yds4uvs9QrNJLVtpQmeYwH5kAhBBQ-D-kr91UrdRaq4OpzRXTyOLD7HaslT2A","expires_in":7200}
+20160106134951:  RequestUtil.php httpPost =====> {"total":8,"count":8,"data":{"openid":["osp6swkdED28-Bo9k0zV1TBfAVwM","osp6swsMgghqE9kB-58Jd_411bCg","osp6swk9_DfmWZ093q8ShHchMjdM","osp6swoC_jT04slc3TKFddSgO45c","osp6swnBLWkDJWivjzzvg4wi_fZY","osp6swlTQrl7KzkgaQTsjPcTIrB8","osp6swrNZiWtEuTy-Gj1cBVA1l38","osp6swkgabGhn7_Jqt7zGU90095A"]},"next_openid":"osp6swkgabGhn7_Jqt7zGU90095A"}
+20160106134951: getWxTokenFromDB=====> 0
+20160106134952:  RequestUtil.php httpPost =====> {"user_info_list":[{"subscribe":1,"openid":"osp6swsMgghqE9kB-58Jd_411bCg","nickname":"游鱼","sex":1,"language":"zh_CN","city":"Suzhou","province":"Jiangsu","country":"China","headimgurl":"http:\/\/wx.qlogo.cn\/mmopen\/PiajxSqBRaEK0HwtMKtnjEiciaUwuTbMGMABMOic24QibhfenFFaLsaxjY8d1FFUv09FRqY6J4I3o1EiaXqU739u4H1g\/0","subscribe_time":1447926510,"remark":"","groupid":0},{"subscribe":1,"openid":"osp6swk9_DfmWZ093q8ShHchMjdM","nickname":"Sweety","sex":0,"language":"zh_CN","city":"","province":"","country":"","headimgurl":"http:\/\/wx.qlogo.cn\/mmopen\/83bILTuwr6Zpzrabp3QYeMa2ibuExVSrUSc6XiaEQ8yssS39ARvQf9rFOJiahyrZiavMx5CibZ5PWrHa4licMB5SEPiaoOSpdqHOPC1\/0","subscribe_time":1448067317,"remark":"","groupid":0},{"subscribe":1,"openid":"osp6swlTQrl7KzkgaQTsjPcTIrB8","nickname":"小怪兽","sex":1,"language":"zh_CN","city":"Pudong New District","province":"Shanghai","country":"China","headimgurl":"http:\/\/wx.qlogo.cn\/mmopen\/83bILTuwr6aU1U25J1gp1khSmAKtIrBcXicE58IMP3Y0FongtCLzJDcYe6fTRibNqVuTrcaMBr34oFhcKbVkBwnCQuRxfguib4t\/0","subscribe_time":1450077640,"remark":"","groupid":0}]}
+20160106135154: getWxTokenFromDB=====> 123
+20160106135154:  RequestUtil.php httpPost =====> {"total":8,"count":8,"data":{"openid":["osp6swkdED28-Bo9k0zV1TBfAVwM","osp6swsMgghqE9kB-58Jd_411bCg","osp6swk9_DfmWZ093q8ShHchMjdM","osp6swoC_jT04slc3TKFddSgO45c","osp6swnBLWkDJWivjzzvg4wi_fZY","osp6swlTQrl7KzkgaQTsjPcTIrB8","osp6swrNZiWtEuTy-Gj1cBVA1l38","osp6swkgabGhn7_Jqt7zGU90095A"]},"next_openid":"osp6swkgabGhn7_Jqt7zGU90095A"}
+20160106135154: getWxTokenFromDB=====> 123
+20160106135155:  RequestUtil.php httpPost =====> {"user_info_list":[{"subscribe":1,"openid":"osp6swsMgghqE9kB-58Jd_411bCg","nickname":"游鱼","sex":1,"language":"zh_CN","city":"Suzhou","province":"Jiangsu","country":"China","headimgurl":"http:\/\/wx.qlogo.cn\/mmopen\/PiajxSqBRaEK0HwtMKtnjEiciaUwuTbMGMABMOic24QibhfenFFaLsaxjY8d1FFUv09FRqY6J4I3o1EiaXqU739u4H1g\/0","subscribe_time":1447926510,"remark":"","groupid":0},{"subscribe":1,"openid":"osp6swk9_DfmWZ093q8ShHchMjdM","nickname":"Sweety","sex":0,"language":"zh_CN","city":"","province":"","country":"","headimgurl":"http:\/\/wx.qlogo.cn\/mmopen\/83bILTuwr6Zpzrabp3QYeMa2ibuExVSrUSc6XiaEQ8yssS39ARvQf9rFOJiahyrZiavMx5CibZ5PWrHa4licMB5SEPiaoOSpdqHOPC1\/0","subscribe_time":1448067317,"remark":"","groupid":0},{"subscribe":1,"openid":"osp6swlTQrl7KzkgaQTsjPcTIrB8","nickname":"小怪兽","sex":1,"language":"zh_CN","city":"Pudong New District","province":"Shanghai","country":"China","headimgurl":"http:\/\/wx.qlogo.cn\/mmopen\/83bILTuwr6aU1U25J1gp1khSmAKtIrBcXicE58IMP3Y0FongtCLzJDcYe6fTRibNqVuTrcaMBr34oFhcKbVkBwnCQuRxfguib4t\/0","subscribe_time":1450077640,"remark":"","groupid":0}]}
+20160106140911: getWxTokenFromDB=====> 1160
+20160106140911:  RequestUtil.php httpPost =====> {"total":8,"count":8,"data":{"openid":["osp6swkdED28-Bo9k0zV1TBfAVwM","osp6swsMgghqE9kB-58Jd_411bCg","osp6swk9_DfmWZ093q8ShHchMjdM","osp6swoC_jT04slc3TKFddSgO45c","osp6swnBLWkDJWivjzzvg4wi_fZY","osp6swlTQrl7KzkgaQTsjPcTIrB8","osp6swrNZiWtEuTy-Gj1cBVA1l38","osp6swkgabGhn7_Jqt7zGU90095A"]},"next_openid":"osp6swkgabGhn7_Jqt7zGU90095A"}
+20160106140911: getWxTokenFromDB=====> 1160
+20160106140911:  RequestUtil.php httpPost =====> {"user_info_list":[{"subscribe":1,"openid":"osp6swsMgghqE9kB-58Jd_411bCg","nickname":"游鱼","sex":1,"language":"zh_CN","city":"Suzhou","province":"Jiangsu","country":"China","headimgurl":"http:\/\/wx.qlogo.cn\/mmopen\/PiajxSqBRaEK0HwtMKtnjEiciaUwuTbMGMABMOic24QibhfenFFaLsaxjY8d1FFUv09FRqY6J4I3o1EiaXqU739u4H1g\/0","subscribe_time":1447926510,"remark":"","groupid":0},{"subscribe":1,"openid":"osp6swk9_DfmWZ093q8ShHchMjdM","nickname":"Sweety","sex":0,"language":"zh_CN","city":"","province":"","country":"","headimgurl":"http:\/\/wx.qlogo.cn\/mmopen\/83bILTuwr6Zpzrabp3QYeMa2ibuExVSrUSc6XiaEQ8yssS39ARvQf9rFOJiahyrZiavMx5CibZ5PWrHa4licMB5SEPiaoOSpdqHOPC1\/0","subscribe_time":1448067317,"remark":"","groupid":0},{"subscribe":1,"openid":"osp6swlTQrl7KzkgaQTsjPcTIrB8","nickname":"小怪兽","sex":1,"language":"zh_CN","city":"Pudong New District","province":"Shanghai","country":"China","headimgurl":"http:\/\/wx.qlogo.cn\/mmopen\/83bILTuwr6aU1U25J1gp1khSmAKtIrBcXicE58IMP3Y0FongtCLzJDcYe6fTRibNqVuTrcaMBr34oFhcKbVkBwnCQuRxfguib4t\/0","subscribe_time":1450077640,"remark":"","groupid":0}]}
+20160106141401: getWxTokenFromDB=====> 1450
+20160106141401:  RequestUtil.php httpPost =====> {"total":8,"count":8,"data":{"openid":["osp6swkdED28-Bo9k0zV1TBfAVwM","osp6swsMgghqE9kB-58Jd_411bCg","osp6swk9_DfmWZ093q8ShHchMjdM","osp6swoC_jT04slc3TKFddSgO45c","osp6swnBLWkDJWivjzzvg4wi_fZY","osp6swlTQrl7KzkgaQTsjPcTIrB8","osp6swrNZiWtEuTy-Gj1cBVA1l38","osp6swkgabGhn7_Jqt7zGU90095A"]},"next_openid":"osp6swkgabGhn7_Jqt7zGU90095A"}
+20160106141401: getWxTokenFromDB=====> 1450
+20160106141401:  RequestUtil.php httpPost =====> {"user_info_list":[{"subscribe":1,"openid":"osp6swsMgghqE9kB-58Jd_411bCg","nickname":"游鱼","sex":1,"language":"zh_CN","city":"Suzhou","province":"Jiangsu","country":"China","headimgurl":"http:\/\/wx.qlogo.cn\/mmopen\/PiajxSqBRaEK0HwtMKtnjEiciaUwuTbMGMABMOic24QibhfenFFaLsaxjY8d1FFUv09FRqY6J4I3o1EiaXqU739u4H1g\/0","subscribe_time":1447926510,"remark":"","groupid":0},{"subscribe":1,"openid":"osp6swk9_DfmWZ093q8ShHchMjdM","nickname":"Sweety","sex":0,"language":"zh_CN","city":"","province":"","country":"","headimgurl":"http:\/\/wx.qlogo.cn\/mmopen\/83bILTuwr6Zpzrabp3QYeMa2ibuExVSrUSc6XiaEQ8yssS39ARvQf9rFOJiahyrZiavMx5CibZ5PWrHa4licMB5SEPiaoOSpdqHOPC1\/0","subscribe_time":1448067317,"remark":"","groupid":0},{"subscribe":1,"openid":"osp6swlTQrl7KzkgaQTsjPcTIrB8","nickname":"小怪兽","sex":1,"language":"zh_CN","city":"Pudong New District","province":"Shanghai","country":"China","headimgurl":"http:\/\/wx.qlogo.cn\/mmopen\/83bILTuwr6aU1U25J1gp1khSmAKtIrBcXicE58IMP3Y0FongtCLzJDcYe6fTRibNqVuTrcaMBr34oFhcKbVkBwnCQuRxfguib4t\/0","subscribe_time":1450077640,"remark":"","groupid":0}]}
+20160106143111: getWxTokenFromDB=====> 2480
+20160106143112:  RequestUtil.php httpPost =====> {"total":8,"count":8,"data":{"openid":["osp6swkdED28-Bo9k0zV1TBfAVwM","osp6swsMgghqE9kB-58Jd_411bCg","osp6swk9_DfmWZ093q8ShHchMjdM","osp6swoC_jT04slc3TKFddSgO45c","osp6swnBLWkDJWivjzzvg4wi_fZY","osp6swlTQrl7KzkgaQTsjPcTIrB8","osp6swrNZiWtEuTy-Gj1cBVA1l38","osp6swkgabGhn7_Jqt7zGU90095A"]},"next_openid":"osp6swkgabGhn7_Jqt7zGU90095A"}
+20160106143112: getWxTokenFromDB=====> 2481
+20160106143112:  RequestUtil.php httpPost =====> {"errcode":40032,"errmsg":"invalid openid list size hint: [3R7G2a0848vr22]"}
+20160106143321: getWxTokenFromDB=====> 2610
+20160106143321:  RequestUtil.php httpPost =====> {"total":8,"count":8,"data":{"openid":["osp6swkdED28-Bo9k0zV1TBfAVwM","osp6swsMgghqE9kB-58Jd_411bCg","osp6swk9_DfmWZ093q8ShHchMjdM","osp6swoC_jT04slc3TKFddSgO45c","osp6swnBLWkDJWivjzzvg4wi_fZY","osp6swlTQrl7KzkgaQTsjPcTIrB8","osp6swrNZiWtEuTy-Gj1cBVA1l38","osp6swkgabGhn7_Jqt7zGU90095A"]},"next_openid":"osp6swkgabGhn7_Jqt7zGU90095A"}
+20160106143321: getWxTokenFromDB=====> 2610
+20160106143321:  RequestUtil.php httpPost =====> {"errcode":40032,"errmsg":"invalid openid list size hint: [qrh5IA0978vr19]"}
+20160106143347: getWxTokenFromDB=====> 2636
+20160106143347:  RequestUtil.php httpPost =====> {"total":8,"count":8,"data":{"openid":["osp6swkdED28-Bo9k0zV1TBfAVwM","osp6swsMgghqE9kB-58Jd_411bCg","osp6swk9_DfmWZ093q8ShHchMjdM","osp6swoC_jT04slc3TKFddSgO45c","osp6swnBLWkDJWivjzzvg4wi_fZY","osp6swlTQrl7KzkgaQTsjPcTIrB8","osp6swrNZiWtEuTy-Gj1cBVA1l38","osp6swkgabGhn7_Jqt7zGU90095A"]},"next_openid":"osp6swkgabGhn7_Jqt7zGU90095A"}
+20160106143347: getWxTokenFromDB=====> 2636
+20160106143347:  RequestUtil.php httpPost =====> {"user_info_list":[{"subscribe":1,"openid":"osp6swsMgghqE9kB-58Jd_411bCg","nickname":"游鱼","sex":1,"language":"zh_CN","city":"Suzhou","province":"Jiangsu","country":"China","headimgurl":"http:\/\/wx.qlogo.cn\/mmopen\/PiajxSqBRaEK0HwtMKtnjEiciaUwuTbMGMABMOic24QibhfenFFaLsaxjY8d1FFUv09FRqY6J4I3o1EiaXqU739u4H1g\/0","subscribe_time":1447926510,"remark":"","groupid":0},{"subscribe":1,"openid":"osp6swk9_DfmWZ093q8ShHchMjdM","nickname":"Sweety","sex":0,"language":"zh_CN","city":"","province":"","country":"","headimgurl":"http:\/\/wx.qlogo.cn\/mmopen\/83bILTuwr6Zpzrabp3QYeMa2ibuExVSrUSc6XiaEQ8yssS39ARvQf9rFOJiahyrZiavMx5CibZ5PWrHa4licMB5SEPiaoOSpdqHOPC1\/0","subscribe_time":1448067317,"remark":"","groupid":0},{"subscribe":1,"openid":"osp6swlTQrl7KzkgaQTsjPcTIrB8","nickname":"小怪兽","sex":1,"language":"zh_CN","city":"Pudong New District","province":"Shanghai","country":"China","headimgurl":"http:\/\/wx.qlogo.cn\/mmopen\/83bILTuwr6aU1U25J1gp1khSmAKtIrBcXicE58IMP3Y0FongtCLzJDcYe6fTRibNqVuTrcaMBr34oFhcKbVkBwnCQuRxfguib4t\/0","subscribe_time":1450077640,"remark":"","groupid":0}]}
+20160106143511: getWxTokenFromDB=====> 2720
+20160106143516:  RequestUtil.php httpPost =====> {"total":8,"count":8,"data":{"openid":["osp6swkdED28-Bo9k0zV1TBfAVwM","osp6swsMgghqE9kB-58Jd_411bCg","osp6swk9_DfmWZ093q8ShHchMjdM","osp6swoC_jT04slc3TKFddSgO45c","osp6swnBLWkDJWivjzzvg4wi_fZY","osp6swlTQrl7KzkgaQTsjPcTIrB8","osp6swrNZiWtEuTy-Gj1cBVA1l38","osp6swkgabGhn7_Jqt7zGU90095A"]},"next_openid":"osp6swkgabGhn7_Jqt7zGU90095A"}
+20160106143516: getWxTokenFromDB=====> 2725
+20160106143516:  RequestUtil.php httpPost =====> {"user_info_list":[{"subscribe":1,"openid":"osp6swsMgghqE9kB-58Jd_411bCg","nickname":"游鱼","sex":1,"language":"zh_CN","city":"Suzhou","province":"Jiangsu","country":"China","headimgurl":"http:\/\/wx.qlogo.cn\/mmopen\/PiajxSqBRaEK0HwtMKtnjEiciaUwuTbMGMABMOic24QibhfenFFaLsaxjY8d1FFUv09FRqY6J4I3o1EiaXqU739u4H1g\/0","subscribe_time":1447926510,"remark":"","groupid":0},{"subscribe":1,"openid":"osp6swk9_DfmWZ093q8ShHchMjdM","nickname":"Sweety","sex":0,"language":"zh_CN","city":"","province":"","country":"","headimgurl":"http:\/\/wx.qlogo.cn\/mmopen\/83bILTuwr6Zpzrabp3QYeMa2ibuExVSrUSc6XiaEQ8yssS39ARvQf9rFOJiahyrZiavMx5CibZ5PWrHa4licMB5SEPiaoOSpdqHOPC1\/0","subscribe_time":1448067317,"remark":"","groupid":0},{"subscribe":1,"openid":"osp6swlTQrl7KzkgaQTsjPcTIrB8","nickname":"小怪兽","sex":1,"language":"zh_CN","city":"Pudong New District","province":"Shanghai","country":"China","headimgurl":"http:\/\/wx.qlogo.cn\/mmopen\/83bILTuwr6aU1U25J1gp1khSmAKtIrBcXicE58IMP3Y0FongtCLzJDcYe6fTRibNqVuTrcaMBr34oFhcKbVkBwnCQuRxfguib4t\/0","subscribe_time":1450077640,"remark":"","groupid":0}]}
+20160106143555: getWxTokenFromDB=====> 2764
+20160106143600:  RequestUtil.php httpPost =====> {"total":8,"count":8,"data":{"openid":["osp6swkdED28-Bo9k0zV1TBfAVwM","osp6swsMgghqE9kB-58Jd_411bCg","osp6swk9_DfmWZ093q8ShHchMjdM","osp6swoC_jT04slc3TKFddSgO45c","osp6swnBLWkDJWivjzzvg4wi_fZY","osp6swlTQrl7KzkgaQTsjPcTIrB8","osp6swrNZiWtEuTy-Gj1cBVA1l38","osp6swkgabGhn7_Jqt7zGU90095A"]},"next_openid":"osp6swkgabGhn7_Jqt7zGU90095A"}
+20160106143600: getWxTokenFromDB=====> 2769
+20160106143600:  RequestUtil.php httpPost =====> {"user_info_list":[{"subscribe":1,"openid":"osp6swsMgghqE9kB-58Jd_411bCg","nickname":"游鱼","sex":1,"language":"zh_CN","city":"Suzhou","province":"Jiangsu","country":"China","headimgurl":"http:\/\/wx.qlogo.cn\/mmopen\/PiajxSqBRaEK0HwtMKtnjEiciaUwuTbMGMABMOic24QibhfenFFaLsaxjY8d1FFUv09FRqY6J4I3o1EiaXqU739u4H1g\/0","subscribe_time":1447926510,"remark":"","groupid":0},{"subscribe":1,"openid":"osp6swk9_DfmWZ093q8ShHchMjdM","nickname":"Sweety","sex":0,"language":"zh_CN","city":"","province":"","country":"","headimgurl":"http:\/\/wx.qlogo.cn\/mmopen\/83bILTuwr6Zpzrabp3QYeMa2ibuExVSrUSc6XiaEQ8yssS39ARvQf9rFOJiahyrZiavMx5CibZ5PWrHa4licMB5SEPiaoOSpdqHOPC1\/0","subscribe_time":1448067317,"remark":"","groupid":0},{"subscribe":1,"openid":"osp6swlTQrl7KzkgaQTsjPcTIrB8","nickname":"小怪兽","sex":1,"language":"zh_CN","city":"Pudong New District","province":"Shanghai","country":"China","headimgurl":"http:\/\/wx.qlogo.cn\/mmopen\/83bILTuwr6aU1U25J1gp1khSmAKtIrBcXicE58IMP3Y0FongtCLzJDcYe6fTRibNqVuTrcaMBr34oFhcKbVkBwnCQuRxfguib4t\/0","subscribe_time":1450077640,"remark":"","groupid":0}]}
+20160106143759: getWxTokenFromDB=====> 2888
+20160106143759:  RequestUtil.php httpPost =====> {"total":8,"count":8,"data":{"openid":["osp6swkdED28-Bo9k0zV1TBfAVwM","osp6swsMgghqE9kB-58Jd_411bCg","osp6swk9_DfmWZ093q8ShHchMjdM","osp6swoC_jT04slc3TKFddSgO45c","osp6swnBLWkDJWivjzzvg4wi_fZY","osp6swlTQrl7KzkgaQTsjPcTIrB8","osp6swrNZiWtEuTy-Gj1cBVA1l38","osp6swkgabGhn7_Jqt7zGU90095A"]},"next_openid":"osp6swkgabGhn7_Jqt7zGU90095A"}
+20160106143759: getWxTokenFromDB=====> 2888
+20160106143800:  RequestUtil.php httpPost =====> {"user_info_list":[{"subscribe":1,"openid":"osp6swsMgghqE9kB-58Jd_411bCg","nickname":"游鱼","sex":1,"language":"zh_CN","city":"Suzhou","province":"Jiangsu","country":"China","headimgurl":"http:\/\/wx.qlogo.cn\/mmopen\/PiajxSqBRaEK0HwtMKtnjEiciaUwuTbMGMABMOic24QibhfenFFaLsaxjY8d1FFUv09FRqY6J4I3o1EiaXqU739u4H1g\/0","subscribe_time":1447926510,"remark":"","groupid":0},{"subscribe":1,"openid":"osp6swk9_DfmWZ093q8ShHchMjdM","nickname":"Sweety","sex":0,"language":"zh_CN","city":"","province":"","country":"","headimgurl":"http:\/\/wx.qlogo.cn\/mmopen\/83bILTuwr6Zpzrabp3QYeMa2ibuExVSrUSc6XiaEQ8yssS39ARvQf9rFOJiahyrZiavMx5CibZ5PWrHa4licMB5SEPiaoOSpdqHOPC1\/0","subscribe_time":1448067317,"remark":"","groupid":0},{"subscribe":1,"openid":"osp6swlTQrl7KzkgaQTsjPcTIrB8","nickname":"小怪兽","sex":1,"language":"zh_CN","city":"Pudong New District","province":"Shanghai","country":"China","headimgurl":"http:\/\/wx.qlogo.cn\/mmopen\/83bILTuwr6aU1U25J1gp1khSmAKtIrBcXicE58IMP3Y0FongtCLzJDcYe6fTRibNqVuTrcaMBr34oFhcKbVkBwnCQuRxfguib4t\/0","subscribe_time":1450077640,"remark":"","groupid":0}]}
+20160106143831: getWxTokenFromDB=====> 2920
+20160106143831:  RequestUtil.php httpPost =====> {"total":8,"count":8,"data":{"openid":["osp6swkdED28-Bo9k0zV1TBfAVwM","osp6swsMgghqE9kB-58Jd_411bCg","osp6swk9_DfmWZ093q8ShHchMjdM","osp6swoC_jT04slc3TKFddSgO45c","osp6swnBLWkDJWivjzzvg4wi_fZY","osp6swlTQrl7KzkgaQTsjPcTIrB8","osp6swrNZiWtEuTy-Gj1cBVA1l38","osp6swkgabGhn7_Jqt7zGU90095A"]},"next_openid":"osp6swkgabGhn7_Jqt7zGU90095A"}
+20160106143831: getWxTokenFromDB=====> 2920
+20160106143831:  RequestUtil.php httpPost =====> {"user_info_list":[{"subscribe":1,"openid":"osp6swsMgghqE9kB-58Jd_411bCg","nickname":"游鱼","sex":1,"language":"zh_CN","city":"Suzhou","province":"Jiangsu","country":"China","headimgurl":"http:\/\/wx.qlogo.cn\/mmopen\/PiajxSqBRaEK0HwtMKtnjEiciaUwuTbMGMABMOic24QibhfenFFaLsaxjY8d1FFUv09FRqY6J4I3o1EiaXqU739u4H1g\/0","subscribe_time":1447926510,"remark":"","groupid":0},{"subscribe":1,"openid":"osp6swk9_DfmWZ093q8ShHchMjdM","nickname":"Sweety","sex":0,"language":"zh_CN","city":"","province":"","country":"","headimgurl":"http:\/\/wx.qlogo.cn\/mmopen\/83bILTuwr6Zpzrabp3QYeMa2ibuExVSrUSc6XiaEQ8yssS39ARvQf9rFOJiahyrZiavMx5CibZ5PWrHa4licMB5SEPiaoOSpdqHOPC1\/0","subscribe_time":1448067317,"remark":"","groupid":0},{"subscribe":1,"openid":"osp6swlTQrl7KzkgaQTsjPcTIrB8","nickname":"小怪兽","sex":1,"language":"zh_CN","city":"Pudong New District","province":"Shanghai","country":"China","headimgurl":"http:\/\/wx.qlogo.cn\/mmopen\/83bILTuwr6aU1U25J1gp1khSmAKtIrBcXicE58IMP3Y0FongtCLzJDcYe6fTRibNqVuTrcaMBr34oFhcKbVkBwnCQuRxfguib4t\/0","subscribe_time":1450077640,"remark":"","groupid":0}]}
+20160106143849: getWxTokenFromDB=====> 2938
+20160106143849:  RequestUtil.php httpPost =====> {"total":8,"count":8,"data":{"openid":["osp6swkdED28-Bo9k0zV1TBfAVwM","osp6swsMgghqE9kB-58Jd_411bCg","osp6swk9_DfmWZ093q8ShHchMjdM","osp6swoC_jT04slc3TKFddSgO45c","osp6swnBLWkDJWivjzzvg4wi_fZY","osp6swlTQrl7KzkgaQTsjPcTIrB8","osp6swrNZiWtEuTy-Gj1cBVA1l38","osp6swkgabGhn7_Jqt7zGU90095A"]},"next_openid":"osp6swkgabGhn7_Jqt7zGU90095A"}
+20160106143849: getWxTokenFromDB=====> 2938
+20160106143849:  RequestUtil.php httpPost =====> {"user_info_list":[{"subscribe":1,"openid":"osp6swsMgghqE9kB-58Jd_411bCg","nickname":"游鱼","sex":1,"language":"zh_CN","city":"Suzhou","province":"Jiangsu","country":"China","headimgurl":"http:\/\/wx.qlogo.cn\/mmopen\/PiajxSqBRaEK0HwtMKtnjEiciaUwuTbMGMABMOic24QibhfenFFaLsaxjY8d1FFUv09FRqY6J4I3o1EiaXqU739u4H1g\/0","subscribe_time":1447926510,"remark":"","groupid":0},{"subscribe":1,"openid":"osp6swk9_DfmWZ093q8ShHchMjdM","nickname":"Sweety","sex":0,"language":"zh_CN","city":"","province":"","country":"","headimgurl":"http:\/\/wx.qlogo.cn\/mmopen\/83bILTuwr6Zpzrabp3QYeMa2ibuExVSrUSc6XiaEQ8yssS39ARvQf9rFOJiahyrZiavMx5CibZ5PWrHa4licMB5SEPiaoOSpdqHOPC1\/0","subscribe_time":1448067317,"remark":"","groupid":0},{"subscribe":1,"openid":"osp6swlTQrl7KzkgaQTsjPcTIrB8","nickname":"小怪兽","sex":1,"language":"zh_CN","city":"Pudong New District","province":"Shanghai","country":"China","headimgurl":"http:\/\/wx.qlogo.cn\/mmopen\/83bILTuwr6aU1U25J1gp1khSmAKtIrBcXicE58IMP3Y0FongtCLzJDcYe6fTRibNqVuTrcaMBr34oFhcKbVkBwnCQuRxfguib4t\/0","subscribe_time":1450077640,"remark":"","groupid":0}]}
+20160106143902: getWxTokenFromDB=====> 2951
+20160106143902:  RequestUtil.php httpPost =====> {"total":8,"count":8,"data":{"openid":["osp6swkdED28-Bo9k0zV1TBfAVwM","osp6swsMgghqE9kB-58Jd_411bCg","osp6swk9_DfmWZ093q8ShHchMjdM","osp6swoC_jT04slc3TKFddSgO45c","osp6swnBLWkDJWivjzzvg4wi_fZY","osp6swlTQrl7KzkgaQTsjPcTIrB8","osp6swrNZiWtEuTy-Gj1cBVA1l38","osp6swkgabGhn7_Jqt7zGU90095A"]},"next_openid":"osp6swkgabGhn7_Jqt7zGU90095A"}
+20160106143902: getWxTokenFromDB=====> 2951
+20160106143902:  RequestUtil.php httpPost =====> {"errcode":40032,"errmsg":"invalid openid list size hint: [8..3Da0319vr20]"}
+20160106144026: getWxTokenFromDB=====> 3035
+20160106144026:  RequestUtil.php httpPost =====> {"total":8,"count":8,"data":{"openid":["osp6swkdED28-Bo9k0zV1TBfAVwM","osp6swsMgghqE9kB-58Jd_411bCg","osp6swk9_DfmWZ093q8ShHchMjdM","osp6swoC_jT04slc3TKFddSgO45c","osp6swnBLWkDJWivjzzvg4wi_fZY","osp6swlTQrl7KzkgaQTsjPcTIrB8","osp6swrNZiWtEuTy-Gj1cBVA1l38","osp6swkgabGhn7_Jqt7zGU90095A"]},"next_openid":"osp6swkgabGhn7_Jqt7zGU90095A"}
+20160106144026: getWxTokenFromDB=====> 3035
+20160106144026:  RequestUtil.php httpPost =====> {"errcode":40032,"errmsg":"invalid openid list size hint: [mkCfkA0403vr23]"}
+20160106144038: getWxTokenFromDB=====> 3047
+20160106144038:  RequestUtil.php httpPost =====> {"total":8,"count":8,"data":{"openid":["osp6swkdED28-Bo9k0zV1TBfAVwM","osp6swsMgghqE9kB-58Jd_411bCg","osp6swk9_DfmWZ093q8ShHchMjdM","osp6swoC_jT04slc3TKFddSgO45c","osp6swnBLWkDJWivjzzvg4wi_fZY","osp6swlTQrl7KzkgaQTsjPcTIrB8","osp6swrNZiWtEuTy-Gj1cBVA1l38","osp6swkgabGhn7_Jqt7zGU90095A"]},"next_openid":"osp6swkgabGhn7_Jqt7zGU90095A"}
+20160106144038: getWxTokenFromDB=====> 3047
+20160106144038:  RequestUtil.php httpPost =====> {"user_info_list":[{"subscribe":1,"openid":"osp6swsMgghqE9kB-58Jd_411bCg","nickname":"游鱼","sex":1,"language":"zh_CN","city":"Suzhou","province":"Jiangsu","country":"China","headimgurl":"http:\/\/wx.qlogo.cn\/mmopen\/PiajxSqBRaEK0HwtMKtnjEiciaUwuTbMGMABMOic24QibhfenFFaLsaxjY8d1FFUv09FRqY6J4I3o1EiaXqU739u4H1g\/0","subscribe_time":1447926510,"remark":"","groupid":0},{"subscribe":1,"openid":"osp6swk9_DfmWZ093q8ShHchMjdM","nickname":"Sweety","sex":0,"language":"zh_CN","city":"","province":"","country":"","headimgurl":"http:\/\/wx.qlogo.cn\/mmopen\/83bILTuwr6Zpzrabp3QYeMa2ibuExVSrUSc6XiaEQ8yssS39ARvQf9rFOJiahyrZiavMx5CibZ5PWrHa4licMB5SEPiaoOSpdqHOPC1\/0","subscribe_time":1448067317,"remark":"","groupid":0},{"subscribe":1,"openid":"osp6swlTQrl7KzkgaQTsjPcTIrB8","nickname":"小怪兽","sex":1,"language":"zh_CN","city":"Pudong New District","province":"Shanghai","country":"China","headimgurl":"http:\/\/wx.qlogo.cn\/mmopen\/83bILTuwr6aU1U25J1gp1khSmAKtIrBcXicE58IMP3Y0FongtCLzJDcYe6fTRibNqVuTrcaMBr34oFhcKbVkBwnCQuRxfguib4t\/0","subscribe_time":1450077640,"remark":"","groupid":0}]}
+20160106144040: getWxTokenFromDB=====> 3049
+20160106144040:  RequestUtil.php httpPost =====> {"total":8,"count":8,"data":{"openid":["osp6swkdED28-Bo9k0zV1TBfAVwM","osp6swsMgghqE9kB-58Jd_411bCg","osp6swk9_DfmWZ093q8ShHchMjdM","osp6swoC_jT04slc3TKFddSgO45c","osp6swnBLWkDJWivjzzvg4wi_fZY","osp6swlTQrl7KzkgaQTsjPcTIrB8","osp6swrNZiWtEuTy-Gj1cBVA1l38","osp6swkgabGhn7_Jqt7zGU90095A"]},"next_openid":"osp6swkgabGhn7_Jqt7zGU90095A"}
+20160106144040: getWxTokenFromDB=====> 3049
+20160106144040:  RequestUtil.php httpPost =====> {"errcode":40032,"errmsg":"invalid openid list size hint: [DzH1aA0417vr22]"}
+20160106150347: getWxTokenFromDB=====> 4496
+20160106150347:  RequestUtil.php httpPost =====> {"total":8,"count":8,"data":{"openid":["osp6swkdED28-Bo9k0zV1TBfAVwM","osp6swsMgghqE9kB-58Jd_411bCg","osp6swk9_DfmWZ093q8ShHchMjdM","osp6swoC_jT04slc3TKFddSgO45c","osp6swnBLWkDJWivjzzvg4wi_fZY","osp6swlTQrl7KzkgaQTsjPcTIrB8","osp6swrNZiWtEuTy-Gj1cBVA1l38","osp6swkgabGhn7_Jqt7zGU90095A"]},"next_openid":"osp6swkgabGhn7_Jqt7zGU90095A"}
+20160106150347: getWxTokenFromDB=====> 4496
+20160106150347:  RequestUtil.php httpPost =====> {"errcode":40032,"errmsg":"invalid openid list size hint: [YmtjVA0828vr21]"}
+20160106150524: getWxTokenFromDB=====> 4593
+20160106150524:  RequestUtil.php httpPost =====> {"total":8,"count":8,"data":{"openid":["osp6swkdED28-Bo9k0zV1TBfAVwM","osp6swsMgghqE9kB-58Jd_411bCg","osp6swk9_DfmWZ093q8ShHchMjdM","osp6swoC_jT04slc3TKFddSgO45c","osp6swnBLWkDJWivjzzvg4wi_fZY","osp6swlTQrl7KzkgaQTsjPcTIrB8","osp6swrNZiWtEuTy-Gj1cBVA1l38","osp6swkgabGhn7_Jqt7zGU90095A"]},"next_openid":"osp6swkgabGhn7_Jqt7zGU90095A"}
+20160106150524: getWxTokenFromDB=====> 4593
+20160106150524:  RequestUtil.php httpPost =====> {"errcode":40032,"errmsg":"invalid openid list size hint: [7npvMA0925vr19]"}
+20160106150539:  index.php newwxindex=====> 
+20160106150539:  checkSignature =====> token验证成功
+20160106150539: saveMsg =======>
+20160106150600: getWxTokenFromDB=====> 4629
+20160106150600:  RequestUtil.php httpPost =====> {"errcode":0,"errmsg":"ok"}
+20160106150600: saveMsg =======>
+20160107170139:  index.php newwxindex=====> 
+20160107170139:  checkSignature =====> token验证成功
+20160111163049:  index.php newwxindex=====> 
+20160111163049:  checkSignature =====> token验证成功
+20160111163128:  index.php newwxindex=====> 
+20160111163128:  checkSignature =====> token验证成功
+20160111163128: saveMsg =======>
+20160111163135:  index.php newwxindex=====> 
+20160111163135:  checkSignature =====> token验证成功
+20160111163135:  TypeEvent EventKey nodb=====> Array
+(
+    [ToUserName] => gh_b4c1774a1ef7
+    [FromUserName] => osp6swrNZiWtEuTy-Gj1cBVA1l38
+    [CreateTime] => 1452501095
+    [MsgType] => event
+    [Event] => CLICK
+    [EventKey] => exitChatingroom
+)
+
+20160111163135:  TypeEvent EventKey nodb=====> exitChatingroom
+20160111163140:  index.php newwxindex=====> 
+20160111163140:  checkSignature =====> token验证成功
+20160111163140: saveMsg =======>
+20160111164506:  index.php newwxindex=====> 
+20160111164506:  checkSignature =====> token验证成功
+20160111164506:  TypeEvent EventKey nodb=====> Array
+(
+    [ToUserName] => gh_b4c1774a1ef7
+    [FromUserName] => osp6swrNZiWtEuTy-Gj1cBVA1l38
+    [CreateTime] => 1452501906
+    [MsgType] => event
+    [Event] => CLICK
+    [EventKey] => enterChatingroom
+)
+
+20160111164506:  TypeEvent EventKey nodb=====> enterChatingroom
+20160111164511:  index.php newwxindex=====> 
+20160111164511:  checkSignature =====> token验证成功
+20160111164511: saveMsg =======>

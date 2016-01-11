@@ -1,0 +1,242 @@
+{include file="sysadmin/header.tpl"}
+<div class="wrap map"> 
+    <dl> 
+        <dt>文章系统 &gt;&gt; 文章管理</dt>
+        <dd> 
+            <a href="?type_id={$type_id}" class="link">文章信息</a>
+            <a href="?action=tj&type_id={$type_id}" class="link">添加文章</a> 
+        </dd>
+        <input type="hidden" id="yctpid" {if $tpid!=''}value="{$tpid}"{else}value="{$tpid2}"{/if} />
+   </dl> 
+</div> 
+
+{if $action eq ""}
+<form action="" method="get" id="searchForm"> 
+<div class="wrap title"> 
+	<dl> 
+    	<dt>文章信息</dt> 
+        <dd>        
+        <select id="type_id" name="type_id"> 
+        <option value="">﹄ 请选择...</option>
+          {section name=list loop=$typeList}
+          {if $typeList[list].id eq $type_id}
+          <option value="{$typeList[list].id}" selected="selected">{$typeList[list].level}﹄ {$typeList[list].name}</option>
+          {else}
+          <option value="{$typeList[list].id}">{$typeList[list].level}﹄ {$typeList[list].name}</option>
+          {/if}
+          {/section}
+          </select>
+        <input type="text" name="keyword" id="keyword" value="{$keyword}" title="根据根据文章名称和编号搜索" onfocus="this.value='';" /> 
+        <input type="submit" name="button" id="btnSearch" value=" 搜 索 " /> 
+        </dd> 
+    </dl>
+</div> 
+</form> 
+ 
+<div class="wrap"> 
+<form method="post" action="?action=delete&type_id={$type_id}" id="form1"> 
+  <table width="100%" cellpadding="0" cellspacing="0" class="list"> 
+    <thead> 
+    <tr> 
+      <th style="width:50px;"><input type="checkbox" id="all" /></th> 
+      <th class="text-left">文章名称</th> 
+      <th>文章分类</th>
+      <!--  <th>图片</th>-->
+      <th>排序</th>
+      <th>归属栏目</th>
+      <th>操作</th> 
+    </tr>  
+     </thead> 
+    <tbody> 
+    {section name=list loop=$productList}
+    <tr> 
+      <td><input type="checkbox" name="id[]" value="{$productList[list].id}" /></td> 
+      <td style="text-align:left;">{$productList[list].title}</td> 
+      <td>{$productList[list].type_name}</td> 
+    <td>{$productList[list].sort}</td>
+      <!--<td>{$productList[list].time}</td>-->
+        <td>{if $productList[list].guishu==''}{else}{section name=i loop=$list_mokuai}{if $productList[list].guishu==$list_mokuai[i].name}{$list_mokuai[i].truename}{/if}{/section}{/if}</td>
+      <td><a href="?action=bj&type_id={$type_id}&id={$productList[list].id}" class="edit">修改</a></td>
+    </tr> 
+    {sectionelse}
+    <tr>
+        <td colspan="8"><div class="notext">没有相关信息</div></td>
+    </tr>
+    {/section}
+    
+  
+     </tbody> 
+    </table> 
+ 	
+    <div class="page" >
+        <dl> 
+            <dt><input type="submit" name="btnDelete" value="删除" onclick="return listDelete(this.form.name);" id="btnDelete" /></dt> 
+            <dd> 
+            {$pager}        
+			</dd> 
+        </dl> 
+    </div> 
+         
+</form> 
+<div class="desc">*</div> 
+</div> 
+
+{elseif $action eq "tj"}
+<div class="wrap title"> 
+	<dl> 
+    	<dt>添加文章</dt> 
+        <dd>        
+        <span class="red">*</span>号为必填项
+        </dd> 
+    </dl>
+</div> 
+
+<div class="wrap">
+<form id="form1" name="form1" method="post" action="?action=add&type_id={$type_id}"> 
+<table class="add">
+<tr>
+    <th>文章名称：<font class="red">*</font></th>
+    <td>
+    <input name="title" maxlength="150" type="text" class="input" id="title" style="width:400px;" />
+    </td>
+</tr>
+
+<tr>
+    <th>文章分类：<font class="red">*</font></th>
+    <td>
+    <!-- onchange="gaibianfenlei(this)" -->
+    <select id="type_id" name="type_id" id="ziliaose"  onchange="gaibianfenlei(this)"> 
+    <option value="">﹄ 请选择...</option>
+      {section name=list loop=$typeList}
+      {if $typeList[list].id eq $type_id}
+          <option value="{$typeList[list].id}" selected="selected">{$typeList[list].level}﹄ {$typeList[list].name}</option>
+          {else}
+          <option value="{$typeList[list].id}">{$typeList[list].level}﹄ {$typeList[list].name}</option>
+          {/if}
+      {/section}
+      </select>
+     </td>
+</tr>
+    <tr class="guishu1">
+        <th>关联模块</th>
+        <td>
+            <select id="mokuai" name="mokuai">
+                <option value="0">请选择...</option>
+                {section name=i loop=$list_mokuai}
+                <option value="{$list_mokuai[i].name}">{$list_mokuai[i].truename}</option>
+                {/section}
+            </select>
+        </td>
+    </tr>
+
+<!--
+<tr> 
+    <th>上传图片：</th> 
+    <td>
+    <input name="image" maxlength="100" type="text" class="input" id="image" style="width:400px;" />      
+    <input type="checkbox" id="autoSimg" onclick="showSmallImg(this.checked);" checked="checked" />自动生成缩略图
+    <br />
+    <input id="image_upload" type="file" name="Filedata" /> 
+    <span class="imgbox"><img src="images/empty.gif" height="38" id="pic" style="margin-top:8px;"  /></span> 
+    </td>
+</tr>
+<tr id="small_img"> 
+    <th>上传缩略图片：</th>
+    <td>
+    <input name="simage" maxlength="100" type="text" class="input" id="simage" style="width:400px;" />      
+    <br /> 
+    <input id="simage_upload" type="file" name="Filedata" /> 
+    <span class="imgbox"><img src="images/empty.gif" height="38" id="spic" style="margin-top:8px;" /></span> 
+    </td>
+</tr>
+-->
+<!-- from 成果  -->
+<tr class="trimg">
+    <th>上传图片：</th> 
+    <td>
+    <input name="image2" maxlength="100" type="text" class="input" id="image2" style="width:400px;" />      
+    <br />
+    <input id="image2_upload" type="file" name="Filedata" /> 
+    <span class="imgbox"><img src="images/empty.gif" height="38" id="pic2" style="margin-top:8px;"  /></span> 
+    </td>
+</tr>
+
+<tr id="ziliaotr" class="trziliao">
+    <th>上传资料：</th> 
+    <td>
+    <input name="ziliao" maxlength="100" type="text" class="input" id="ziliao" style="width:400px;" /> <br />     
+    <input id="ziliao_upload" type="file" name="Filedata" /> 
+    </td>
+</tr>
+<!-- from Big Rabbit end-->
+<tr>
+      <th>排序：<font class="red">*</font></th>
+      <td>
+     <input name="sort" type="text" class="input" value="0" id="sort" maxlength="5" style="width:50px;" onKeyUp="this.value=this.value.replace(/\D/g,'')"  onafterpaste="this.value=this.value.replace(/\D/g,'')"/>  
+      </td>
+</tr>
+<tr class="trurl">
+      <th>链接：<font class="red">*</font></th>
+      <td>
+     <input name="url" type="text" class="input" id="url"  style="width:400px;" />  
+      </td>
+</tr>
+<tr>
+    <th>文章关键字：</th>
+    <td>
+    <textarea style=" width:79%; height:50px;" name="keywords" class="input" id="keywords"></textarea> 
+    <span>网页SEO优化，多个用","号隔开</span>
+    </td>
+</tr>
+
+<tr class="trdan">
+    <th>简单描述：</th>
+    <td>
+    <textarea style=" width:79%; height:50px;" name="description" class="input" id="description"></textarea>
+    <span>网页SEO优化，文章的简单描述</span>
+    </td>
+</tr>
+<tr class="trdan2">
+    <th>文章描述：</th>
+    <td>
+    <textarea id="contents" name="contents" style="width:79%;"></textarea>
+    </td>
+</tr>
+<tr>
+	<th></th>
+	<td>
+    <input name="btnSubmit" type="submit" id="btnSubmit" value="确定" /> 
+    <input name="btnReset" type="reset" id="btnReset" value="清除" /> 
+    <a href="javascript:history.go(-1);"><input name="btnBack" type="button" id="btnBack" value="返回" /> </a>
+    </td>
+</tr>
+</table>
+</form> 
+</div> 
+
+{elseif $action eq "bj"}
+<div class="wrap title"> 
+	<dl> 
+    	<dt>修改文章</dt> 
+        <dd>        
+        <span class="red">*</span>号为必填项
+        </dd> 
+    </dl>
+</div> 
+
+<div class="wrap">
+<form id="form1" name="form1" method="post" action="?action=edit&type_id={$type_id}"> 
+<input type="hidden" name="id" value="{$product.id}" /> 
+<table class="add">
+<tr>
+    <th>文章名称：<font class="red">*</font></th>
+    <td>
+    <input name="title" maxlength="150" type="text" class="input" id="title" style="width:400px;" value="{$product.title}" /> 
+    </td>
+</tr>
+
+<tr>
+    <th>文章分类：<font class="red">*</font></th>
+    <td>
+    <select id="type_id" name="type_id"  id="ziliaose" onchange="gaibianfenlei(this)"  disabled="disabled"> 
+      {section name

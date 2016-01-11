@@ -1,0 +1,24 @@
+<form action="wxgroup.php?action=addone" method="post">
+	<input name="groupname" />
+	<input name="backup" />
+	<input type="submit" value="提交" />
+	
+	<table width="100%" cellpadding="0" cellspacing="0" class="list"> 
+    <tr> 
+      <td><input type="checkbox" id="all" /></td> 
+      <td class="text-left">用户名</td> 
+    </tr>  
+    	
+    {section name=user loop=$allUserArray}
+    <tr> 
+      <td><input type="checkbox" name="groupids[]" value="{$allUserArray[user].id}" />&nbsp;</td> 
+      <td style="text-align:left;">{$allUserArray[user].nickname}</td> 
+    </tr> 
+    {sectionelse}
+    <tr>
+        <td colspan="4"><div class="notext">没有相关信息</div></td>
+    </tr>
+    {/section}
+  
+    </table> 
+</form>

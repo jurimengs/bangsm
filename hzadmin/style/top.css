@@ -1,0 +1,22 @@
+@CHARSET "UTF-8";
+body {
+	margin: 0px;
+	background-image: url(../images/top_bg.png);
+	background-repeat: repeat-x;
+}
+body,td,th {
+	font-size: 12px;
+	font-family: Verdana, Geneva, sans-serif;
+}
+.right{ background:url(../images/top_right_bg.png) no-repeat right;}
+.green{color:#4D5D2C;}
+.green a{color:#4D5D2C;text-decoration:none}
+.green a:hover {color: #4D5D2C;text-decoration:none}
+.nav { color:#222}
+.nav a{color:#222; text-decoration:none}
+.nav a:hover {color:#000;text-decoration:none}
+
+.info{width:100%; }
+.successmsg{position:absolute; width:100%; text-align:center;color:#fff; top:0px; display:none;margin:0 auto;}
+.noticemsg{ position:absolute;  width:100%; text-align:center; color:#fff; top:0px; display:none;margin:0 auto;}
+.errormsg{position:absolute; width:100%; text-align:center;color:#fff; top:0px; display:none;margin:0 auto;}

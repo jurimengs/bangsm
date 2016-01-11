@@ -1,0 +1,132 @@
+{if $yemianid=='conmpany'}
+    <div class="cmain_leftarea">
+        <h2><span>走进嘉隆</span></h2>
+        <ul>
+            <li {if $yemianid2=='conm'}class="cmain_leftarea_icon"{else}{/if}><span></span><a href="/jlwy/conmpany/conmpany.php">公司简介</a></li>
+            <li {if $yemianid2=='struct'}class="cmain_leftarea_icon"{else}{/if}><span></span><a href="/jlwy/conmpany/conmpany_struct.php">组织架构</a></li>
+            <li {if $yemianid2=='history'}class="cmain_leftarea_icon"{else}{/if}><span></span><a href="/jlwy/conmpany/conmpany_history.php"> 发展历程</a></li>
+            <li {if $yemianid2=='honor'}class="cmain_leftarea_icon tehh"{else}class="tehh"{/if}><span></span> <a href="javascript:void(0)">公司荣誉</a>
+                <ul class="businse_sel" {if !empty($tid)}style="display:block;"{/if}>
+                {section name=i loop=$left_conmpany}
+                    <li {if !empty($tid)}{if $tid==$left_conmpany[i].id}style="background-color:#be980d;"{/if}{/if}><a href="/jlwy/conmpany/conmpany_honor.php?whatid={$left_conmpany[i].id}" style="font-size:12.5px;color:#000;">{$left_conmpany[i].name}</a></li>
+                {/section}
+                </ul>
+            </li>
+            <li {if $yemianid2=='porfit'}class="cmain_leftarea_icon"{else}{/if}><span></span><a href="/jlwy/conmpany/conmpany_profit.php">社会公益</a></li>
+        </ul>
+    </div>
+    
+ {elseif $yemianid=='culture'}   
+     <div class="cmain_leftarea">
+        <h2><span>企业文化</span></h2>
+        <ul>
+            <li {if $yemianid2=='linian'}class="cmain_leftarea_icon"{else}{/if}><span></span><a href="/jlwy/culture/culture.php">经营理念</a></li>
+            <li {if $yemianid2=='nk'}class="cmain_leftarea_icon"{else}{/if}><span></span><a href="/jlwy/culture/culture_nk.php">企业内刊</a></li>
+            <li {if $yemianid2=='tu'}class="cmain_leftarea_icon"{else}{/if}><span></span><a href="/jlwy/culture/culture_tu.php"> 图片专栏</a></li>
+            <li {if $yemianid2=='video'}class="cmain_leftarea_icon"{else}{/if}><span></span> <a href="/jlwy/culture/culture_video.php">视频中心</a></li>
+        </ul>
+    </div>
+ {elseif $yemianid=="news"}      
+        <div class="cmain_leftarea">
+        <h2><span>新闻中心</span></h2>
+        <ul>
+         {section name=i loop=$top_news}
+            <li {if $whatid==$top_news[i].id}class="cmain_leftarea_icon"{else}{/if}><span></span><a href="/jlwy/news/news.php?whatid={$top_news[i].id}">{$top_news[i].name}</a></li>
+          {/section}   
+
+        </ul>
+    </div>
+  {elseif $yemianid=="building"}  
+  <div class="cmain_leftarea">
+        <h2><span>党建工作</span></h2>
+        <ul>
+        {section name=i loop=$left_building}
+            <li {if $whatid==$left_building[i].id}class="cmain_leftarea_icon tehh"{else}class="tehh"{/if}><span></span><a href="javascript:void(0)">{$left_building[i].name}</a>
+                <ul class="businse_sel" {if !empty($whatid)}{if $whatid==$left_building[i].id}style="display:block;"{/if}{/if}>
+                	 {section name=j loop=$left_building[i].sleft_building}
+                    <li {if !empty($whatid)}{if $id==$left_building[i].sleft_building[j].id}style="background-color:#be980d;"{/if}{/if}>
+                    
+                    <a {if $left_building[i].sleft_building[j].id=="5"||$left_building[i].sleft_building[j].id=="9"||$left_building[i].sleft_building[j].id=="12"}
+	                     href="/jlwy/building/building-cont.php?whatid={$left_building[i].sleft_building[j].parent_id}&parent_id={$left_building[i].sleft_building[j].id}" 
+	                    {else}
+	                    href="/jlwy/building/building.php?whatid={$left_building[i].sleft_building[j].parent_id}&parent_id={$left_building[i].sleft_building[j].id}" 
+	                    {/if}
+	                    style="font-size:12px;color:#000;">{$left_building[i].sleft_building[j].name}</a>
+                    </li>
+					 {/section}  
+                </ul>
+            </li>
+          {/section}  
+        
+        </ul>
+    </div>
+      {elseif $yemianid=="business"}  
+    <div class="cmain_leftarea">
+        <h2><span>业务介绍</span></h2>
+        <ul>
+           
+            <li {if $whatid=="2"}class="cmain_leftarea_icon tehh"{else}class="tehh"{/if}><span></span><a href="javascript:void(0)">主营业务</a>
+                <ul class="businse_sel" {if !empty($whatid)}{if $whatid==2}style="display:block;"{/if}{/if}>
+                {section name=i loop=$left_zhuying}
+                    <li {if !empty($whatid)}{if $id==$left_zhuying[i].id}style="background-color:#be980d;"{/if}{/if}><a href="/jlwy/business/business-list.php?whatid={$left_zhuying[i].parent_id}&whattid={$left_zhuying[i].id}" style="font-size:12px;color:#000;">{$left_zhuying[i].name}</a></li>
+                {/section}
+                </ul>
+            </li>
+            <li {if $whatid=="3"}class="cmain_leftarea_icon tehh"{else}class="tehh"{/if}><span></span><a href="javascript:void(0)">延伸业务</a>
+                <ul class="businse_sel" {if !empty($whatid)}{if $whatid==3}style="display:block;"{/if}{/if}>
+                {section name=i loop=$left_yanshen}
+                    <li {if !empty($whatid)}{if $id==$left_yanshen[i].id}style="background-color:#be980d;"{/if}{/if}><a href="/jlwy/business/stretch.php?whatid={$left_yanshen[i].parent_id}&whattid={$left_yanshen[i].id}" style="font-size:12px;color:#000;">{$left_yanshen[i].name}</a></li>
+                {/section}    
+                </ul>
+            </li>
+        </ul>
+    </div>
+    
+{elseif $yemianid=="safety"}  
+       <div class="cmain_leftarea">
+        <h2><span>安全管理</span></h2>
+        <ul>
+ 				<li {if $whatid=="2"}class="cmain_leftarea_icon tehh"{else}class="tehh"{/if}><span></span><a href="/jlwy/safety/safety-zhi.php?whatid=2">{$left_zhi.name}</a></li>
+ 
+            <li {if $whatid=="3"}class="cmain_leftarea_icon tehh"{else}class="tehh"{/if}><span></span><a href="javascript:void(0)">{$left_bai.name}</a>
+                <ul class="businse_sel" {if !empty($whatid)}{if $whatid==3}style="display:block;"{/if}{/if}>
+                {section name=i loop=$sleft_bai}
+                    <li {if $whatid=="3"}{if $id==$sleft_bai[i].id}style="background-color:#be980d;"{/if}{/if}><a href="/jlwy/safety/safety.php?whatid={$sleft_bai[i].parent_id}&whattid={$sleft_bai[i].id}" style="font-size:12px;color:#000;">{$sleft_bai[i].name}</a></li>
+               {/section}
+                </ul>
+            </li>
+            
+     	  
+        </ul>
+    </div>
+{elseif $yemianid=="staff"}  
+         <div class="cmain_leftarea">
+        <h2><span>员工风采</span></h2>
+        <ul>
+        {section name=i loop=$top_staff}
+            <li {if $whatid==$top_staff[i].id}class="cmain_leftarea_icon"{else}{/if}><span></span><a href="/jlwy/staff/staff.php?whatid={$top_staff[i].id}">{$top_staff[i].name}</a></li>
+        {/section}   
+        </ul>
+    </div>
+{elseif $yemianid=="contact"}
+    <div class="cmain_leftarea">
+        <h2><span>联系我们</span></h2>
+        <ul>
+        {section name=i loop=$top_contact}
+            <li {if $whatid==$top_contact[i].id}class="cmain_leftarea_icon"{else}{/if}><span></span><a href="/jlwy/contact/contact.php?whatid={$top_contact[i].id}">{$top_contact[i].name}</a></li>
+        {/section}       
+
+        </ul>
+    </div>
+{elseif $yemianid=="search"}
+<div class="cmain_leftarea">
+    <h2><span>联系我们</span></h2>
+    <ul>
+        {section name=i loop=$top_contact}
+        <li><span></span><a href="/jlwy/contact/contact.php?whatid={$top_contact[i].id}">{$top_contact[i].name}</a></li>
+        {/section}
+
+    </ul>
+</div>
+ {/if}
+ 

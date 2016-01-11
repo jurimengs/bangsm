@@ -1,0 +1,428 @@
+{include file="sysadmin/header.tpl"}
+<div class="wrap map">
+    <dl>
+        <dt>文章系统 &gt;&gt; 文章管理</dt>
+        <dd>
+            <a href="?type_id={$type_id}" class="link">文章信息</a>
+            <a href="?action=tj&type_id={$type_id}" class="link">添加文章</a>
+        </dd>
+
+    </dl>
+</div>
+{if $action eq ""}
+<form action="" method="get" id="searchForm">
+    <input type="hidden" id="table"  value="{$table}"  />
+    <input type="hidden" id="pageno" value="{$pageno}" />
+    <input type="hidden" id="tid" value="{$tid}" />
+    <div class="wrap title">
+        <dl>
+            <dt>文章信息</dt>
+            <dd>
+                <select id="type_id" name="type_id">
+                    <option value="">﹄ 请选择...</option>
+                    {section name=list loop=$typeList}
+                    {if $typeList[list].id eq $type_id}
+                    <option value="{$typeList[list].id}" selected="selected">{$typeList[list].level}﹄ {$typeList[list].name}</option>
+                    {else}
+                    <option value="{$typeList[list].id}">{$typeList[list].level}﹄ {$typeList[list].name}</option>
+                    {/if}
+                    {/section}
+                </select>
+                <input type="text" name="keyword" id="keyword" value="{$keyword}" title="根据根据文章名称和编号搜索" onfocus="this.value='';" />
+                <input type="submit" name="button" id="btnSearch" value=" 搜 索 " />
+            </dd>
+        </dl>
+    </div>
+</form>
+
+<div class="wrap">
+    <form method="post" action="?action=delete&type_id={$type_id}" id="form1">
+        <table width="100%" cellpadding="0" cellspacing="0" class="list">
+            <thead>
+            <tr>
+                <th style="width:50px;"><input type="checkbox" id="all" /></th>
+                <th class="text-left">文章名称</th>
+                <th>文章分类</th>
+                <th style="display:none">图片</th>
+                <th>排序</th>
+                <th>发布日期</th>
+                <th>操作</th>
+            </tr>
+            </thead>
+            <tbody  id="charu">
+            {section name=list loop=$productList}
+            <tr>
+                <td><input type="checkbox" name="id[]" value="{$productList[list].id}" /></td>
+                <td style="text-align:left;">{$productList[list].title}</td>
+                <td>{$productList[list].type_name}</td>
+                <td style="display:none"><img src="images/pic.gif" onmouseover="javascript:ddrivetip('<img width=120 src=../{$productList[list].simage}>','#ffffff', 120)" onmouseout="hideddrivetip()" /></td>
+                <td>{$productList[list].sort}</td>
+
+                <td>{$productList[list].time|date_format:"%Y-%m-%d"}</td>
+                <td><a href="?action=bj&type_id={$type_id}&id={$productList[list].id}" class="edit">修改</a></td>
+            </tr>
+            {sectionelse}
+            <tr>
+                <td colspan="9"><div class="notext">没有相关信息</div></td>
+            </tr>
+            {/section}
+
+
+            </tbody>
+        </table>
+
+        <div class="page">
+            <dl>
+                <dt><input type="submit" name="btnDelete" value="删除" onclick="return listsc(this.form.name);" id="btnDelete" />
+                    <input type="submit" name="btntj" value="加入推荐" onclick="return listtj(this.form.name);" id="btntj" />
+                    <input type="submit" name="btnqxtj" value="取消推荐" onclick="return listqxtj(this.form.name);" id="btnqxtj" />
+                    <input type="hidden" name="yincang" id="yincang" />
+                </dt>
+                <dd>
+                    {$pager}
+                </dd>
+            </dl>
+        </div>
+
+    </form>
+    <div class="desc">*</div>
+</div>
+
+{elseif $action eq "tj"}
+<div class="wrap title">
+    <dl>
+        <dt>添加文章</dt>
+        <dd>
+            <span class="red">*</span>号为必填项
+        </dd>
+    </dl>
+</div>
+
+<div class="wrap">
+    <form id="form1" name="form1" method="post" action="?action=add&type_id={$type_id}">
+        <table class="add">
+            <tr>
+                <th>文章名称：<font class="red">*</font></th>
+                <td>
+                    <input name="title" maxlength="50" type="text" class="input" id="title" style="width:400px;" />
+                </td>
+            </tr>
+
+            <tr>
+                <th>文章分类：<font class="red">*</font></th>
+                <td>
+                    <select id="type_id" name="type_id">
+                        <option value="">﹄ 请选择...</option>
+                        {section name=list loop=$typeList}
+                        {if $typeList[list].id eq $type_id}
+                        <option value="{$typeList[list].id}" selected="selected">{$typeList[list].level}﹄ {$typeList[list].name}</option>
+                        {else}
+                        <option value="{$typeList[list].id}">{$typeList[list].level}﹄ {$typeList[list].name}</option>
+                        {/if}
+                        {/section}
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <th>排序：<font class="red">*</font></th>
+                <td>
+                    <input name="sort" type="text" class="input" value="0" id="sort" maxlength="5" style="width:50px;" onKeyUp="this.value=this.value.replace(/\D/g,'')"  onafterpaste="this.value=this.value.replace(/\D/g,'')"/>
+                </td>
+            </tr>
+            <tr style="display:none">
+                <th>招聘人数：</th>
+                <td><input name="num" type="text" class="input" value="0" id="num" maxlength="5" style="width:50px;" onKeyUp="this.value=this.value.replace(/\D/g,'')"  onafterpaste="this.value=this.value.replace(/\D/g,'')"/></td>
+            </tr>
+
+            <tr >
+                <th>上传图片：</th>
+                <td>
+                    <input name="image" maxlength="100" type="text" class="input" id="image" style="width:400px;" />
+                    <input type="checkbox" id="autoSimg" onclick="showSmallImg(this.checked);" checked="checked" />自动生成缩略图
+                    <br />
+                    <input id="image_upload" type="file" name="Filedata" />
+                    <span class="imgbox"><img src="images/empty.gif" height="38" id="pic" style="margin-top:8px;"  /></span>
+                </td>
+            </tr>
+            <tr id="small_img" >
+                <th>上传缩略图片：</th>
+                <td>
+                    <input name="simage" maxlength="100" type="text" class="input" id="simage" style="width:400px;" />
+                    <br />
+                    <input id="simage_upload" type="file" name="Filedata" />
+                    <span class="imgbox"><img src="images/empty.gif" height="38" id="spic" style="margin-top:8px;" /></span>
+                </td>
+            </tr>
+            <tr id="ziliaotr" style="display:none;">
+                <th>上传资料：</th>
+                <td>
+                    <input name="ziliao" maxlength="100" type="text" class="input" id="ziliao" style="width:400px;" /> <br />
+                    <input id="ziliao_upload" type="file" name="Filedata" />
+                </td>
+            </tr>
+            <tr>
+                <th>文章关键字：</th>
+                <td>
+                    <textarea style=" width:79%; height:50px;" name="keywords" class="input" id="keywords"></textarea>
+                    <span>网页SEO优化，多个用","号隔开</span>
+                </td>
+            </tr>
+            <tr>
+                <th>简单描述：</th>
+                <td>
+                    <textarea style=" width:79%; height:50px;" name="description" class="input" id="description"></textarea>
+                    <span>网页SEO优化，文章的简单描述</span>
+                </td>
+            </tr>
+            <tr>
+                <th>文章描述：</th>
+                <td>
+                    <textarea id="contents" name="contents" style="width:79%;"></textarea>
+                </td>
+            </tr>
+            <tr>
+                <th></th>
+                <td>
+                    <input name="btnSubmit" type="submit" id="btnSubmit" value="确定" />
+                    <input name="btnReset" type="reset" id="btnReset" value="清除" />
+                    <a href="javascript:history.go(-1);"><input name="btnBack" type="button" id="btnBack" value="返回" /> </a>
+                </td>
+            </tr>
+        </table>
+    </form>
+</div>
+
+{elseif $action eq "bj"}
+<div class="wrap title">
+    <dl>
+        <dt>修改文章</dt>
+        <dd>
+            <span class="red">*</span>号为必填项
+        </dd>
+    </dl>
+</div>
+
+<div class="wrap">
+    <form id="form1" name="form1" method="post" action="?action=edit&type_id={$type_id}">
+        <input type="hidden" name="id" value="{$product.id}" />
+        <table class="add">
+            <tr>
+                <th>文章名称：<font class="red">*</font></th>
+                <td>
+                    <input name="title" maxlength="50" type="text" class="input" id="title" style="width:400px;" value="{$product.title}" />
+                </td>
+            </tr>
+            <tr>
+                <th>文章分类：<font class="red">*</font></th>
+                <td>
+                    <select id="type_id" name="type_id">
+                        {section name=list loop=$typeList}
+                        {if $typeList[list].selected eq 'true'}
+                        <option value="{$typeList[list].id}" selected="selected">{$typeList[list].level}﹄ {$typeList[list].name}</option>
+                        {else}
+                        <option value="{$typeList[list].id}">{$typeList[list].level}﹄ {$typeList[list].name}</option>
+                        {/if}
+                        {/section}
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <th>排序：<font class="red">*</font></th>
+                <td>
+                    <input name="sort" type="text" class="input" value="{$product.sort}" id="sort" maxlength="5" style="width:50px;" onKeyUp="this.value=this.value.replace(/\D/g,'')"  onafterpaste="this.value=this.value.replace(/\D/g,'')"/>
+                </td>
+            </tr>
+
+            <tr style="display:none;">
+                <th>选择地区：<font class="red">*</font></th>
+                <td>
+                    <select id="s_province" name="s_province" class="select-sheng" ></select>  
+                    <select id="s_city" name="s_city" class="select-shi" style="width:100px; margin-left:0px;"></select>  
+                    <select id="s_county" name="s_county" style="width:80px; margin-left:0px;"></select>
+                    <script class="resources library" src="../js/area.js" type="text/javascript" class="select-shi" ></script>
+                    <script type="text/javascript">_init_area();</script>
+                </td>
+            </tr>
+            <tr>
+                <th>上传文章图片：</th>
+                <td>
+                    <input name="image" maxlength="100" type="text" class="input" id="image" style="width:400px;" value="{$product.image}" />
+                    <input type="checkbox" id="autoSimg" onclick="showSmallImg(this.checked);" checked="checked" />自动生成商品缩略图
+                    <br />
+                    <input id="image_upload" type="file" name="Filedata" />
+                    <span class="imgbox"><img {if $product.image!=''}src="../{$product.image}"{else}src="images/empty.gif"{/if} height="38" id="pic" style="margin-top:8px;"  /></span>
+                </td>
+            </tr>
+            <tr id="small_img">
+                <th>上传文章缩略图片：</th>
+                <td>
+                    <input name="simage" maxlength="100" type="text" class="input" id="simage" style="width:400px;" value="{$product.simage}" />
+                    <br />
+                    <input id="simage_upload" type="file" name="Filedata" />
+                    <span class="imgbox"><img {if $product.simage!=''}src="../{$product.simage}"{else}src="images/empty.gif"{/if} height="38" id="spic" style="margin-top:8px;" /></span>
+                <td>
+            </tr>
+            <tr id="ziliaotr" style="display:none;">
+                <th>上传资料：</th>
+                <td>
+                    <input name="ziliao" maxlength="100" type="text" class="input" id="ziliao" style="width:400px;" /> <br />
+                    <input id="ziliao_upload" type="file" name="Filedata" />
+                </td>
+            </tr>
+            <tr>
+                <th>文章关键字：</th>
+                <td>
+                    <textarea style=" width:79%; height:50px;" name="keywords" class="input" id="keywords">{$product.keywords}</textarea>
+                    <span>网页SEO优化，多个用","号隔开</span>
+                </td>
+            </tr>
+            <tr>
+                <th>简单描述：</th>
+                <td>
+                    <textarea style=" width:79%; height:50px;" name="description" class="input" id="description">{$product.description}</textarea>
+                    <span>网页SEO优化，文章的简单描述</span>
+                </td>
+            </tr>
+
+            <tr>
+                <th>文章描述：</th>
+                <td>
+                    <textarea id="contents" name="contents" style="width:79%;">{$product.contents}</textarea>
+                </td>
+            </tr>
+            <tr>
+                <th></th>
+                <td>
+                    <input name="btnSubmit" type="submit" id="btnSubmit" value="确定" />
+                    <input name="btnReset" type="reset" id="btnReset" value="清除" />
+                    <a href="javascript:history.go(-1);"><input name="btnBack" type="button" id="btnBack" value="返回" /> </a>
+                </td>
+            </tr>
+        </table>
+    </form>
+</div>
+
+
+{/if}
+<script type="text/javascript">
+    var Gid  = document.getElementById ;
+    var showArea = function(){
+        Gid('show').innerHTML = "<h3>省" + Gid('s_province').value + " - 市" +
+        Gid('s_city').value + " - 县/区" +
+        Gid('s_county').value + "</h3>"
+    }
+    Gid('s_county').setAttribute('onchange','showArea()');
+</script>
+
+{literal}
+<script type="text/javascript">
+
+    $(document).ready(function() {
+        //表单验证
+        $("#form1").validate({
+            rules: {
+                title: {required: true},
+                type_id:{ required:true},
+                sort:{ required:true}
+            },
+            submitHandler: function (form) {
+                $("#btnSubmit").attr("disabled",true);
+                $("#contents").val(editor.html());	//解决shosen.jquery冲突，取不到值
+                form.submit();
+            }
+        });
+    })
+    var editor1;
+    KindEditor.ready(function(K) {
+        editor1 = K.create('textarea[name="contents"]', {
+            allowFileManager : true,
+            filterMode:false
+        });
+    });
+    $(function() {
+        $('#simage_upload').uploadify({
+            'uploader'  : 'jquery/uploadify/uploadify.swf',
+            'script'    : 'jquery/uploadify/uploadify.php',
+            'folder'	  : '../uploads/product/',
+            'cancelImg' : 'jquery/uploadify/cancel.png',
+            'removeCompleted' : true,
+            'auto':true,
+            'buttonText': 'SELECT IMAGE',
+            'fileExt'     : '*.jpg; *.gif; *.png',
+            'fileDesc'    : 'Select Files *.jpg; *.gif; *.png',
+            'onCancel'    : function(event,ID,fileObj,data) {
+                $("#btnSubmit").attr("disabled",false);
+            },
+            'onSelect':function(event,ID,fileObj) {
+                $("#btnSubmit").attr("disabled",true);
+            },
+            'onComplete' :function(event,queueID,fileObj,response,data){
+                $("#simage").val(response);
+                $("#spic").attr("src",'../'+response);
+                $("#btnSubmit").attr("disabled",false);
+            }
+        });
+        showSmallImg($("#autoSimg").attr("checked"));
+    });
+
+    function showSmallImg(isbool){
+        $("#image_upload").next("object").remove();
+        $("#image_upload").next("#image_uploadQueue").remove();
+        if(isbool){
+            $('#image_upload').uploadify({
+                'uploader'  : 'jquery/uploadify/uploadify.swf',
+                'script'    : 'jquery/uploadify/uploadify.php?simg=true_300_300',
+                'folder'	  : '../uploads/product/',
+                'cancelImg' : 'jquery/uploadify/cancel.png',
+                'removeCompleted' : true,
+                'auto':true,
+                'buttonText': 'SELECT IMAGE',
+                'fileExt'     : '*.jpg; *.gif; *.png',
+                'fileDesc'    : 'Select Files *.jpg; *.gif; *.png',
+                'onCancel'    : function(event,ID,fileObj,data) {
+                    $("#btnSubmit").attr("disabled",false);
+                },
+                'onSelect':function(event,ID,fileObj) {
+                    $("#btnSubmit").attr("disabled",true);
+                },
+                'onComplete' :function(event,queueID,fileObj,response,data){
+                    $("#image").val(response);
+                    $("#pic").attr("src",'../'+response);
+                    $("#simage").val(response.replace(".","_s."));
+                    $("#btnSubmit").attr("disabled",false);
+                }
+            });
+            $("#small_img").hide();
+        }else{
+            $("#small_img").show();
+            $('#image_upload').uploadify({
+                'uploader'  : 'jquery/uploadify/uploadify.swf',
+                'script'    : 'jquery/uploadify/uploadify.php',
+                'folder'	  : '../uploads/product/',
+                'cancelImg' : 'jquery/uploadify/cancel.png',
+                'removeCompleted' : true,
+                'auto':true,
+                'buttonText': 'SELECT IMAGE',
+                'fileExt'     : '*.jpg; *.gif; *.png',
+                'fileDesc'    : 'Select Files *.jpg; *.gif; *.png',
+                'onCancel'    : function(event,ID,fileObj,data) {
+                    $("#btnSubmit").attr("disabled",false);
+                },
+                'onSelect':function(event,ID,fileObj) {
+                    $("#btnSubmit").attr("disabled",true);
+                },
+                'onComplete' :function(event,queueID,fileObj,response,data){
+                    $("#image").val(response);
+                    $("#pic").attr("src",'../'+response);
+                    $("#btnSubmit").attr("disabled",false);
+                }
+            });
+        }
+    }
+
+
+</script>
+{/literal}
+
+ 
+ 

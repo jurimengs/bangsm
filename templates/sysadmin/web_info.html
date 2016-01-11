@@ -1,0 +1,43 @@
+{include file="sysadmin/header.tpl"}
+<div class="wrap map"> 
+    <dl> 
+        <dt>系统设置 &gt;&gt; 基本设置</dt> 
+        <dd> 
+        </dd> 
+   </dl> 
+</div> 
+
+{if $action eq ""}
+<div class="wrap title"> 
+	<dl> 
+    	<dt>基本设置</dt> 
+        <dd>        
+        </dd> 
+    </dl>
+</div> 
+
+<div class="wrap">
+<form id="form1" name="form1" method="post" action="?action=edit"> 
+<table class="add">
+{section name=list loop=$webinfo}
+<tr>
+	<th>{$webinfo[list].name}：</th>
+	<td>
+    {if $webinfo[list].type eq "input"}
+    <input name="{$webinfo[list].filed}" maxlength="50" type="text" class="input" id="{$webinfo[list].filed}" style="width:400px;" value="{$webinfo[list].value}" /> 
+    {else}
+    <textarea style=" width:79%; height:50px;" name="{$webinfo[list].filed}" class="input" id="{$webinfo[list].filed}">{$webinfo[list].value}</textarea>
+    {/if}
+    <span>{$webinfo[list].description}</span>
+    </td>
+</tr>
+{/section}
+<tr>
+	<th></th>
+	<td><input name="btnSubmit" type="submit" id="btnSubmit" value="确定" /></td>
+</tr>
+</table>
+</form> 
+</div> 
+
+{/if}

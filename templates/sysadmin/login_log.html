@@ -1,0 +1,65 @@
+{include file="sysadmin/header.tpl"}
+<div class="wrap map"> 
+    <dl> 
+        <dt>系统设置 &gt;&gt; 管理员登录日志</dt> 
+        <dd> 
+            <a href="login_log.php" class="link">日志信息</a> 
+        </dd> 
+   </dl> 
+</div> 
+
+<form action="" method="get" id="searchForm"> 
+<div class="wrap title"> 
+	<dl> 
+    	<dt>日志信息</dt> 
+        <dd>        
+        <input type="text" name="keyword" id="keyword" value="{$keyword}" title="根据登录用户搜索" onfocus="this.value='';" /> 
+        <input type="submit" name="button" id="btnSearch" value=" 搜 索 " /> 
+        </dd> 
+    </dl>
+</div> 
+</form> 
+ 
+<div class="wrap"> 
+<form method="post" action="?action=delete" id="form1"> 
+  <table width="100%" cellpadding="0" cellspacing="0" class="list"> 
+    <thead> 
+    <tr> 
+      <th><input type="checkbox" id="all" /></th> 
+      <th>登录用户</th> 
+      <th>登录时间</th> 
+      <th>登录IP</th> 
+      <th>登录描述</th> 
+    </tr>  
+     </thead> 
+    <tbody> 
+    {section name=list loop=$logList}
+    <tr> 
+      <td class="text-center"><input type="checkbox" name="id[]" value="{$logList[list].id}" /></td> 
+      <td class="text-center">{$logList[list].user_id}</td> 
+      <td class="text-center">{$logList[list].time|date_format:"%Y/%m/%d %T"}</td> 
+      <td class="text-center">{$logList[list].ip}</td> 
+      <td class="text-center">{$logList[list].contents}</td> 
+    </tr> 
+    {sectionelse}
+    <tr>
+        <td colspan="5"><div class="notext">没息</div></td>
+    </tr>
+    {/section}
+    
+  
+     </tbody> 
+    </table> 
+ 	
+    <div class="page"> 
+        <dl> 
+            <dt><input type="submit" name="btnDelete" value="删除" onclick="return listDelete(this.form.name);" id="btnDelete" /></dt> 
+            <dd> 
+            {$pager}       
+			</dd> 
+        </dl> 
+    </div> 
+         
+</form> 
+<div class="desc">* 记录所有用户的登录日志,可进行批量删除</div> 
+</div> 
