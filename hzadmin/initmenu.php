@@ -9,7 +9,7 @@ if(empty($_SESSION["cn_sysadmin"])){
 	die("<script>top.location.href='login.php'</script>");
 }
 
-init();
+echo init();
 
 function init(){
 	$url = wxCreateBottommenuUrl().WxUtil::getWxTokenFromDB();

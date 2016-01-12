@@ -78,8 +78,7 @@ function reply(){
 	//LogUtil::logs("queryGroupUserAndReplyMsg data ====>".$data, getLogFile("/business.log"));
 	$tp = new TypeParent();
 	$response = $tp -> sendMsgByService($data);
-	
-	if($response["errno"] == 0) {
+	if($response["errcode"] == 0) {
 		// 回复成功
 		// 2 保存回复的消息
 		$msgtype = "1"; // 消息类型: 0表示用户发送  1表示管理员回复 2表示管理员群发消息 3 自动回复  4聊天室信息
