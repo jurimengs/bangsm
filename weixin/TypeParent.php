@@ -71,5 +71,16 @@ class TypeParent {
 		return $userInfo;
 	}
 	
+	public function batchSendPicMsg($openidarr, $mediaid){
+		$data = array("touser"=>$openidarr, "mpnews"=>array("media_id"=>$mediaid), "msgtype"=>"mpnews");
+		$datastr = JsonUtil::getJsonStrFromArray($data);
+		echo print_r($datastr);
+		$url = wxBatchSendPicMsg().WxUtil::getWxTokenFromDB();
+		$response = RequestUtil::httpPost($url, $datastr, 'post');
+		if($response['errcode'] == 0) {
+			return "图文消息群发成功";
+		}
+		return $respArr["errcode"].":".$respArr["errmsg"];
+	}
 }
 ?>

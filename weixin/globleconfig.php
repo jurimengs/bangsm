@@ -78,6 +78,27 @@ function wxGetUserBaseinfo(){
 function wxSendMessageByService(){
      return "https://api.weixin.qq.com/cgi-bin/message/custom/send?access_token=";
 }
+
+/**
+ * batch send picmsg
+ */
+function wxBatchSendPicMsg(){
+     return "https://api.weixin.qq.com/cgi-bin/message/mass/send?access_token=";
+}
+
+/**
+ * upload pic message
+ */
+function wxUploadPicMsg(){
+     return "https://api.weixin.qq.com/cgi-bin/media/uploadnews?access_token=";
+}
+
+/**
+ * upload pic merterials
+ */
+function wxUploadPic(){
+     return "https://api.weixin.qq.com/cgi-bin/material/add_news?access_token=";
+}
  
 function getLogFile($fname){
      return dirname(__FILE__).$fname;
