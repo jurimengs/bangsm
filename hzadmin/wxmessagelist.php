@@ -22,7 +22,7 @@ function showlist(){
 	global $db;
 	global $smarty;
 	
-	$page_size = 2; // 每页显示的条目数
+	$page_size = getPageSize(); // 每页显示的条目数
 	$sub_pages = getSubPages(); // 每次显示的页数
 	$current_page = empty($_GET["p"]) ? "1" : $_GET["p"]; // 当前被选中的页
 	
@@ -33,7 +33,7 @@ function showlist(){
 			on a.createby = b.openid 
 		left join wx_user_msg c
 			on a.id = c.replyid
-		where a.msgtype in('0', '4')
+		where a.msgtype in('0', '4', '5')
 		order by createtime desc";
 	$res = $db->query_page_list2($sql,$page_size,$current_page);
 	$rowList=$db->fetch_all($res);

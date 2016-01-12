@@ -26,11 +26,6 @@ function init(){
 	            "name": "互动",
 	            "sub_button": [
 	                {
-	                    "type": "click",
-	                    "name": "问答",
-	                    "key": "askAndAnwser"
-	                },
-	                {
 	                    "type": "view",
 	                    "name": "来稿说明",
 	                    "url": "http://demo.alsovalue.com/BONZWISE/Draft-Description.html"

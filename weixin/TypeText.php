@@ -117,7 +117,7 @@ class TypeText extends TypeParent{
 				parent::sendMsgByService($data);
 			}
 		}
-		return "success";
+		return getSuccessStr();
 	}
 
 
@@ -126,23 +126,23 @@ class TypeText extends TypeParent{
      * MsgType ： text image voice video 等
      */
 	function autoReplay($postData){
-		$openid = $postData["openid"];
+		$openid = $postData["FromUserName"];
 		$content = $postData["Content"];
 		$createtime = DateUtil::getCurrentTime();
 		$msgData = array();
 		if( $postData['MsgType'] == 'text' && !empty($content) ){
+			DBUtil::saveMsg($openid, $content, $createtime, "" , "5", "0");
 			switch($content){
 				case 'hello':
 					$text = '您好';
 					break;
 				default:
-					$text = getSuccessStr();
+					return getSuccessStr();
 				
 			}
 			$paramsData['Content'] = $text;
 			$paramsData['MsgType'] = 'text';
-			// 用户发送的信息，要保存到数据库// 消息类型: 0表示用户发送  1表示管理员回复 2表示管理员群发消息 3 自动回复  4聊天室信息
-			DBUtil::saveMsg($openid, $content, $createtime, "" , "3", "0");
+			// 用户发送的信息，要保存到数据库// 消息类型: 0表示用户发送  1表示管理员回复 2表示管理员群发消息 3 自动回复  4聊天室信息 5用户私聊管理员
 		}
 		return parent::packageData($postData,$paramsData);
 	}

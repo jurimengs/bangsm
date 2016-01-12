@@ -6,7 +6,7 @@ require_once("../configs/db.inc.php");
 
 class DBUtil {
 	/**
-	 * 消息类型: 0表示用户发送  1表示管理员回复 2表示管理员群发消息
+	 * $msgtype 消息类型: 0表示用户发送  1表示管理员回复 2表示管理员群发消息 3 自动回复  4聊天室信息 5用户私聊管理员
 	 */
 	public static function saveMsg($createby, $content, $createtime, $replyid, $msgtype, $status){
 		global $db;
