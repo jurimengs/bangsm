@@ -105,5 +105,117 @@ class WxUtil {
 		$userList = RequestUtil::httpPost($remoteUrl, "", 'post');
 		return $userList;
 	}
+	
+	
+	/**
+	 * 根据图片素材的id，拼装图文素材
+	 * @param token
+	 * @param mediaid 图片素材的id
+	 */
+	public static function uploadpicmsg($mediaid){
+		$url = wxUploadPicMsg().WxUtil::getWxTokenFromDB();
+		$title = $_POST["title"]; //  	图文消息的标题  不可空
+		$sourceurl = $_POST["sourceurl"]; // 阅读原文的链接 可空
+		$content = $_POST["content"]; // 图文  的 文， 不可空
+		$digest = $_POST["digest"]; // 图片消息的描述， 可空
+		$showcoverpic = $_POST["showcoverpic"]; // 是否显示封面，1为显示，0为不显示 
+		
+		$article = array("thumb_media_id"=>$mediaid,"author"=>"",
+						 "title"=>$title,"content_source_url"=>$sourceurl,
+						 "content"=>$content,"digest"=>$digest,
+						 "show_cover_pic"=>$showcoverpic);
+						 
+		$articles[] = $article;
+		$dataarr = array("articles"=>$articles);
+		$data = JsonUtil::getJsonStrFromArray($dataarr);
+		$response = RequestUtil::httpPost($url, $data, $action);
+		if($response["errcode"] == 0) {
+			/* response: 
+			 * {
+			   "type":"news",
+			   "media_id":"CsEf3ldqkAYJAU6EJeIkStVDSvffUJ54vqbThMgplD-VJXXof6ctX5fI6-aYyUiQ",
+			   "created_at":1391857799
+			}*/
+			return $response["media_id"];
+		}
+		return null;
+		/*
+		$data = '{
+	   		"articles": [
+				{
+		            "thumb_media_id":$mediaid,
+		            "author":"xxx",
+					"title":"Happy Day",
+					"content_source_url":"www.qq.com",
+					"content":"content",
+					"digest":"digest",
+		            "show_cover_pic":"1"
+				}
+		    ]
+		}'
+		*/
+	}
+
+	/**
+	 * 上传临时图片素材， 上限5000
+	 * type  媒体文件类型，分别有图片（image）、语音（voice）、视频（video）和缩略图（thumb）
+	 * 
+	 */
+	public static function uploadpic($meidaType, $mediapath){
+		$url = wxUploadPic().self::getWxTokenFromDB()."&type=".$meidaType;
+		//  curl 函数 CURLOPT_POSTFIELDS 里如果传的 一个数组 默认就会以multipart/form-data请求，所以 文件数据是这样写的：$file['media'] = "@/www/test.jpg";
+		$data['media'] = "@".$mediapath;
+		echo print_r($data);
+		//$data = JsonUtil::getJsonStrFromArray($dataarr);
+		$response = self::http_post($url, $data);
+		echo print_r($response);
+		if($response["errcode"] == 0) {
+			/* response: 
+			 * {
+			   "type":"news",
+			   "media_id":"CsEf3ldqkAYJAU6EJeIkStVDSvffUJ54vqbThMgplD-VJXXof6ctX5fI6-aYyUiQ",
+			   "created_at":1391857799
+			}*/
+			return $response["media_id"];
+		}
+		return null;
+		/*
+		$data = '{
+	   		"articles": [
+				{
+		            "thumb_media_id":$mediaid,
+		            "author":"xxx",
+					"title":"Happy Day",
+					"content_source_url":"www.qq.com",
+					"content":"content",
+					"digest":"digest",
+		            "show_cover_pic":"1"
+				}
+		    ]
+		}'
+		*/
+	}
+	
+	
+	public static function http_post($url,$param){
+        $oCurl = curl_init();
+        //下面判断https 和 http；因为钉钉接口是 Https请求
+        if(stripos($url,"https://")!==FALSE){
+                curl_setopt($oCurl, CURLOPT_SSL_VERIFYPEER, FALSE);
+                curl_setopt($oCurl, CURLOPT_SSL_VERIFYHOST, false);
+        }
+        curl_setopt($oCurl, CURLOPT_URL, $url);
+        curl_setopt($oCurl, CURLOPT_RETURNTRANSFER, 1 );
+        curl_setopt($oCurl, CURLOPT_POST,true);
+        curl_setopt($oCurl, CURLOPT_POSTFIELDS,$param);  
+        $sContent = curl_exec($oCurl);
+        $aStatus = curl_getinfo($oCurl);
+        curl_close($oCurl);
+        if(intval($aStatus["http_code"])==200){
+                return $sContent;
+        }else{
+                return false;
+        }
+}
 }
 ?>

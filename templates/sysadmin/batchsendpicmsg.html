@@ -1,0 +1,43 @@
+{include file="sysadmin/header.tpl"}
+<div class="wrap map"> 
+    <dl> 
+        <dt>微信功能 &gt;&gt; 微信图文消息素材管理</dt> 
+        <dd> 
+            <!--<a href="javascript:void(0)" onclick="deleteselected();" class="link">删除用户</a>
+            <a href="?action=toaddpage" class="link">添加用户</a> -->
+        </dd> 
+   </dl> 
+</div> 
+
+<form action="" method="get" id="searchForm"> 
+<div class="wrap title"> 
+	<dl> 
+    	<dt style="width: 800px;">微信图文消息素材管理
+    		<div style="color: red;">(文件类型为jpeg、gif、pjpeg类型，并且不能超过2M)</div>
+    	</dt> 
+        <dd>        
+        <!--<input type="text" name="keyword" id="keyword" value="" title="根据组名称搜索" onfocus="this.value='';" /> 
+        <input type="submit" name="button" id="btnSearch" value=" 搜 索 组 " /> -->
+        </dd> 
+    </dl>
+</div> 
+</form> 
+
+<div class="wrap"> 
+<form id="form1" method="POST" action="?action=sendnewmsg" enctype="multipart/form-data">
+	<table width="100%" cellpadding="0" cellspacing="0" class="list"> 
+		<tr>
+			<td>图片:</td>
+			<td><input type="file" name="media"/></td>
+			<td><input type="submit" value="上传素材"/></td>
+		</tr>
+	</table> 
+</form>
+
+<div class="desc">*</div> 
+</div> 
+
+{literal} 
+<script type="text/javascript"> 
+</script> 
+{/literal}

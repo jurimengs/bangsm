@@ -94,10 +94,11 @@ function wxUploadPicMsg(){
 }
 
 /**
- * upload pic merterials
+ * upload pic/media/vedio merterials
  */
 function wxUploadPic(){
-     return "https://api.weixin.qq.com/cgi-bin/material/add_news?access_token=";
+    //return "https://api.weixin.qq.com/cgi-bin/media/upload?access_token=";
+    return "http://file.api.weixin.qq.com/cgi-bin/media/upload?access_token=";
 }
  
 function getLogFile($fname){
