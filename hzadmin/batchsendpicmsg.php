@@ -136,7 +136,10 @@ function sendnewmsg() {
 				//echo "Stored in: " . $tmp_file_path.$media["name"];
 				// 保存到本地后，上传
 			}
+			// 调素材管理接口上传图片，得到meidaid
 			$picmediaid = WxUtil::uploadpic($meidaType, $tmp_file_path.$media["name"]);
+			// 调保存接口，保存图文消息, 得到图文media_id
+			WxUtil::uploadpicmsg($meidaType, $tmp_file_path.$media["name"]);
 		}
 	} else {
 		echo "文件类型、大小不符合要求";

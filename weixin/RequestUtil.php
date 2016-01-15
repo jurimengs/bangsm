@@ -70,6 +70,32 @@ class RequestUtil {
         return $arr; // 返回数据
     }
 	
+	/**
+	* 上传文件的兼容5.6以后版本的http请求
+	*/
+	public static function httpFilePost($url,$param){
+        $oCurl = curl_init();
+        //下面判断https 和 http
+        if(stripos($url,"https://")!==FALSE){
+            curl_setopt($oCurl, CURLOPT_SSL_VERIFYPEER, FALSE);
+            curl_setopt($oCurl, CURLOPT_SSL_VERIFYHOST, false);
+        }
+        curl_setopt($oCurl, CURLOPT_URL, $url);
+        curl_setopt($oCurl, CURLOPT_RETURNTRANSFER, 1 );
+        curl_setopt($oCurl, CURLOPT_POST,true);
+		// php版本问题，如果这一句没有，就上传不了。而且，必需要放在 CURLOPT_POSTFIELDS 前面
+		curl_setopt($oCurl, CURLOPT_SAFE_UPLOAD, false);
+        curl_setopt($oCurl, CURLOPT_POSTFIELDS,$param);
+        $sContent = curl_exec($oCurl);
+        $aStatus = curl_getinfo($oCurl);
+        curl_close($oCurl);
+        if(intval($aStatus["http_code"])==200){
+                return $sContent;
+        }else{
+                return false;
+        }
+	}
+		
 }
 
 ?>

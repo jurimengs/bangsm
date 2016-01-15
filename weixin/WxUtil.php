@@ -164,11 +164,11 @@ class WxUtil {
 	public static function uploadpic($meidaType, $mediapath){
 		$url = wxUploadPic().self::getWxTokenFromDB()."&type=".$meidaType;
 		//  curl 函数 CURLOPT_POSTFIELDS 里如果传的 一个数组 默认就会以multipart/form-data请求，所以 文件数据是这样写的：$file['media'] = "@/www/test.jpg";
-		$data['media'] = "@".$mediapath;
-		echo print_r($data);
+		//$data['media'] = "@".$mediapath;
+		$data = array("media" => "@".$mediapath);
 		//$data = JsonUtil::getJsonStrFromArray($dataarr);
-		$response = self::http_post($url, $data);
-		echo print_r($response);
+		$response = RequestUtil::httpFilePost($url, $data);
+		//echo print_r($response);
 		if($response["errcode"] == 0) {
 			/* response: 
 			 * {
@@ -179,43 +179,7 @@ class WxUtil {
 			return $response["media_id"];
 		}
 		return null;
-		/*
-		$data = '{
-	   		"articles": [
-				{
-		            "thumb_media_id":$mediaid,
-		            "author":"xxx",
-					"title":"Happy Day",
-					"content_source_url":"www.qq.com",
-					"content":"content",
-					"digest":"digest",
-		            "show_cover_pic":"1"
-				}
-		    ]
-		}'
-		*/
 	}
 	
-	
-	public static function http_post($url,$param){
-        $oCurl = curl_init();
-        //下面判断https 和 http；因为钉钉接口是 Https请求
-        if(stripos($url,"https://")!==FALSE){
-                curl_setopt($oCurl, CURLOPT_SSL_VERIFYPEER, FALSE);
-                curl_setopt($oCurl, CURLOPT_SSL_VERIFYHOST, false);
-        }
-        curl_setopt($oCurl, CURLOPT_URL, $url);
-        curl_setopt($oCurl, CURLOPT_RETURNTRANSFER, 1 );
-        curl_setopt($oCurl, CURLOPT_POST,true);
-        curl_setopt($oCurl, CURLOPT_POSTFIELDS,$param);  
-        $sContent = curl_exec($oCurl);
-        $aStatus = curl_getinfo($oCurl);
-        curl_close($oCurl);
-        if(intval($aStatus["http_code"])==200){
-                return $sContent;
-        }else{
-                return false;
-        }
-}
 }
 ?>
