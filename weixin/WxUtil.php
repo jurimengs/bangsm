@@ -109,18 +109,18 @@ class WxUtil {
 	
 	/**
 	 * 根据图片素材的id，拼装图文素材
-	 * @param token
-	 * @param mediaid 图片素材的id
+	 * 	$mediaid  
+	 * 	$title  图文消息的标题  不可空
+		$sourceurl 阅读原文的链接 可空
+		$content 图文  的 文， 不可空
+		$digest 图片消息的描述， 可空
+		$showcoverpic 是否显示封面，1为显示，0为不显示 
+	 * 
 	 */
-	public static function uploadpicmsg($mediaid){
+	public static function uploadpicmsg($mediaid, $title, $sourceurl, $content, $digest, $showcoverpic){
 		$url = wxUploadPicMsg().WxUtil::getWxTokenFromDB();
-		$title = $_POST["title"]; //  	图文消息的标题  不可空
-		$sourceurl = $_POST["sourceurl"]; // 阅读原文的链接 可空
-		$content = $_POST["content"]; // 图文  的 文， 不可空
-		$digest = $_POST["digest"]; // 图片消息的描述， 可空
-		$showcoverpic = $_POST["showcoverpic"]; // 是否显示封面，1为显示，0为不显示 
 		
-		$article = array("thumb_media_id"=>$mediaid,"author"=>"",
+		$article = array("thumb_media_id" => $mediaid,"author"=>"",
 						 "title"=>$title,"content_source_url"=>$sourceurl,
 						 "content"=>$content,"digest"=>$digest,
 						 "show_cover_pic"=>$showcoverpic);
@@ -128,17 +128,8 @@ class WxUtil {
 		$articles[] = $article;
 		$dataarr = array("articles"=>$articles);
 		$data = JsonUtil::getJsonStrFromArray($dataarr);
-		$response = RequestUtil::httpPost($url, $data, $action);
-		if($response["errcode"] == 0) {
-			/* response: 
-			 * {
-			   "type":"news",
-			   "media_id":"CsEf3ldqkAYJAU6EJeIkStVDSvffUJ54vqbThMgplD-VJXXof6ctX5fI6-aYyUiQ",
-			   "created_at":1391857799
-			}*/
-			return $response["media_id"];
-		}
-		return null;
+		$response = RequestUtil::httpPost($url, $data, 'post');
+		return $response;
 		/*
 		$data = '{
 	   		"articles": [
@@ -168,17 +159,7 @@ class WxUtil {
 		$data = array("media" => "@".$mediapath);
 		//$data = JsonUtil::getJsonStrFromArray($dataarr);
 		$response = RequestUtil::httpFilePost($url, $data);
-		//echo print_r($response);
-		if($response["errcode"] == 0) {
-			/* response: 
-			 * {
-			   "type":"news",
-			   "media_id":"CsEf3ldqkAYJAU6EJeIkStVDSvffUJ54vqbThMgplD-VJXXof6ctX5fI6-aYyUiQ",
-			   "created_at":1391857799
-			}*/
-			return $response["media_id"];
-		}
-		return null;
+		return $response;
 	}
 	
 }

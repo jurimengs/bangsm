@@ -86,11 +86,11 @@ class RequestUtil {
 		// php版本问题，如果这一句没有，就上传不了。而且，必需要放在 CURLOPT_POSTFIELDS 前面
 		curl_setopt($oCurl, CURLOPT_SAFE_UPLOAD, false);
         curl_setopt($oCurl, CURLOPT_POSTFIELDS,$param);
-        $sContent = curl_exec($oCurl);
+        $tmpInfo = curl_exec($oCurl);
         $aStatus = curl_getinfo($oCurl);
         curl_close($oCurl);
         if(intval($aStatus["http_code"])==200){
-                return $sContent;
+                return json_decode($tmpInfo, true);
         }else{
                 return false;
         }

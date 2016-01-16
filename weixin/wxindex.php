@@ -11,6 +11,7 @@ require_once("XmlUtil.php");
 require_once("TypeParent.php");
 require_once("TypeEvent.php");
 require_once("TypeText.php");
+require_once("TypeImage.php");
 
 $echostr = "";
 if(isset($_GET["echostr"])) {
@@ -52,6 +53,9 @@ function dealRequest($postXml){
 		$te -> dealByAychReturn($postData);
 	} elseif($postData['MsgType'] == "text"){
 		$tt = new TypeText();
+		$tt -> deal($postData);
+	} elseif($postData['MsgType'] == "image"){
+		$tt = new TypeImage();
 		$tt -> deal($postData);
 	}
 }

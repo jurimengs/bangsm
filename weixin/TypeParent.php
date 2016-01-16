@@ -74,8 +74,25 @@ class TypeParent {
 	public function batchSendPicMsg($openidarr, $mediaid){
 		$data = array("touser"=>$openidarr, "mpnews"=>array("media_id"=>$mediaid), "msgtype"=>"mpnews");
 		$datastr = JsonUtil::getJsonStrFromArray($data);
-		echo print_r($datastr);
+		//echo print_r($datastr);
 		$url = wxBatchSendPicMsg().WxUtil::getWxTokenFromDB();
+		$response = RequestUtil::httpPost($url, $datastr, 'post');
+		//echo print_r($response);
+		if($response['errcode'] == 0) {
+			return "图文消息群发成功";
+		}
+		return $respArr["errcode"].":".$respArr["errmsg"];
+	}
+	
+	/**
+	 * 图文消息推送预览接口
+	 */
+	public function batchSendPicMsgYulan($openidarr, $mediaid){
+		$yulanurl = "https://api.weixin.qq.com/cgi-bin/message/mass/preview?access_token=";
+		$data = array("touser"=>$openidarr, "mpnews"=>array("media_id"=>$mediaid), "msgtype"=>"mpnews");
+		$datastr = JsonUtil::getJsonStrFromArray($data);
+		//echo print_r($datastr);
+		$url = $yulanurl.WxUtil::getWxTokenFromDB();
 		$response = RequestUtil::httpPost($url, $datastr, 'post');
 		if($response['errcode'] == 0) {
 			return "图文消息群发成功";

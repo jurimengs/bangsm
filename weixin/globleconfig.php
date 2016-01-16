@@ -131,5 +131,11 @@ function getSubPages(){
 	return 5;
 }
 
+/**
+ * 返回的是globleconfig.php所在目录全路径
+ */
+function getRootPath(){
+	return str_replace('\\', '/', dirname(__FILE__));
+}
 
 ?>
