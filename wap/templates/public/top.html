@@ -1,0 +1,99 @@
+<div class="top-warp">
+    <div class="top group">
+        <div><input  class="search-top"></div>
+        <a href="index.html">
+            <div class="top-left">
+                <a><img src="../images/logo.jpg"></a>
+                <a class="name">岩齐科技<span> &nbsp;|&nbsp;</span></a>
+                <a class="title">ENKITEK 开放智联 融合进化</a>
+            </div>
+        </a>
+        <div class="top-right">
+            <ul class="nav">
+                <a href="/yanqi/product/Product.html"><li>{$product_t.name}</li></a>
+                <a href="/yanqi/plan/Plan.html"><li>{$plan_t.name}</li></a>
+                <a href="/yanqi/server/Server.html"><li>{$server_t.name}</li></a>
+                <a href="/yanqi/technology/Download.html"><li>{$technology_t.name}</li></a>
+                <a href="/yanqi/about/About.html"><li>{$abouts_t.name}</li></a>
+                <a href="/yanqi/contact/Contact.html"><li>{$contact_t.name}</li></a>
+            </ul>
+            <div class="menu-nav"  style="display: none;">
+                <ul>
+                    <li style=" width: 343px;">
+                        <h3><a> &nbsp {$product_t.name}</a></h3>
+                        {section name=i loop=$product}
+
+                        {if $smarty.section.i.last=='true'}
+                        <dl style="margin-top: 35px;">
+                            <dt><img src="../images/menu.jpg"> <a>{$product[i].name}</a></dt>
+                        </dl>
+                        {else}
+                        <dl>
+                            <dt><img src="../images/menu.jpg"> <a>{$product[i].name}</a></dt>
+                            {foreach $product[i].par as $v}
+                            {if $v.parent_id==$product[i].id}
+                            <dd><a href="/yanqi/product/Product-List-{$v.id}.html">{$v.name}</a></dd>
+                            {/if}
+                            {/foreach}
+                        </dl>
+                        {/if}
+                        {/section}
+
+                    </li>
+                    <li>
+                        <h3><a>{$plan_t.name}</a></h3>
+                        <dl>
+                            {section name=i loop=$plan}
+                            <dt><a href="/yanqi/plan/Plan-{$plan[i].id}.html">&nbsp {$plan[i].name}</a></dt>
+                            {/section}
+                        </dl>
+
+                    </li>
+                    <li>
+                        <h3><a>{$server_t.name}</a></h3>
+                        <dl>
+                            {section name=i loop=$server}
+                            <dt><a href="/yanqi/server/Server{$server[i].id}.html">&nbsp {$server[i].name}</a></dt>
+                            {/section}
+                        </dl>
+                    </li>
+                    <li>
+                        <h3><a>{$technology_t.name}</a></h3>
+                        {section name=i loop=$technology}
+                        <dl>
+                            <dt><img src="../images/menu.jpg"> <a>{$technology[i].name}</a></dt>
+                            {foreach $technology[i].par as $v}
+                            {if $v.parent_id==$technology[i].id}
+
+                                {if $v.parent_id==2}
+                                 <dd><a href="/yanqi/technology/Download-{$v.id}.html">{$v.name}</a></dd>
+                                {else}
+                                 <dd><a href="/yanqi/technology/Knowledge-{$v.id}.html">{$v.name}</a></dd>
+                                {/if}
+
+                            {/if}
+                            {/foreach}
+                        </dl>
+                        {/section}
+                    </li>
+                    <li >
+                        <h3><a>{$abouts_t.name}</a></h3>
+                        <dl>
+                            {section name=i loop=$abouts}
+                            <dt><a>&nbsp {$abouts[i].name}</a></dt>
+                            {/section}
+                        </dl>
+                    </li>
+                    <li style="border-right:none;"> <h3>{$contact_t.name}</a></h3>
+                        <dl>
+                            {section name=i loop=$contact}
+                            <dt><a>&nbsp {$contact[i].name}</a></dt>
+                            {/section}
+                        </dl>
+                    </li>
+
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>

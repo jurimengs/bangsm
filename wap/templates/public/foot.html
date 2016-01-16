@@ -1,0 +1,72 @@
+<div class="footer-warp">
+    <div class="footer-one group">
+        <ul>
+            <li>
+                <dl>
+                    <dt>产品</dt>
+                    {section name=i loop=$product}
+                    <dd>
+                        <a href="/yanqi/product/Product.html"> {$product[i].name}</a>
+                    </dd>
+                    {/section}
+                </dl>
+            </li>
+            <li>
+                <dl>
+                    <dt>解决方案</dt>
+                    {section name=i loop=$plan}
+                    <dd><a> {$plan[i].name}</a></dd>
+                    {/section}
+                </dl>
+            </li>
+            <li>
+                <dl>
+                    <dt>服务</dt>
+                    {section name=i loop=$server}
+                    <dd><a>{$server[i].name}</a></dd>
+                    {/section}
+                </dl>
+            </li>
+            <li>
+                <dl>
+                    <dt>技术支持</dt>
+                    {section name=i loop=$technology}
+                    <dd>
+                        {$technology[i].name}
+                    </dd>
+                    {/section}
+                </dl>
+            </li>
+            <li>
+                <dl>
+                    <dt>关于岩齐</dt>
+                    {section name=i loop=$abouts}
+                    <dd><a>{$abouts[i].name}</a></dd>
+                    {/section}
+                </dl>
+            </li>
+            <li>
+                <dl>
+                    <dt>联系我们</dt>
+                    {section name=i loop=$contact}
+                    <dd><a>{$contact[i].name}</a></dd>
+                    {/section}
+                </dl>
+            </li>
+        </ul>
+        <div class="care">
+            <img src="../images/ewm.jpg">
+
+            <div>
+                关注我，拍我
+            </div>
+        </div>
+    </div>
+    <div class="footer-two-warp">
+        <div class="footer-two">
+            Copyright © 2015 enkitek.cn Powered by Alsovalue <span style="margin-left: 658px;">Follow
+                    ENKITEK
+                    <img src="../images/wx.jpg"><img src="../images/wb.jpg"></span>
+        </div>
+    </div>
+</div>

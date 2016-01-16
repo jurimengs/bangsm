@@ -1,0 +1,130 @@
+{include file="sysadmin/header.tpl"}
+<div class="wrap map"> 
+    <dl> 
+        <dt>微信功能 &gt;&gt; 微信消息管理</dt> 
+        <dd> 
+           <!-- <a href="?action=delete" class="link">删除</a>-->
+        </dd> 
+   </dl> 
+</div> 
+
+<form action="" method="get" id="searchForm"> 
+<div class="wrap title"> 
+	<dl> 
+    	<dt <dt style="width: 800px;">
+    		微信消息
+    		<div style="color: red;">(请在消息发送的24小时内完成回复，超过后无法回复)</div>
+    	</dt> 
+        <dd>        
+        <!--<input type="text" name="keyword" id="keyword" value="{$keyword}" title="根据名称搜索" onfocus="this.value='';" /> 
+        <input type="submit" name="button" id="btnSearch" value=" 搜 索 " /> -->
+        </dd> 
+    </dl>
+</div> 
+</form> 
+
+<div class="wrap"> 
+  <table width="100%" cellpadding="0" cellspacing="0" class="list"> 
+    <thead> 
+    <tr> 
+      <th><input type="checkbox" id="all" /></th> 
+      <th class="text-left">消息类型</th>
+      <th>消息内容</th>
+      <th>是否回复</th>
+      <th>消息创建人</th> 
+      <th>消息创建时间</th> 
+    </tr>  
+     </thead> 
+    <tbody> 
+    	
+    {section name=message loop=$messageArray}
+    <tr> 
+      <td><input type="checkbox" name="id[]" value="{$messageArray[message].id}" />&nbsp;</td> 
+      <td style="text-align:left;">{$messageArray[message].msgtype}</td> 
+      <td>{$messageArray[message].content}</td> 
+      <td>
+      		{if $messageArray[message].replycontent ne ""}
+	      	已回复 <a href="javascript:void(0);" onclick="showsibling(this);">查看回复</a>
+	      	{elseif $messageArray[message].replycontent eq ""}
+		      	{if $messageArray[message].timeInterval >= 24*3600}
+		      		已超时不能再回复啦
+		      	{else}
+		      		未回复 <a href="javascript:void(0);" onclick="showsibling(this);">点击回复</a>
+		      	{/if}
+	      	{/if}
+      </td>
+      <td>{$messageArray[message].nickname}</td>
+      <td>{$messageArray[message].createtime|date_format:'%Y-%m-%d %H:%M:%S'}</td>
+    </tr>
+    <tr style="display: none;">
+    	<td colspan="6">
+    		<form method="post" action="?action=reply"> 
+    			<input type="hidden" name="msgid" value="{$messageArray[message].id}" />
+    			<input type="hidden" name="createby" value="{$messageArray[message].createby}" />
+      			{if $messageArray[message].replycontent ne ""}
+	    			<div>{$messageArray[message].replycontent}</div>
+		      	{elseif $messageArray[message].replycontent eq ""}
+		      		<div><textarea name="content"></textarea></div>
+		    		<div><a onclick="reply(this);" class="link">确认回复</a></div>
+		      	{/if}
+      		</form> 
+    	</td>
+    </tr>
+    {sectionelse}
+    <tr>
+        <td colspan="4"><div class="notext">没有相关信息</div></td>
+    </tr>
+    {/section}
+    
+  
+     </tbody> 
+    </table> 
+ 	
+{$pager}
+<div class="desc">*</div> 
+</div> 
+
+{literal} 
+<script type="text/javascript"> 
+<!--
+$(document).ready(function() {
+	$("#form1").validate({
+		rules: {
+			name: {
+			required: true
+			}
+		},
+		submitHandler:function(form){
+			$("#btnSubmit").attr("disabled",true);
+			form.submit();
+		}
+	});
+});
+
+function showsibling(obj){
+	var aimobj = $(obj).parent().parent().next();
+	if(aimobj.css("display") == "none") {
+		aimobj.show();
+		//$(obj).text("收起<<");
+	} else {
+		aimobj.hide();
+		//$(obj).text("展开>>");
+	}
+}
+
+function reply(obj){
+	var contentObj = $(obj).parent().prev().children(":first");
+	//alert(contentObj.val());
+	
+	if(!!! contentObj.val()){
+		alert("请输入回复内容");
+		return;
+	}
+	if(confirm("确认回复?")) {
+		$(obj).parent().parent().submit();
+	}
+}
+
+//-->
+</script> 
+{/literal}

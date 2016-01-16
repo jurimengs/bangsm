@@ -1,0 +1,297 @@
+
+html, body {
+    font-size: 62.5%;
+    margin: 0;
+    padding: 0;
+background-color: #fff;
+}
+
+ul li a,p {
+    color: #232525;
+    list-style: none;
+    font-weight: normal;
+}
+
+body, section, ul, li, div {
+    margin: 0;
+    padding: 0
+}
+
+header {
+    width: 100%;
+    height: 40px;
+    position: fixed;
+    top:0;
+    background-color: #fff;
+    z-index: 12000000;
+}
+
+.sw {
+
+    height: 100%;
+    overflow: hidden
+}
+/*.more{height:40px;}*/
+.sw .log {
+    float: left;
+    font-weight: bold;
+    width: 240px;
+    margin-left: 0.4rem;
+    background: url("../images/log.png") no-repeat left center;
+    height: 40px;
+    background-size:100%;
+}
+.log1 {
+    float: left;
+    font-weight: bold;
+    width: 240px;
+    margin-left: 1rem;
+    height: 40px;
+    line-height: 40px;
+}
+.sw img {
+    width: 100%;
+    margin-top: 0.3rem;
+}
+
+.sw a {
+    width: 40px;
+    height: 40px;
+    display: block;
+    background: url("../images/search.png") no-repeat center center;
+    float: right;
+    cursor: pointer;
+    overflow: hidden;
+    background-size: 70%;
+}
+
+.news_list {
+    overflow: hidden;
+    margin-top: 1rem
+}
+
+.news_list, .news_list ul {
+    width: 100%;
+}
+
+.news_list ul li {
+    /*padding: 1rem;*/
+    overflow: hidden;
+    /*border-bottom: 1px solid #dbdbdb;*/
+}
+
+.news_list ul li h3 {
+    font-size: 1.6rem;
+
+}
+
+.news_list ul li p {
+    font-size: 1.6rem;
+}
+
+.news_list .img {
+    float: left;
+    width: 30%
+}
+
+.news_list .img img {
+    width: 100%
+}
+
+.news_list .new_content {
+    float: right;
+    width: 68%;
+
+}
+
+
+
+.list, .list ul {
+    width: 100%;
+}
+
+.list li {
+    padding: 1rem;
+    overflow: hidden;
+    border-bottom: 1px solid #dbdbdb;
+}
+
+.list li h3 {
+    font-weight: normal;
+    font-size: 1.6rem
+}
+
+.list li h4 {
+    font-weight: normal;
+    font-size: 1.4rem;
+    text-align: center;
+    cursor:pointer;
+}
+
+.list li p {
+    font-size: 1.2rem;
+    color: #626262;
+    margin-top: 1rem;
+    margin-bottom: 0;
+}
+
+.search-box {
+    background-color: #ebebeb;
+    position: absolute;
+    top: 40px;
+    z-index: 100;
+    width: 100%;
+    display: none;
+}
+.search-box-input{ margin: 1rem;overflow: hidden}
+.search-box input {
+    height: 3rem;
+    line-height: 3rem;
+    padding-left: 0.5rem;
+    color: #a7a7a7;
+    font-size: 1.4rem;
+    width: 100%;
+}
+
+.search-box1 {
+    display: block
+}
+.fou{
+    margin-left:12px;
+}
+.news_title {
+    margin: 1rem;
+    border-bottom: 1px solid #dbdbdb;
+}
+
+.news_title h3 {
+    font-size: 1.6rem;
+}
+
+.new_article {
+    margin: 1rem;
+}
+
+.new_article p {
+    margin: 2rem 0
+}
+
+.news_title p {
+    font-size: 1.2rem;
+    margin-top: 1rem;
+    margin-bottom: 0.5rem;
+}
+
+.new_img {
+    margin: 1rem 0;
+}
+
+.new_img img {
+    width: 100%;
+}
+
+.news-details footer {
+    height: 4rem;
+    line-height: 4rem;
+    text-align: center;
+    color: #005a47;
+    border-top: 1px solid #dbdbdb;
+    margin: 3rem 1rem
+}
+.interaction{ margin-top: 40px;}
+
+.interaction h3 {
+    font-size: 1.8rem;
+    border-bottom: 1px solid #dbdbdb;
+    padding-bottom: 1rem;
+    margin: 1rem 1rem;
+}
+
+.interaction_img {
+    margin: 1rem 1rem;
+}
+
+.interaction_img img {
+    width: 100%;
+}
+
+.interaction_content h4 {
+    font-size: 1.6rem;
+    margin: 0 1rem;
+}
+
+.interaction_content p {
+    font-size: 1.4rem;
+    margin-bottom: 2rem;
+    padding: 0 1rem;
+}
+
+.studybanner img {
+    width: 100%;
+}
+
+.studylist {
+    width: 100%;
+    overflow: hidden;
+    margin-top: 1rem;
+    margin-bottom: 5rem
+}
+
+.studylist li {
+    float: left;
+    width: 30%;
+    margin: 1.66%;
+    position: relative;
+}
+
+.studylist li img {
+    width: 100%;
+}
+
+.tcopy {
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    background-color: #000000;
+    opacity: 0.8;
+    text-align: center;
+    color: #fff;
+    font-size: 1.2rem;
+    padding: 0.5rem 0;
+}
+.news,.list,.studybanner{ margin-top:40px; }
+.news-details{margin-top:60px;}
+.study-list{ width: 100%; margin-top:60px; margin-bottom: 2rem}
+.study-list li{width: 100%; overflow: hidden;font-size: 1.6rem;  font-weight: normal}
+.li-con{ margin:0 1rem; overflow: hidden; padding: 1rem 0; border-bottom: 1px solid #dbdbdb;}
+.li-content{ float: left; width: 62%; }
+.studyimg{ float: right; width: 37%;}
+.date{ color: #626262; margin-top: 1rem; overflow: hidden; }
+.studydetails-title{  font-size: 1.6rem;  margin: 0 1rem;margin-top: 50px; overflow: hidden; border-bottom: 1px solid #dbdbdb }
+.studydetails-title p{font-weight: bold;}
+.studydetails-title .date{font-weight: normal}
+.study-content{ margin: 1rem ;}
+.simg img{ width: 100%;}
+.study-p p{ margin: 1rem 0;}
+.study-p{ border-bottom: 1px solid #dbdbdb;}
+.form{ overflow: hidden; margin-top: 3rem;}
+.form h3{ color: #004b36; font-size: 2rem}
+.form li{ margin: 1rem 0; font-size: 1.6rem; overflow: hidden}
+.form li p{ margin-bottom: 1rem;}
+.form li .customer{ margin-left: 0.5rem}
+.form li .title{ line-height: 3rem; margin-left: 0.5rem; float: left }
+.form li input[type="text"]{ height: 3rem; line-height: 3rem; float: left; margin-left: 2rem; width: 60%;border: 1px solid #b9b9b9;}
+.form li input[type="date"]{ height: 3rem; line-height: 3rem; float: left; margin-left: 2rem; width: 60%;border: 1px solid #b9b9b9;}
+.form li input[type="checkbox"]{ width: 1.5rem; height: 1.5rem; background-color: #fff;margin: 0 0.5rem;border: 1px solid #b9b9b9;}
+.submit{ margin-left: 0.5rem; width: 5rem; height: 3rem; line-height: 3rem; background-color: #fff; text-align: center; border: 1px solid #b9b9b9;}
+.form li textarea{ margin-left: 0.5rem; height: 5rem; width: 95%;border: 1px solid #b9b9b9;}
+.t{ float: left; margin-right: 1rem}
+.change{ float: left; line-height: 3rem}
+.c_banner{ width: 100%; margin-top: 40px;}
+.courselist h3{ margin-top: 1rem;}
+.courselist p{ font-size: 1.4rem; margin: 0.5rem 0;}
+.form1 li input{ float: right !important; margin-right: 1rem}
+.info{ width: 60% !important; float: right !important;margin-right: 1rem }
+.submit2{ float: right; margin-right:1rem; width: 60%; }
+.submit2 .submit{ margin-left: 0;}
+.ordertitle{ margin-top: 1rem; margin-bottom: 0;}

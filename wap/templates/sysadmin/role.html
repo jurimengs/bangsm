@@ -1,0 +1,209 @@
+{include file="sysadmin/header.tpl"}
+<div class="wrap map"> 
+    <dl> 
+        <dt>系统设置 &gt;&gt; 角色管理</dt> 
+        <dd> 
+            <a href="?" class="link">角色信息</a>
+            <a href="?action=tj" class="link">添加角色</a> 
+        </dd> 
+   </dl> 
+</div> 
+
+{if $action eq ""}
+<form action="" method="get" id="searchForm"> 
+<div class="wrap title"> 
+	<dl> 
+    	<dt>角色信息</dt> 
+        <dd>        
+        <input type="text" name="keyword" id="keyword" value="{$keyword}" title="根据名称搜索" onfocus="this.value='';" /> 
+        <input type="submit" name="button" id="btnSearch" value=" 搜 索 " /> 
+        </dd> 
+    </dl>
+</div> 
+</form> 
+
+<div class="wrap"> 
+<form method="post" action="?action=delete" id="form1"> 
+  <table width="100%" cellpadding="0" cellspacing="0" class="list"> 
+    <thead> 
+    <tr> 
+      <th><input type="checkbox" id="all" /></th> 
+      <th class="text-left">角色名称</th> 
+      <th>拥有用户数</th> 
+      <th>操作</th> 
+    </tr>  
+     </thead> 
+    <tbody> 
+    {section name=list loop=$roleList}
+    <tr> 
+      <td>{if $roleList[list].id neq 1}<input type="checkbox" name="id[]" value="{$roleList[list].id}" />{/if}&nbsp;</td> 
+      <td style="text-align:left;">{$roleList[list].name}</td> 
+      <td>{$roleList[list].user_count}</td> 
+      <td>
+      {if $roleList[list].id neq 1}
+      <a href="?action=bj&id={$roleList[list].id}" class="edit">修改</a>
+      <a href="?action=rolemenu&id={$roleList[list].id}" class="priv">分派权限</a>
+      {/if}&nbsp;
+      </td> 
+    </tr> 
+    {sectionelse}
+    <tr>
+        <td colspan="4"><div class="notext">没有相关信息</div></td>
+    </tr>
+    {/section}
+    
+  
+     </tbody> 
+    </table> 
+ 	
+    <div class="page"> 
+        <dl> 
+            <dt><input type="submit" name="btnDelete" value="删除" onclick="return listDelete(this.form.name);" id="btnDelete" /></dt> 
+            <dd> 
+            {$pager}        
+			</dd> 
+        </dl> 
+    </div> 
+         
+</form> 
+<div class="desc">*</div> 
+</div> 
+
+{elseif $action eq "tj"}
+<div class="wrap title"> 
+	<dl> 
+    	<dt>添加角色</dt> 
+        <dd>        
+        <span class="red">*</span>号为必填项
+        </dd> 
+    </dl>
+</div> 
+
+<div class="wrap">
+<form id="form1" name="form1" method="post" action="?action=add">
+<table class="add">
+<tr>
+	<th>角色名称：<font class="red">*</font></th>
+    <td>
+    <input name="name" maxlength="20" type="text" class="input" id="name" style="width:200px;" /> 
+    <span>角色名称不能重复</span>
+    </td>
+</tr>
+<tr>
+	<th></th>
+    <td>
+    <input name="btnSubmit" type="submit" id="btnSubmit" value="确定" /> 
+    <input name="btnReset" type="reset" id="btnReset" value="清除" /> 
+    <input name="btnBack" type="button" id="btnBack" value="返回" /> 
+    </td>
+</tr>
+</table>
+</form> 
+</div> 
+
+{elseif $action eq "bj"}
+<div class="wrap title"> 
+	<dl> 
+    	<dt>修改角色</dt> 
+        <dd>        
+        <span class="red">*</span>号为必填项
+        </dd> 
+    </dl>
+</div> 
+
+<div class="wrap">
+<form id="form1" name="form1" method="post" action="?action=edit"> 
+<input type="hidden" name="id" value="{$role.id}" /> 
+<table class="add">
+<tr>
+	<th>角色名称：<font class="red">*</font></th>
+    <td>
+    <input name="name" maxlength="20" type="text" class="input" id="name" style="width:200px;" value="{$role.name}" /> 
+    <span>角色名称不能重复</span>    
+    </td>
+</tr>
+<tr>
+	<th></th>
+    <td>
+    <input name="btnSubmit" type="submit" id="btnSubmit" value="确定" /> 
+    <input name="btnReset" type="reset" id="btnReset" value="清除" /> 
+    <input name="btnBack" type="button" id="btnBack" value="返回" /> 
+    </td>
+</tr>
+</table>
+</form> 
+</div> 
+{elseif $action eq "rolemenu"}
+<link rel="stylesheet" type="text/css" href="jquery/dtree/dtree.css" />
+<script type="text/javascript" src="jquery/dtree/dtree.js"></script>
+<div class="wrap title"> 
+	<dl> 
+    	<dt>分派权限</dt> 
+        <dd>        
+        
+        </dd> 
+    </dl>
+</div> 
+
+<div class="wrap">
+<form id="rightForm" name="rightForm" method="post" action="?action=edit_rolemenu"> 
+<input type="hidden" name="role_id" value="{$role.id}" /> 
+<table class="add">
+<tr>
+	<th>角色名称：</th>
+    <td>
+    {$role.name}
+    </td>
+</tr>
+<tr>
+	<th></th>
+	<td>
+	<script type="text/javascript">
+	var tree = new dTree('tree','jquery/dtree','rightForm');
+	//tree.config.closeSameLevel = true;
+	//tree.config.useCookies = false;
+	tree.add("0","-1","");
+	{section name=list loop=$menuList}
+	{if $menuList[list].selected neq "0"}
+	tree.add("{$menuList[list].id}","{$menuList[list].parent_id}","{$menuList[list].name}","","{$menuList[list].name}","",'','','',1);
+	{else}
+	tree.add("{$menuList[list].id}","{$menuList[list].parent_id}","{$menuList[list].name}","","{$menuList[list].name}","",'','','',2);
+	{/if}
+	{/section}
+	document.write(tree);
+	</script>
+	</td>
+</tr>
+<tr>
+	<th></th>
+    <td>
+    <input name="btnSubmit" type="submit" id="btnSubmit" value="确定" onclick="document.getElementById('rightForm').submit()" /> 
+    <input name="btnReset" type="reset" id="btnReset" value="清除" /> 
+    <input name="btnBack" type="button" id="btnBack" value="返回" /> 
+    </td>
+</tr>
+</table>
+</form> 
+<div class="desc">*</div>
+</div> 
+{/if}
+
+{literal} 
+<script type="text/javascript"> 
+<!--
+$(document).ready(function() {
+	$("#form1").validate({
+		rules: {
+			name: {
+			required: true
+			}
+		},
+		submitHandler:function(form){
+			$("#btnSubmit").attr("disabled",true);
+			form.submit();
+		}
+	});
+})
+//-->
+</script> 
+{/literal}

@@ -1,0 +1,17 @@
+20160117033343:  index.php newwxindex=====> 
+20160117033343:  checkSignature =====> token验证成功
+20160117033343: dealRequest ====>Array
+(
+    [ToUserName] => gh_b4c1774a1ef7
+    [FromUserName] => osp6swrNZiWtEuTy-Gj1cBVA1l38
+    [CreateTime] => 1452972822
+    [MsgType] => image
+    [PicUrl] => http://mmbiz.qpic.cn/mmbiz/icRiaF68icp1PbVyMOjHzW00QsH2aHiaTYGlT5WlHK4YldIyPfbKoZwIFRobOpxxibouhT0H2NUeommQPiblxOOgVc5A/0
+    [MsgId] => 6240470752869778416
+    [MediaId] => 6tL6BRJya2M9KSHIz44NNgO5jhuEBn40ZW7SdfFPAR7NBqVuvxeZ-S7_8fH-EIIf
+)
+
+20160117033343: saveMsg =======>
+20160117033343: queryGroupUserAndReplyMsg data ====>{"touser":"osp6swrNZiWtEuTy-Gj1cBVA1l38","msgtype":"image","image":{"image":{"media_id":"6tL6BRJya2M9KSHIz44NNgO5jhuEBn40ZW7SdfFPAR7NBqVuvxeZ-S7_8fH-EIIf"}}}
+20160117033343: getWxTokenFromDB=====> 551
+20160117033343:  RequestUtil.php httpPost =====> {"errcode":40007,"errmsg":"invalid media_id hint: [wpZ_Ka0823age6]"}

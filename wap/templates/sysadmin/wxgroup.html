@@ -1,0 +1,104 @@
+{include file="sysadmin/header.tpl"}
+<div class="wrap map"> 
+    <dl> 
+        <dt>微信功能 &gt;&gt; 微信组管理</dt> 
+        <dd> 
+            <a href="javascript:void(0)" onclick="deleteselected();" class="link">删除组</a>
+            <a href="?action=toaddpage" class="link">添加组</a> 
+        </dd> 
+   </dl> 
+</div> 
+
+<form action="" method="get" id="searchForm"> 
+<div class="wrap title"> 
+	<dl> 
+    	<dt>微信组信息</dt> 
+        <dd>        
+        <input type="text" name="keyword" id="keyword" value="" title="根据名称搜索" onfocus="this.value='';" /> 
+        <input type="submit" name="button" id="btnSearch" value=" 搜 索 " /> 
+        </dd> 
+    </dl>
+</div> 
+</form> 
+
+<div class="wrap"> 
+<form method="post" action="" id="form1"> 
+  <table width="100%" cellpadding="0" cellspacing="0" class="list"> 
+    <thead> 
+    <tr> 
+      <th><input type="checkbox" id="all" /></th> 
+      <th class="text-left">组名称</th> 
+      <th>组创建时间</th>
+      <th>创建人</th> 
+      <th>备注</th> 
+      <!--<th>查看组员</th>--> 
+    </tr>  
+     </thead> 
+    <tbody> 
+    	
+    {section name=group loop=$groupArray}
+    <tr> 
+      <td><input type="checkbox" name="groupids[]" value="{$groupArray[group].id}" />&nbsp;</td> 
+      <td style="text-align:left;">{$groupArray[group].groupname}</td> 
+      <td>{$groupArray[group].createtime}</td> 
+      <td>{$groupArray[group].createby}</td>
+      <td>{$groupArray[group].backup}</td>
+      <!--<td><a href="wxgroupuser.php?action=groupusermanage&groupid={$groupArray[group].id}">查看</a></td>-->
+    </tr> 
+    {sectionelse}
+    <tr>
+        <td colspan="4"><div class="notext">没有相关信息</div></td>
+    </tr>
+    {/section}
+    
+  
+     </tbody> 
+    </table> 
+</form>
+{$pager}
+<div class="desc">*</div> 
+</div> 
+
+{literal} 
+<script type="text/javascript"> 
+<!--
+$(document).ready(function() {
+	$("#form1").validate({
+		rules: {
+			name: {
+			required: true
+			}
+		},
+		submitHandler:function(form){
+			$("#btnSubmit").attr("disabled",true);
+			form.submit();
+		}
+	});
+});
+
+function subselected(attName){
+	obj = document.getElementsByName(attName);
+	//check_val = [];
+	var temp = false;
+	for(var i=0; i<obj.length; i++) {
+		if(obj[i].checked) {
+			temp = true;
+			break;
+		}
+	}
+	return temp;
+}
+
+function deleteselected(){
+	if(!!! subselected("groupids[]")){
+		alert("当前未选中任何记录");
+		return;
+	}
+	if(confirm("确认删除?")) {
+		document.getElementById("form1").action = "?action=deleteselected";
+		document.getElementById("form1").submit();
+	}
+}
+//-->
+</script> 
+{/literal}

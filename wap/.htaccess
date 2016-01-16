@@ -1,0 +1,21 @@
+RewriteEngine on
+RewriteRule ^index.html$ index.php
+RewriteRule ^product/Product.html$ product/Product.php
+RewriteRule ^product/Product-List-([0-9]*).html$ product/Product-List.php?tid=$1
+RewriteRule ^product/Product-Details-([0-9]*).html$ product/Product-Details.php?id=$1
+
+RewriteRule ^plan/Plan.html$ plan/Plan.php
+RewriteRule ^plan/Plan-([0-9]*).html$ plan/Plan.php?tid=$1
+RewriteRule ^plan/Plan-List-([0-9]*).html$ plan/Plan-List.php?tid=$1
+RewriteRule ^plan/Plan-Details-([0-9]*).html$ plan/Plan-Details.php?id=$1
+
+RewriteRule ^server/Server.html$ server/Server.php
+RewriteRule ^server/Server([0-9]*).html$ server/Server.php?tid=$1
+RewriteRule ^server/Server-([0-9]*).html$ server/Server.php?id=$1
+
+RewriteRule ^technology/Download.html$ technology/Download.php
+RewriteRule ^technology/Download-([0-9]*).html$ technology/Download.php?tid=$1
+
+RewriteRule ^technology/Knowledge.html$ technology/Knowledge.php
+RewriteRule ^technology/Knowledge-([0-9]*).html$ technology/Knowledge.php?tid=$1
+

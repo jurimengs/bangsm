@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="target-densitydpi=device-dpi, width=device-width, initial-scale=1, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+    <meta name="format-detection" content="telephone=no">
+    <title>{if empty($search)}{foreach $course_type as $v}{if $tid==$v.id}{$v.name}{/if}{/foreach}{else}{$search}{/if} | {$web.title}</title>
+    <link href="css/main.css" rel="stylesheet" type="text/css">
+    <link href="css/example.css" rel="stylesheet" type="text/css">
+    <script type="text/javascript" src="js/jquery-1.9.1.min.js"></script>
+    <script type="text/javascript" src="js/jquery.slides.js"></script>
+    <script type="text/javascript" src="js/index.js"></script>
+</head>
+<body>
+<header>
+    <section class="sw">
+        <div class="log"></div>
+        <a class="search"></a>
+    </section>
+    {literal}
+    <form method="post" action="Course-List.php">
+        <section class="search-box">
+            <div class="search-box-input"> <input type="text" name="search" value="请输入关键字" onfocus="if(value=='请输入关键字'){value=''}" onblur="if(value==''|| value==' '){ value='请输入关键字'}"></div>
+        </section>
+    </form>
+    {/literal}
+</header>
+<section class="study-list">
+    <ul>
+        {section name=c loop=$list max=3}
+        <a href="Course-Details.php?id={$list[c].id}">
+        <li>
+            <div class="li-con">
+                <div class="li-content" {if $list[c].color==1}style="color:red;"{/if}>
+                    {mb_substr($list[c].title,0,30,'utf-8')}
+                    <p class="date">
+                        {$list[c].time|date_format:"%Y/%m/%d"}
+                    </p>
+                </div>
+                <div class="studyimg">
+                    <img src="{$list[c].image}">
+                </div>
+            </div>
+        </li>
+        </a>
+        {/section}
+        {section name=c loop=$list start=3}
+        <a href="Course-Details.php?id={$list[c].id}">
+            <li>
+                <div class="li-con">
+                    <p {if $list[c].color==1}style="color:red;"{/if}> {mb_substr($list[c].title,0,60,'utf-8')}</p>
+                    <p class="date">
+                        {$list[c].time|date_format:"%Y/%m/%d"}
+                    </p>
+                </div>
+            </li>
+        </a>
+        {/section}
+    </ul>
+</section>
+</body>
+</html>

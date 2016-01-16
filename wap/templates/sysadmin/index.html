@@ -1,0 +1,173 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>{$web.title}</title>
+    <meta name="description" content="{$web.description}">
+    <meta name="keywords" content="{$web.keywords}">
+    <meta name="baidu-site-verification" content="wvrucrfX1o" />
+<link rel="stylesheet" type="text/css" href="css/index.css"/>
+<link rel="stylesheet" type="text/css" href="css/lxwm.css"/>
+<script type="text/javascript" src="js/jquery-1.7.2.min.js"></script>
+<script type="text/javascript" src="js/index.js"></script>
+</head>
+<body>
+
+{include file='top.html'}
+
+    <div id="main">
+    	<div id="zhuyin">
+        	<div id="main_items">
+            	<span id="zyyw">主营业务</span><span id="mi">MAIN&nbsp;ITEMS</span>
+            </div>
+            <div class="xian"></div>
+            <div id="screenshot">
+            	<ul>
+                	<li id="jzuo"><img src="img/gupiao.jpg" width="108" height="108" /></li>
+                    <li id="jzhong"><img src="img/qihuo.jpg" width="108" height="108" /></li>
+                    <li id="jyou"><img src="img/moni.jpg" width="108" height="108" /></li>
+                </ul>
+            </div>
+           	<div id="screenshot_a">
+            	<ul>
+                	<!--<li><a href="Rule.php?whatid=29" id="jzuoa">股票实盘选拔</a></li>-->
+                    <li><a href="Rule.php?whatid=30" id="jzhonga">期货实盘选拔</a></li>
+                    <li><a href="Rule.php?whattid=8" id="jyoua">期货模拟选拔</a></li>
+                </ul>
+            </div>
+        </div>
+        <div id="youshi">
+        	<div id="main_youshi">
+            	<span id="sdys">四大优势</span><span id="mi">ADVANTAGE</span>
+            </div>
+            <div class="xian">
+            </div>
+            <div id="sdys_tu">
+            	<ul>
+                	<li id="youshiA"><p></p>
+                    	<span>选拔模式一刀切，达到 条件通通签约。</span>
+                    </li>
+                    <li id="youshiB"><p></p>
+                    	<span>交易全部自主决定， 公司不做任何干涉。</span>
+                    </li>
+                    <li id="youshiC"><p></p>
+                    	<span>40%分成，一周一次 ，不留底。</span>
+                    </li>
+                    <li id="youshiD"><p></p>
+                    	<span style="width:130px;padding-left:5px;">晋级门槛低，资金 增加快。</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div id="faqs">
+        	<div id="faqs_a">
+            	<ul>
+                    {section name=i loop=$index_caidan}{if $index_caidan[i].id==1}
+                	<li class="list_a"><p class="font_s" ><span class="font_a"><a href="Faqs.php?whattid={$index_caidan[i].id}">{$index_caidan[i].name}</a></span><span class="font_b">{$index_caidan[i].entitle}</span></p><p class="font_y"><a href="Faqs.php?whattid={$index_caidan[i].id}">>>更多</a></p></li>
+                    {/if}{/section}
+
+                    {section name=i loop=$index_faq1}
+                    <li {if $smarty.section.i.index%2==0}class="font_ar"{else}class="font_ae"{/if} {if $smarty.section.i.first=='true'}style="margin-top:15px;"{/if}><a href="Faqs.php?whattid={$index_faq1[i].type_id}">{mb_substr($index_faq1[i].title,0,24,'utf-8')}</a></li>
+                    {/section}
+                </ul>
+            </div>
+            <div id="faqs_b">
+            	<ul>{section name=i loop=$index_caidan}{if $index_caidan[i].id==2}
+                	<li class="list_a"><p class="font_s" style="width:150px;"><span class="font_a"><a  href="Faqs.php?whattid={$index_caidan[i].id}">{$index_caidan[i].name}</a></span><span class="font_b">{$index_caidan[i].entitle}</span></p><p class="font_y"><a  href="Faqs.php?whattid={$index_caidan[i].id}">>>更多</a></p></li>{/if}{/section}
+
+                    {section name=i loop=$index_faq2}
+                    <li class="font_ac" {if $smarty.section.i.first=='true'}style="margin-top:15px;"{/if}><a href="Faqs.php?whattid={$index_faq2[i].type_id}">{mb_substr($index_faq2[i].title,0,24,'utf-8')}</a></li>
+                    {/section}
+                </ul>
+            </div>
+        </div>
+        <div id="news">
+        	<div id="news_a">
+            	<ul>{section name=i loop=$index_caidan}{if $index_caidan[i].id==4}
+                	<li class="list_a">
+                    	<p class="font_s" style="width:170px;"><span class="font_a" style="font-size:17px;"><a href="Faqs.php?whattid={$index_caidan[i].id}">{$index_caidan[i].name}</a></span><span class="font_b">{$index_caidan[i].entitle}</span></p><p class="font_y"><a href="Faqs.php?whattid={$index_caidan[i].id}">>>更多</a></p>
+                    </li>{/if}{/section}
+
+                    {section name=i loop=$index_faq3}
+                    {if $smarty.section.i.first=='true'}
+                    <li class="imga">
+                        <div class="tupian"><img src="./{$index_faq3[i].image}" width="170" height="94" /></div>
+                        <div class="wenzi">
+                            <p class="wenzi_a"><a href="Faqs.php?whattid={$index_faq3[i].type_id}">{mb_substr($index_faq3[i].title,0,18,'utf-8')}</a></p>
+                            <p class="wenzi_b"><a href="Faqs.php?whattid={$index_faq3[i].type_id}">{mb_substr($index_faq3[i].description,0,32,'utf-8')}{if utf8_strlen($index_faq3[i].description) gt 32}...{/if}</a></p>
+                            <p class="wenzi_c"><a href="Faqs.php?whattid={$index_faq3[i].type_id}">详情>></a></p>
+                        </div>
+                    </li>
+                    {else}
+                    <li class="qingshi"><a href="Faqs.php?whattid={$index_faq3[i].type_id}" class="qingshia">{mb_substr($index_faq3[i].title,0,18,'utf-8')}</a><a href="#" class="qingshib">{$index_faq3[i].time|date_format:"%Y-%m-%d"}</a></li>
+                    {/if}
+                    {/section}
+                   <!-- <li class="imga">
+                    	<div class="tupian"><img src="img/xiaotuA.jpg" width="170" height="94" /></div>
+                        <div class="wenzi">
+                                <p class="wenzi_a"><a href="#">青石谈合理的交易系统</a></p>
+                                <p class="wenzi_b"><a href="#">普通交易者应该经常遇到以下的问题---看对的趋势行情因为频繁进出没有抓住足......</a></p>
+                                <p class="wenzi_c"><a href="#">详情>></a></p>
+                        </div>
+                    </li>
+                    <li class="qingshi"><a href="#" class="qingshia">青石谈合理的交易系统</a><a href="#" class="qingshib">2015-03-06</a></li>
+                    <li class="qingshi"><a href="#" class="qingshia">克服成本是盈利的基础</a><a href="#" class="qingshib">2015-03-06</a></li>
+                    <li class="qingshi"><a href="#" class="qingshia">期货市场9大生存指南</a><a href="#" class="qingshib">2015-03-06</a></li>
+                --></ul>
+            </div>
+            <div id="news_b">
+            	<ul>{section name=i loop=$index_caidan}{if $index_caidan[i].id==5}
+                	<li class="list_a"><p class="font_s" style="width:145px;"><span class="font_a" style="font-size:17px;"><a  href="Faqs.php?whattid={$index_caidan[i].id}">{$index_caidan[i].name}</a></span><span class="font_b">{$index_caidan[i].entitle}</span></p><p class="font_y"><a href="Faqs.php?whattid={$index_caidan[i].id}">>>更多</a></p></li>
+                    {/if}{/section}
+
+                    {section name=i loop=$index_faq4}
+                    {if $smarty.section.i.first=='true'}
+                    <li class="imga">
+                        <div class="tupian"><img src="./{$index_faq4[i].image}" width="158" height="94" /></div>
+                        <div class="wenzi">
+                            <p class="wenzi_a"><a href="Faqs.php?whattid={$index_faq4[i].type_id}">{mb_substr($index_faq4[i].title,0,18,'utf-8')}</a></p>
+                            <p class="wenzi_b"><a href="Faqs.php?whattid={$index_faq4[i].type_id}">{mb_substr($index_faq4[i].description,0,32,'utf-8')}{if utf8_strlen($index_faq4[i].description) gt 32}...{/if}</a></p>
+                            <p class="wenzi_c"><a href="Faqs.php?whattid={$index_faq4[i].type_id}">详情>></a></p>
+                        </div>
+                    </li>
+                    {else}
+                    <li class="font_al"><a href="Faqs.php?whattid={$index_faq4[i].type_id}">{mb_substr($index_faq4[i].title,0,18,'utf-8')}</a></li>
+                    {/if}
+                    {/section}
+
+                    <!--<li class="imga">
+                    	<div class="tupian"><img src="img/xiaotuB.jpg" width="158" height="94" /></div>
+                        <div class="wenzi" style="width:270px;">
+                                <p class="wenzi_a"><a href="#">油价暴跌 原油公司是怎么赚钱的？</a></p>
+                                <p class="wenzi_b"><a href="#">原油市场的持续波动可能让欧洲三大石油巨头获利颇丰。众所周知，BP 、壳牌、道......</a></p>
+                                <p class="wenzi_c"><a href="#">详情>></a></p>
+                        </div>
+                    </li>
+                    <li class="font_al" style="margin-top:10px;"><a href="#">股票交易品种是什么？</a></li>
+                    <li class="font_al"><a href="#">股票选拔管理费如何收取的？</a></li>
+                    <li class="font_al"><a href="#">股票选拔通过后，获得多少的签约账户？</a></li>-->
+                </ul>
+            </div>
+        </div>
+        <div id="partner">
+        	<div id="partner_tag">
+            	<p class="font_s" style="width:160px;">
+                <span class="font_a"><a href="#">合作机构</a></span>
+                <span class="font_b">COOPERATION</span>
+                </p>
+            </div>
+            <div id="partner_scroll">
+                <div id="partner_logo">
+                        <ul>
+                            {section name=i loop=$index_jigou}
+                            <li {if $smarty.section.i.first=='true'}style="margin-left:0;"{/if}><a href="{$index_jigou[i].url}" ><img src="./{$index_jigou[i].yuliu2}" width="147" height="90" /></a></li>
+                            {/section}
+                        </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+     {include file='foot.html'}
+</div>
+</body>
+</html>

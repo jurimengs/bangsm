@@ -1,0 +1,134 @@
+{include file="sysadmin/header.tpl"}
+<div class="wrap map"> 
+    <dl> 
+        <dt>微信功能 &gt;&gt; 微信组用户管理</dt> 
+        <dd> 
+            <!--<a href="javascript:void(0)" onclick="deleteselected();" class="link">删除用户</a>
+            <a href="?action=toaddpage" class="link">添加用户</a> -->
+        </dd> 
+   </dl> 
+</div> 
+
+<form action="" method="get" id="searchForm"> 
+<div class="wrap title"> 
+	<dl> 
+    	<dt style="width: 800px;">微信组用户信息
+    		<div style="color: red;">(管理员可以邀请用户加入组，但用户需要打开微信，进入聊天组才能开始聊天。如果用户超过24小时未与公众号互动，则需要从微信重新进入聊天组)</div>
+    	</dt> 
+        <dd>        
+        <input type="text" name="keyword" id="keyword" value="" title="根据组名称搜索" onfocus="this.value='';" /> 
+        <input type="submit" name="button" id="btnSearch" value=" 搜 索 组 " /> 
+        </dd> 
+    </dl>
+	<dl> 
+        <dt><a class="link" href="?action=initUser">同步已关注用户</a></dt>
+    </dl>
+</div> 
+</form> 
+
+<div class="wrap"> 
+<form method="post" action="?action=delete" id="form1"> 
+  <table width="100%" cellpadding="0" cellspacing="0" class="list"> 
+    <thead> 
+    <tr> 
+      <th>组序号</th> 
+      <th>组名称</th>
+      <th style="text-align: left;">操作</th>
+    </tr>  
+     </thead> 
+    <tbody> 
+    	
+    {section name=groupUser loop=$groupUserArray}
+	    <tr> 
+	      <td>{$groupUserArray[groupUser].groupid}</td> 
+	      <td>{$groupUserArray[groupUser].groupname}</td>
+	      <td style="text-align: left;">
+		      	<div style="float: left;">
+			      	<a class="link" href="?action=groupusermanage&groupid={$groupUserArray[groupUser].groupid}">用户管理</a>
+		      	</div>
+			    {if $groupUserArray[groupUser].userList != null}
+			    	<div style="float: left;"><a class="link" href="javascript:void(0);" onclick="showsibling(this);">用户预览>></a></div>
+				    <div style="display: none;">
+			    		<table width="100%" cellpadding="0" cellspacing="0" class="list"> 
+					    	{section name=user loop=$groupUserArray[groupUser].userList}
+					    	<tr>
+					    		<!--<td>{$groupUserArray[groupUser].userList[user].openid}</td>-->
+					    		<td style="text-align: left;">{$groupUserArray[groupUser].userList[user].nickname}</td>
+					    	</tr>
+					    	{/section}
+					    </table>
+				    </div>
+			    {/if}
+	    
+	    
+	      </td>
+	    </tr>
+    {sectionelse}
+    <tr>
+        <td colspan="4"><div class="notext">没有相关信息</div></td>
+    </tr>
+    {/section}
+    
+  
+     </tbody> 
+    </table> 
+         
+</form> 
+{$pager}
+<div class="desc">*</div> 
+</div> 
+
+{literal} 
+<script type="text/javascript"> 
+<!--
+$(document).ready(function() {
+	$("#form1").validate({
+		rules: {
+			name: {
+			required: true
+			}
+		},
+		submitHandler:function(form){
+			$("#btnSubmit").attr("disabled",true);
+			form.submit();
+		}
+	});
+});
+
+function subselected(attName){
+	obj = document.getElementsByName(attName);
+	//check_val = [];
+	var temp = false;
+	for(var i=0; i<obj.length; i++) {
+		if(obj[i].checked) {
+			temp = true;
+			break;
+		}
+	}
+	return temp;
+}
+
+function deleteselected(){
+	if(!!! subselected("groupids[]")){
+		alert("当前未选中任何记录");
+		return;
+	}
+	if(confirm("确认删除?")) {
+		document.getElementById("form1").action = "?action=deleteselected";
+		document.getElementById("form1").submit();
+	}
+}
+
+function showsibling(obj){
+	var aimobj = $(obj).parent().next();
+	if(aimobj.css("display") == "none") {
+		aimobj.show();
+		$(obj).text("收起<<");
+	} else {
+		aimobj.hide();
+		$(obj).text("展开>>");
+	}
+}
+//-->
+</script> 
+{/literal}

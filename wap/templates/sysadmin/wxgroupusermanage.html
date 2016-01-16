@@ -1,0 +1,77 @@
+{include file="sysadmin/header.tpl"}
+<div class="wrap map"> 
+    <dl> 
+        <dt>微信功能 &gt;&gt; 微信组用户管理</dt> 
+        <dd> 
+        </dd> 
+   </dl> 
+</div> 
+
+<div class="wrap"> 
+	<form method="post" action="?action=deletefromgroup" id="deleteform">
+		<div>
+			<div>已在组中的用户(<span style="font-color: #333;">可选中用户，从本组中删除</span>)</div>
+			<div>
+				<table width="100%" cellpadding="0" cellspacing="0" class="list"> 
+				{section name=groupUser loop=$groupUserList}
+					<tr>
+						<td><input type="checkbox" name="openid[]" value="{$groupUserList[groupUser].openid}" /></td>
+						<td>{$groupUserList[groupUser].nickname}</td>
+					</tr>
+			    {/section}
+			    </table>
+			</div>
+			{if $groupUserList != null}
+				<div><a href="javascript:void(0);" onclick="submitclick('deleteform');">确认删除</a></div>
+			{/if}
+	    </div>
+	    <input type="hidden" name="groupid" value="{$groupid}"/>
+	</form>
+	<form method="post" action="?action=addtogroup" id="addform">
+	    <br />
+	    <div>
+			<div>不在本组的用户(<span style="font-color: #333;">可选中用户，添加至组中</span>)</div>
+			<div>
+				<table width="100%" cellpadding="0" cellspacing="0" class="list"> 
+				{section name=otheruser loop=$otheruserlist}
+					<tr>
+						<td><input type="checkbox" name="openid[]" value="{$otheruserlist[otheruser].openid}" /></td>
+						<td>{$otheruserlist[otheruser].nickname}</td>
+					</tr>
+			    {/section}
+			    </table>
+			</div>
+			{if $otheruserlist != null}
+			<div><a href="javascript:void(0);" onclick="submitclick('addform');">确认添加</a></div>
+			{/if}
+	    </div>
+	    <input type="hidden" name="groupid" value="{$groupid}"/>
+	</form> 
+</div> 
+
+{literal} 
+<script type="text/javascript"> 
+<!--
+$(document).ready(function() {
+	$("#form1").validate({
+		rules: {
+			name: {
+			required: true
+			}
+		},
+		submitHandler:function(form){
+			$("#btnSubmit").attr("disabled",true);
+			form.submit();
+		}
+	});
+});
+
+function submitclick(formid){
+	if(confirm("确认操作?")) {
+		document.getElementById(formid).submit();
+	}
+}
+
+//-->
+</script> 
+{/literal}

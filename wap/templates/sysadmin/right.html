@@ -1,0 +1,43 @@
+{include file="sysadmin/header.tpl"}
+<div class="wrap map"> 
+    <dl> 
+        <dt>系统首页</dt> 
+        <dd> 
+           
+        </dd> 
+   </dl> 
+</div>
+
+<div class="wrap"> 
+<table width="100%" cellpadding="3" cellspacing="3">
+  <tbody>
+    <tr>    
+      <th colspan="4" align="left">系统统信息</th>
+    </tr>
+    <tr>
+      <td width="19%">服务器操作系统：</td>
+      <td width="30%">{$sys_info['os']}({$sys_info['ip']})</td>
+      <td width="19%">Web 服务器：</td>
+      <td width="32%">{$sys_info['web_server']}</td>
+    </tr>
+    <tr>
+      <td>PHP 版本：</td>
+      <td>{$sys_info['php_ver']}</td>
+      <td>SQL 版本：</td>
+      <td>5.0</td>
+    </tr>
+    <tr>
+      <td>端口号：</td>
+      <td>{$sys_info['port']}</td>
+      <td>文件上传的最大大小：</td>
+      <td>{$sys_info['max_filesize']}</td>
+    </tr>
+    <tr>
+      <td>开发者：</td>
+      <td><a href="mailto:web@alsovalue.com">翱思</a></td>
+      <td>程序版本：</td>
+      <td>v10<sup>+</sup></td>
+    </tr>
+  </tbody>
+</table>
+</div>

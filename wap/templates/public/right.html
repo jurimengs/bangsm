@@ -1,0 +1,130 @@
+{if $yemianid=='product'}
+<div class="pro-right">
+    <div class="one">
+        <h2>{$product_t.name}</h2>
+        <div class="pro-menu"><!--1分类-->
+            {section name=i loop=$product}
+            {if !$smarty.section.i.last=='true'}
+
+            {if $product[i].id==3}
+            <h3><img src="../images/menu.jpg" style="vertical-align: middle;"> <a>{$product[i].name}</a></h3>
+            <ul><!--2类别-->
+                {foreach $product[i].par as $v}
+                {if $v.parent_id==$product[i].id}
+                <li class="title-two"><a href="/yanqi/product/Product-List-{$v.id}.html#pos">{$v.name}</a></li>
+                {/if}
+                {/foreach}
+            </ul>
+             {else}
+                <h3><img src="../images/menu.jpg" style="vertical-align: middle;"> <a>{$product[i].name}</a></h3>
+                <ul><!--2类别-->
+                    {foreach $product[i].par as $v}
+                    {if $v.parent_id==$product[i].id}
+                    <li class="title-two"><a>{$v.name}</a></li>
+                    <li class="title-thr"style=" display: none;" >
+                        <ul>  <!--3系列-->
+                            {foreach $v.parx as $j}
+                              {if $j.parent_id==$v.id}
+                                <li><a href="/yanqi/product/Product-List-{$j.id}.html#pos">{$j.name}</a></li>
+                              {/if}
+                            {/foreach}
+                        </ul>
+                    </li>
+                    {/if}
+                    {/foreach}
+                </ul>
+             {/if}
+            {else}
+            <h3><img src="../images/menu.jpg" style="vertical-align: middle;"><a href=""> {$product[i].name}</a></h3>
+            {/if}
+            {/section}
+        </div>
+    </div>
+    <div class="service-right-two">
+        <h3>下载中心</h3>
+        <div><img src="../images/down.jpg"></div>
+    </div>
+</div>
+{elseif $yemianid=='plan'}
+<div class="about-right">
+    <div class="about-right-one">
+        <dl>
+            <dt><a>{section name=i loop=$plan}{if $plan[i].id==$xiangqing.type_id}{$plan[i].name}{/if}{/section}</a></dt>
+            {foreach $rirht as $v}
+            <dd {if $id==$v.id}style="color: #ee1921;"{/if}>
+                <a href="/yanqi/plan/Plan-Details-{$v.id}.html">{$v.title}</a>
+            </dd>
+            {/foreach}
+        </dl>
+
+        <dl>
+            <dt>相关案例推荐</dt>
+
+            <dd style="color: #ee1921;">
+                上海市智能楼宇虹口区物业改造
+                工程完成
+            </dd>
+            <dd>2015/11/14</dd>
+            <dd class="al">服务所需的X86架构计岩齐致力于研究视频数据的储、运算、服务所需的X86架构计岩齐致力视频聘请了市有关委</dd>
+        </dl>
+        <dl>
+            <dt>北京养老运维系统</dt>
+            <dd style="color: #ee1921;">上海市智能楼宇虹口区物业改造
+                工程完成</dd>
+            <dd>2015/11/14</dd>
+            <dd class="al">岩齐致力于研究视频数据的储、运算、服务所需的X86架构计岩齐致力于研究视频数据的储、运算、服务所6架于研究视频</dd>
+        </dl>
+        <button class="learn-more"></button>
+    </div>
+    <div class="service-right-two">
+        <h3>下载中心</h3>
+        <div><img src="../images/down.jpg"></div>
+    </div>
+</div>
+{elseif $yemianid=='server'}
+<div class="service-right">
+    <div class="service-right-one">
+        {section name=i loop=$server}
+        <dl>
+            <dt><a>{$server[i].name}</a></dt>
+            {foreach $server[i].par as $v}
+            {if $v.type_id==$server[i].id}
+            <dd><a  {if $xiangqing.id==$v.id}style=" color: #ee1921;"{/if} href="/yanqi/server/Server-{$v.id}.html">{$v.title}</a></dd>
+            {/if}
+            {/foreach}
+        </dl>
+        {/section}
+
+
+
+    </div>
+    <div class="service-right-two">
+        <h3>下载中心</h3>
+        <div><img src="../images/down.jpg"></div>
+    </div>
+</div>
+{elseif $yemianid=='technology'}
+
+<div class="about-right">
+    <div class="about-right-one">
+        {section name=i loop=$technology}
+        <dl>
+            <dt><a>{$technology[i].name}</a></dt>
+
+            {foreach $technology[i].par as $v}
+            {if $v.parent_id==$technology[i].id}
+                {if $v.parent_id==2}
+                <dd><a {if $v.id==$tid} style="color: #ee1921;"{/if} href="/yanqi/technology/Download-{$v.id}.html">{$v.name}</a></dd>
+                {else}
+                <dd><a  {if $v.id==$tid} style="color: #ee1921;"{/if} href="/yanqi/technology/Knowledge-{$v.id}.html">{$v.name}</a></dd>
+                {/if}
+            {/if}
+            {/foreach}
+
+        </dl>
+        {/section}
+    </div>
+</div>
+
+
+{/if}

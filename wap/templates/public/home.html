@@ -1,0 +1,123 @@
+{if $yemianid=='conmpany'}
+<div class="cmain_rightarea_title">
+    <h3><span></span>{if $yemianid2=='conm'}公司简介{elseif $yemianid2=='struct'}组织架构{elseif $yemianid2=='history'}
+        发展历程{elseif $yemianid2=='honor'}公司荣誉{elseif $yemianid2=='porfit'}社会公益{/if}</h3>
+
+    <div class="cmain_rightarea_title_word">您的位置：<a href="/index.php">首页 </a>> <a href="/conmpany/conmpany.php">走进嘉隆</a>
+        >{if $yemianid2=='conm'}公司简介{elseif $yemianid2=='struct'}组织架构{elseif $yemianid2=='history'} 发展历程{elseif
+        $yemianid2=='honor'}<a href="/conmpany/conmpany_honor.php">公司荣誉</a>{if !empty($tid)}{section name=i
+        loop=$left_conmpany}{if $tid==$left_conmpany[i].id} > {$left_conmpany[i].name}{/if}{/section}{/if}{elseif
+        $yemianid2=='porfit'}社会公益{/if}
+    </div>
+</div>
+{elseif $yemianid=='culture'}
+<div class="cmain_rightarea_title">
+    <h3><span></span> {if $yemianid2=='linian'}经营理念{elseif $yemianid2=='nk'}企业内刊{elseif $yemianid2=='tu'}图片专栏{elseif
+        $yemianid2=='video'}视频中心{/if}</h3>
+
+    <div class="cmain_rightarea_title_word">您的位置：<a href="/index.php">首页 </a> > <a href="/culture/culture.php">企业文化</a>
+        > {if $yemianid2=='linian'}经营理念{elseif $yemianid2=='nk'}企业内刊{elseif $yemianid2=='tu'}图片专栏{elseif
+        $yemianid2=='video'}视频中心{/if}
+    </div>
+</div>
+{elseif $yemianid=="news"}
+<div class="cmain_rightarea_title">
+
+
+    {if !empty($whatid)}
+    {section name=i loop=$top_news}
+    {if $whatid==$top_news[i].id}
+    <h3><span></span>{$top_news[i].name}</h3>
+
+    <div class="cmain_rightarea_title_word">您的位置：<a href="/index.php">首页 </a> > <a href="/news/news.php">新闻中心</a> > <a
+            href="/news/news.php?whatid={$top_news[i].id}">{$top_news[i].name}</a></div>
+    {/if}
+    {/section}
+    {else}
+    <h3><span></span>新闻中心</h3>
+
+    <div class="cmain_rightarea_title_word">您的位置：<a href="/index.php">首页 </a> > <a href="/news/news.php">新闻中心</a></div>
+    {/if}
+
+</div>
+{elseif $yemianid=="building"}
+<div class="cmain_rightarea_title">
+
+    {if !empty($whatid)}
+    {section name=i loop=$left_building}
+    {if $whatid==$left_building[i].id}
+    <h3><span></span> {$left_building[i].name}</h3>
+
+    <div class="cmain_rightarea_title_word">您的位置：<a href="/index.php">首页 </a> > <a
+            href="/building/building.php">党建工作</a> > <a href="/building/building.php?whatid={$left_building[i].id}">{$left_building[i].name}</a>{if
+        isset($id)}{section name=j loop=$left_building[i].sleft_building}{if
+        $id==$left_building[i].sleft_building[j].id}>{$left_building[i].sleft_building[j].name}{/if}{/section}{/if}
+    </div>
+    {/if}
+    {/section}
+    {else}
+    <h3><span></span>党建工作</h3>
+
+    <div class="cmain_rightarea_title_word">您的位置：<a href="/index.php">首页 </a> > <a
+            href="/building/building.php">党建工作</a></div>
+    {/if}
+
+</div>
+{elseif $yemianid=="business"}
+<div class="cmain_rightarea_title">
+    {if isset($yemianid2)}
+    <h3><span></span>{if !empty($type_name)}{$type_name.name}{else}延伸业务{/if}</h3>
+
+    <div class="cmain_rightarea_title_word">您的位置：<a href="/index.php">首页 </a> > <a
+            href="/business/business.php">介绍业务</a> > 延伸业务{if !empty($type_name)}>{$type_name.name}{/if}
+    </div>
+    {else}
+    <h3><span></span>{if !empty($whatidname)}{$whatidname.name}{else}主营业务{/if}</h3>
+
+    <div class="cmain_rightarea_title_word">您的位置：<a href="/index.php">首页 </a> > <a
+            href="/business/business.php">介绍业务</a> > <a href="/business/business.php">主营业务</a>{if
+        !empty($whatidname)}><a
+                href="/business/business-list.php?whatid={$whatidname.parent_id}&whattid={$whatidname.id}">{$whatidname.name}</a>{/if}{if
+        isset($id2)} {section name=i loop=$left_zhuying}{if
+        $id2==$left_zhuying[i].id}>{$left_zhuying[i].name}{/if}{/section}{/if}
+    </div>
+    {/if}
+</div>
+{elseif $yemianid=="safety"}
+<div class="cmain_rightarea_title">
+    {if $whatid=="2"}
+    <h3><span></span>职能介绍</h3>
+
+    <div class="cmain_rightarea_title_word">您的位置：<a href="/index.php">首页 </a>> <a href="/safety/safety.php">安全管理</a> >
+        职能介绍
+    </div>
+    {else}
+    <h3><span></span>{section name=i loop=$sleft_bai}{if !empty($id)}{if
+        $id==$sleft_bai[i].id}{$sleft_bai[i].name}{/if}{/if} {/section} </h3>
+
+    <div class="cmain_rightarea_title_word">您的位置：<a href="/index.php">首页 </a> > <a href="/safety/safety.php">安全管理</a>{section
+        name=i loop=$sleft_bai}{if !empty($id)}{if $id==$sleft_bai[i].id}> <a
+                href="/safety/safety.php?whatid={$sleft_bai[i].parent_id}&whattid={$sleft_bai[i].id}">{$sleft_bai[i].name}</a>{/if}{/if}
+        {/section}
+    </div>
+    {/if}
+</div>
+{elseif $yemianid=="staff"}
+<div class="cmain_rightarea_title">
+    <h3><span></span>{$staff_name.name}</h3>
+
+    <div class="cmain_rightarea_title_word">您的位置：<a href="/index.php">首页 </a> > <a href="/staff/staff.php">员工风采</a>{if
+        !empty($whatid)} > {$staff_name.name}{/if}
+    </div>
+</div>
+{elseif $yemianid=="contact"}
+<div class="cmain_rightarea_title">
+    <h3><span></span>{if !empty($whatid)}{section name=i loop=$top_contact} {if
+        $whatid==$top_contact[i].id}{$top_contact[i].name}{/if} {/section}{else}联系方式{/if}</h3>
+
+    <div class="cmain_rightarea_title_word">您的位置：<a href="/index.php">首页 </a>> <a href="/contact/contact.php">联系我们</a>{if
+        !empty($whatid)}{section name=i loop=$top_contact} {if $whatid==$top_contact[i].id} >
+        {$top_contact[i].name}{/if} {/section}{else} > 联系方式{/if}
+    </div>
+</div>
+{/if}

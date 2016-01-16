@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<web>
+	<info>
+		<add name="站点名称" type="input" filed="name" value="上海邦思迈" description="站点的名称"/>
+		<add name="站点关键字" type="textarea" filed="keywords" value="上海邦思迈" description="站点关键字，网页SEO优化，多个用“,”号隔开"/>
+		<add name="站点描述" type="textarea" filed="description" value="上海邦思迈" description="网页SEO优化，站点的简单描述"/>
+	</info>
+</web>

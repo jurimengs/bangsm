@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="target-densitydpi=device-dpi, width=device-width, initial-scale=1, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+    <meta name="format-detection" content="telephone=no">
+    <title>公开引导课 | {$web.title}</title>
+    <link href="css/main.css" rel="stylesheet" type="text/css">
+    <link href="css/example.css" rel="stylesheet" type="text/css">
+    <script type="text/javascript" src="js/jquery-1.9.1.min.js"></script>
+    <script type="text/javascript" src="js/jquery.slides.js"></script>
+    <script type="text/javascript" src="js/index.js"></script>
+</head>
+<body>
+<header>
+    <section class="sw">
+        <div class="log"></div>
+        <a class="search"></a>
+    </section>
+    {literal}
+    <form method="post" action="Course-List.php">
+        <section class="search-box">
+            <div class="search-box-input"> <input type="text" name="search" value="请输入关键字" onfocus="if(value=='请输入关键字'){value=''}" onblur="if(value==''|| value==' '){ value='请输入关键字'}"></div>
+        </section>
+    </form>
+    {/literal}
+</header>
+<section class="c_banner">
+ <img src="images/course/coursebanner.png">   
+</section>
+<article class="courselist">
+    <ul>
+        {foreach $course_type as $c}
+        <a href="Course-List.php?tid={$c.id}">
+            <li>
+               <div class="li-con">
+                <img src="{$c.image}">
+                   <h3>{$c.name}</h3>
+                   <p>
+                       {mb_substr($c.description,0,30,'utf-8')}
+                   </p>
+               </div>
+            </li>
+        </a>
+        {/foreach}
+    </ul>
+
+</article>
+
+</body>
+</html>
