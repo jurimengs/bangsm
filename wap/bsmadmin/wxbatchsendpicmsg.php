@@ -115,7 +115,7 @@ function sendnewmsg() {
 		$response = WxUtil::uploadpic($meidaType, $tmp_file);
 		$picmediaid = $response["media_id"];
 		$title = $row["title"];
-		$sourceurl = "";
+		$sourceurl = "http://bangmaisiw.w107.mc-test.com/wap/Course-Details.php?id=".$courseid;
 		$content = $row["contents"];
 		$digest = "";
 		$showcoverpic = "1";

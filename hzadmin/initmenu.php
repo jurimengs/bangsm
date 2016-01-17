@@ -1,9 +1,9 @@
 <?php
 
 require 'inc.php';
-require_once '../../weixin/globleconfig.php';
-require_once '../../weixin/WxUtil.php';
-require_once '../../weixin/RequestUtil.php';
+require_once '../weixin/globleconfig.php';
+require_once '../weixin/WxUtil.php';
+require_once '../weixin/RequestUtil.php';
 
 if(empty($_SESSION["cn_sysadmin"])){
 	die("<script>top.location.href='login.php'</script>");
