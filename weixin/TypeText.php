@@ -106,7 +106,7 @@ class TypeText extends TypeParent{
 			//LogUtil::logs("ppppppp ====>".print_r($val,true), getLogFile("/business.log"));
 			// 循环每个人推送一条消息 
 			$openid = $val['openid'];
-			//if($userSelfOpenid != $openid) {
+			if($userSelfOpenid != $openid) {
 				// 从组中除去发信息者自己
 				$paramContent = array();
 				$contentTemp = array("content"=>$content);
@@ -114,7 +114,7 @@ class TypeText extends TypeParent{
 				$data = JsonUtil::getJsonStrFromArray(array_merge($paramContent, array("touser" => $openid)));
 				//LogUtil::logs("queryGroupUserAndReplyMsg data ====>".$data, getLogFile("/business.log"));
 				parent::sendMsgByService($data);
-			//}
+			}
 		}
 		return getSuccessStr();
 	}

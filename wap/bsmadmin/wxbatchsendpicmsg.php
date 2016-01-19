@@ -92,7 +92,11 @@ function tonewpage() {
 }
 
 function sendnewmsg() {
-	define('DIR_ROOT', str_replace('\\', '/', dirname(__FILE__)));
+	// 当前php文件所在目录
+	//define('DIR_ROOT', str_replace('\\', '/', dirname(__FILE__)));
+	// 项目根目录
+	define('DIR_ROOT', $_SERVER['DOCUMENT_ROOT']);
+	//define('DIR_ROOT', "/wwwroot/");
 	
 	$courseid = $_GET["courseid"];
 	// 根据courseid查询对应的课程（推送）信息
@@ -135,9 +139,9 @@ function sendnewmsg() {
 		}
 		//echo print_r($openidarr);
 		$tp = new TypeParent();
-		//echo $tp -> batchSendPicMsg($openidarr, $pictextMediaid);
-		$yulanopenid = "osp6swrNZiWtEuTy-Gj1cBVA1l38";
-		echo $tp -> batchSendPicMsgYulan($yulanopenid, $pictextMediaid);
+		echo $tp -> batchSendPicMsg($openidarr, $pictextMediaid);
+//		$yulanopenid = "osp6swrNZiWtEuTy-Gj1cBVA1l38";
+//		echo $tp -> batchSendPicMsgYulan($yulanopenid, $pictextMediaid);
 	} else {
 		echo "文件不存在:".$row["image"];
 		return;
