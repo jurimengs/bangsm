@@ -20,8 +20,7 @@ class TypeText extends TypeParent{
 		// 重复消息处理机制：
 		$existmsg = $this -> isExist($FromUserName, $wxcreatetime);
 		if($existmsg) {
-			// 如果存在
-			LogUtil::logs("TypeText Content 已存在消息，忽略本次请求 ====>".$flagStr, getLogFile("/business.log"));
+			// 如果存在，忽略本次请求
 			exit();
 		}
 		
@@ -107,7 +106,7 @@ class TypeText extends TypeParent{
 			//LogUtil::logs("ppppppp ====>".print_r($val,true), getLogFile("/business.log"));
 			// 循环每个人推送一条消息 
 			$openid = $val['openid'];
-			if($userSelfOpenid != $openid) {
+			//if($userSelfOpenid != $openid) {
 				// 从组中除去发信息者自己
 				$paramContent = array();
 				$contentTemp = array("content"=>$content);
@@ -115,7 +114,7 @@ class TypeText extends TypeParent{
 				$data = JsonUtil::getJsonStrFromArray(array_merge($paramContent, array("touser" => $openid)));
 				//LogUtil::logs("queryGroupUserAndReplyMsg data ====>".$data, getLogFile("/business.log"));
 				parent::sendMsgByService($data);
-			}
+			//}
 		}
 		return getSuccessStr();
 	}
