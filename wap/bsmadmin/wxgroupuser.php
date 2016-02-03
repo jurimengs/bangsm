@@ -60,7 +60,7 @@ function showlist(){
 	}
 	$in = StringUtil::sublaststr($groupids);
 	
-	$userlistsql = "SELECT a.openid , a.groupid , b.nickname
+	$userlistsql = "SELECT a.openid , a.groupid , b.nickname, b.localnickname
 			FROM wx_group_user a 
 			left join wx_user_info b 
 			on a.openid = b.openid 
@@ -151,7 +151,7 @@ function groupusermanage(){
 	global $db;
 	global $smarty;
 	// 先查本组员
-	$userlistsql = "SELECT a.openid , a.groupid , b.nickname FROM wx_group_user a 
+	$userlistsql = "SELECT a.openid , a.groupid , b.nickname, b.localnickname FROM wx_group_user a 
 			left join wx_user_info b 
 			on a.openid = b.openid 
 			where b.openid is not null and a.groupid ='$groupid'";
@@ -230,6 +230,7 @@ function addtogroup(){
 
 function initUser(){
 	$remoteTemp = WxUtil::getUserList();
+	//echo print_r($remoteTemp);
 	
 	if(!empty ($remoteTemp)) {
 		$remoteUsers = $remoteTemp["data"];
@@ -272,12 +273,15 @@ function initUser(){
 				
 				$openid = $userinfo["openid"];
 				if(!empty($openid)) {
+					//echo print_r($userinfo);
 					$nickname = $userinfo["nickname"];
+					// 默认是/0 表示640*640的尺寸    有0、46、64、96、132
+					$headimgurl = $userinfo["headimgurl"];
 					$sex = $userinfo["sex"];
 					$subscribe = $userinfo["subscribe"];
 					$currtime = DateUtil::getCurrentTime();
-					$sql = "INSERT INTO `wx_user_info` (openid, nickname, sex, subscribe, subscribe_time) 
-						VALUES ('$openid', '$nickname', '$sex', '$subscribe', '$currtime') ";
+					$sql = "INSERT INTO `wx_user_info` (openid, nickname, sex, subscribe, subscribe_time, headimgurl) 
+						VALUES ('$openid', '$nickname', '$sex', '$subscribe', '$currtime', '$headimgurl') ";
 					$execres = $db -> exec($sql);
 					if(!$execres) {
 						$errorOpenids = $errorOpenids."; ".$openid.":".$nickname;

@@ -1,34 +1,33 @@
 <?php
-echo "fffffffff"; 
+$strrule = "/^更新信息+.*/";
 
-$fp = fsockopen("localhost", 80, $errno, $errstr, 30);
-
-if (!$fp) {
-
-    echo "$errstr ($errno)<br />\n";
-
-} else {
-
-    $out = "GET /backend.php / HTTP/1.1\r\n";
-
-    $out .= "Host: www.example.com\r\n";
-
-    $out .= "Connection: Close\r\n\r\n";
-
- 
-
-    fwrite($fp, $out);
-
-    /*����ִ�н��
-
-while (!feof($fp)) {
-
-echo fgets($fp, 128);
-
-}*/
-
-    fclose($fp);
-
+$content = "更新信息+测试+19933333444";
+if(preg_match($strrule, $content)) {
+	$arr = explode("+", $content);
+	
+	echo $arr[0];
+	echo "<br />";
+	echo $arr[1];
+	echo "<br />";
+	echo $arr[2];
+	
+	
+	echo "<br />";
+	if(!preg_match("/^.{0,1}$/", $arr[1])){
+		echo "eeee";
+	}
+	
+	echo "<br />";
+	if(!preg_match("/^1[3|4|5|7|8][0-9]\\d{8}$/", $arr[2])){
+		echo "aaaa";
+	}
 }
-
+			
+			
+/*
+if(preg_match($strrule, "更新信息:xxxx")) {
+	echo "xxxxxxx";
+} else {
+	echo "........";
+}*/
 ?>

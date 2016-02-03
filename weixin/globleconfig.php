@@ -101,6 +101,13 @@ function wxUploadPic(){
     return "http://file.api.weixin.qq.com/cgi-bin/media/upload?access_token=";
 }
  
+/**
+ * upload pic merterials, then return the url from wx
+ */
+function wxUploadPicGetPicUrl(){
+    return "https://api.weixin.qq.com/cgi-bin/media/uploadimg?access_token=";
+}
+ 
 function getLogFile($fname){
      return dirname(__FILE__).$fname;
 }

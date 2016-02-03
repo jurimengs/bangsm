@@ -40,6 +40,7 @@
                 <th style="width:50px;"><input type="checkbox" id="all" /></th>
                 <th style="width: 50px;">编号</th>
                 <th class="text-left">文章名称</th>
+                <th>推送所有微信用户</th>
                 <th>标题颜色</th>
                 <th>文章分类</th>
                 <th>显示状态</th>
@@ -69,6 +70,7 @@
                 <td><input type="checkbox" name="id[]" value="{$productList[list].id}" /></td>
                 <td style="width: 50px; ">{$productList[list].id}</td>
                 <td {if $productList[list].color eq 0} style="text-align:left;"{else}style="text-align:left;color:red;"{/if} id="title{$productList[list].id}">{$productList[list].title}</td>
+                <td><a style="color:#87A34D;cursor: pointer;" href="javascript:void(0);" onclick="sendsinglemsg('{$productList[list].id}', '{$productList[list].simage}');">推送</a></td>
                 <td><input type="button" id="lineColor_{$productList[list].id}" {if $productList[list].color eq 0}style="width:20px;cursor:pointer;"{else}style="width:20px;background:red;cursor:pointer;"{/if}  onclick="updateColor({$productList[list].color},{$productList[list].id});" readonly="readonly" /></td>
                 <td>{$productList[list].type_name}</td>
                 <td style="cursor: pointer;">{if $productList[list].view eq 0}<img src="images/error.gif" id="updateIsViewPic_{$productList[list].id}" onclick="updateState('updateIsView',{$productList[list].id});" />{else}<img src="images/success.gif" id="updateIsViewPic_{$productList[list].id}" onclick="updateState('updateIsView',{$productList[list].id});" />{/if}</td>
@@ -90,12 +92,20 @@
         <div class="page">
             <dl>
                 <dt><input type="submit" name="btnDelete" value="删除" onclick="return listDelete(this.form.name);" id="btnDelete" /></dt>
+                <input type="button" value="联合推送" onclick="batchsendmsg();" id="batchsendmsgbtn" />
+                <a href="javascript:void(0);" onclick="showhiddeninput();">翻页了不能多选? 点我</a>
                 <dd>
                     {$pager}
                 </dd>
             </dl>
         </div>
     </form>
+    <form style="display: none;" id="batchsendmsgform" action="wxbatchsendpicmsg.php?action=sendmultinewmsg" method="post">
+		<input type="text" id="courseids" name="courseids" />
+		<input type="button" value="推送" onclick="inputsendmsg();" />
+		<span style="color:red">请输入要组合发送的消息编号，多个用英文(半角)字符逗号(",")隔开，例如：1,3,5</span>
+	</form>
+	
     <div class="desc">*</div>
     {literal}
     <script type="text/javascript">
@@ -478,6 +488,50 @@
         CKFinder.setupCKEditor( editor, '../ckfinder/' ) ;
     }
     //-->
+
+function batchsendmsg(){
+	// 先置空
+	$("#courseids").val("");
+	//
+	var aimcheckbox = $(":checkbox[name=id\\[\\]][checked=true]");
+	if(aimcheckbox.length > 10) {
+		alert("单次推送数量不可大于10条");
+		return;
+	}
+	var courseids = "";
+	aimcheckbox.each(function(){
+		courseids += $(this).val()+",";
+	});
+	courseids = courseids.substring(0, courseids.length - 1);
+	
+	if(!!courseids) {
+		$("#courseids").val(courseids);
+		if(confirm("是否确认推送以上信息？")){
+			$("#batchsendmsgform").submit();
+		}
+	} else {
+		alert("请选择勾选要推送的消息!");
+	}
+}
+
+function sendsinglemsg(msgid, imageurl){
+	if(!! imageurl) {
+		var url = "wxbatchsendpicmsg.php?action=sendnewmsg&courseid="+msgid;
+		window.location.href = url;
+	} else {
+		alert("该消息未配图片，请重新编辑消息");
+	}
+}
+
+function showhiddeninput(){
+	$("#batchsendmsgform").show();
+}
+
+function inputsendmsg(){
+	if(!! $("#courseids").val()) {
+		$("#batchsendmsgform").submit();
+	}
+}
 
 </script>
 {/literal}

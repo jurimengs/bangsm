@@ -147,6 +147,28 @@ class WxUtil {
 		*/
 	}
 
+
+	/**
+	 * 根据图片素材的id，拼装多图文素材
+	 * 	$mediaid  
+	 * 	$title  图文消息的标题  不可空
+		$sourceurl 阅读原文的链接 可空
+		$content 图文  的 文， 不可空
+		$digest 图片消息的描述， 可空
+		$showcoverpic 是否显示封面，1为显示，0为不显示 
+	 * 
+	 */
+	public static function uploadmultipicmsg($articles){
+		$url = wxUploadPicMsg().WxUtil::getWxTokenFromDB();
+		
+		//$articles[] = $article;
+		$dataarr = array("articles"=>$articles);
+		$data = JsonUtil::getJsonStrFromArray($dataarr);
+		//echo $data;
+		$response = RequestUtil::httpPost($url, $data, 'post');
+		return $response;
+	}
+	
 	/**
 	 * 上传临时图片素材， 上限5000
 	 * type  媒体文件类型，分别有图片（image）、语音（voice）、视频（video）和缩略图（thumb）
@@ -160,6 +182,66 @@ class WxUtil {
 		//$data = JsonUtil::getJsonStrFromArray($dataarr);
 		$response = RequestUtil::httpFilePost($url, $data);
 		return $response;
+	}
+	
+	/**
+	 * 上传图片,并返回图片的url， 不占用 上限5000
+	 * 
+	 */
+	public static function uploadPicGetPicUrl($meidaType, $mediapath){
+		$url = wxUploadPicGetPicUrl().self::getWxTokenFromDB();
+		//  curl 函数 CURLOPT_POSTFIELDS 里如果传的 一个数组 默认就会以multipart/form-data请求，所以 文件数据是这样写的：$file['media'] = "@/www/test.jpg";
+		//$data['media'] = "@".$mediapath;
+		$data = array("buffer" => "@".$mediapath);
+		$response = RequestUtil::httpFilePost($url, $data);
+		return $response;
+	}
+	
+	/**
+	 * 0
+	 */
+	public static function getheadimgurl0($picurl){
+		return $picurl;
+	}
+	
+	/**
+	 * 46
+	 */
+	public static function getheadimgurl46($picurl){
+		if(!empty($picurl)) {
+			return substr($picurl, 0, strlen($picurl) -1)."46";
+		}
+		return "";
+	}
+	
+	/**
+	 * 64
+	 */
+	public static function getheadimgurl64($picurl){
+		if(!empty($picurl)) {
+			return substr($picurl, 0, strlen($picurl) -1)."64";
+		}
+		return "";
+	}
+	
+	/**
+	 * 96
+	 */
+	public static function getheadimgurl96($picurl){
+		if(!empty($picurl)) {
+			return substr($picurl, 0, strlen($picurl) -1)."96";
+		}
+		return "";
+	}
+	
+	/**
+	 * 132
+	 */
+	public static function getheadimgurl132($picurl){
+		if(!empty($picurl)) {
+			return substr($picurl, 0, strlen($picurl) -1)."132";
+		}
+		return "";
 	}
 	
 }

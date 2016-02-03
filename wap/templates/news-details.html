@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <title>{$xiangqing.title} | {$web.title}</title>
     <meta charset="UTF-8">
-    <meta name="viewport" content="target-densitydpi=device-dpi, width=device-width, initial-scale=1, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+    <meta content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" name="viewport">
     <meta name="format-detection" content="telephone=no">
     <link href="css/main.css" rel="stylesheet" type="text/css">
     <link href="css/example.css" rel="stylesheet" type="text/css">
@@ -21,22 +21,25 @@
     {literal}
     <form method="post" action="News-List.php">
         <section class="search-box">
-            <div class="search-box-input"> <input type="text" name="search" value="请输入关键字" onfocus="if(value=='请输入关键字'){value=''}" onblur="if(value==''|| value==' '){ value='请输入关键字'}"></div>
+            <div class="search-box-input"><input type="text" name="search" value="请输入关键字"
+                                                 onfocus="if(value=='请输入关键字'){value=''}"
+                                                 onblur="if(value==''|| value==' '){ value='请输入关键字'}"></div>
         </section>
     </form>
     {/literal}
 </header>
 <section class="news-details">
     <div class="news_title">
- <h3>
-    {$xiangqing.title}
-</h3>
+        <h3>
+            {$xiangqing.title}
+        </h3>
+
         <p>
             {$xiangqing.time|date_format:"%Y/%m/%d"}
         </p>
     </div>
     <article class="new_article">
-      {$xiangqing.contents}
+        {$xiangqing.contents}
     </article>
     <footer style="cursor:pointer;" onclick="self.location=document.referrer;">
         返回

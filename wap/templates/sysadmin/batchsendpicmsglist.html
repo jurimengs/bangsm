@@ -1,7 +1,7 @@
 {include file="sysadmin/header.tpl"}
 <div class="wrap map"> 
     <dl> 
-        <dt>微信功能 &gt;&gt; 微信组用户管理</dt> 
+        <dt>微信功能 &gt;&gt; 微信发送图文消息列表</dt> 
         <dd> 
             <!--<a href="javascript:void(0)" onclick="deleteselected();" class="link">删除用户</a>
             <a href="?action=toaddpage" class="link">添加用户</a> -->
@@ -20,62 +20,16 @@
         <input type="submit" name="button" id="btnSearch" value=" 搜 索 组 " /> 
         </dd> 
     </dl>
-	<dl> 
-        <dt><a class="link" href="?action=initUser">同步已关注用户</a></dt>
-    </dl>
 </div> 
 </form> 
 
 <div class="wrap"> 
-<form method="post" action="?action=delete" id="form1"> 
-  <table width="100%" cellpadding="0" cellspacing="0" class="list"> 
-    <thead> 
-    <tr> 
-      <th>组序号</th> 
-      <th>组名称</th>
-      <th style="text-align: left;">操作</th>
-    </tr>  
-     </thead> 
-    <tbody> 
-    	
-    {section name=groupUser loop=$groupUserArray}
-	    <tr> 
-	      <td>{$groupUserArray[groupUser].groupid}</td> 
-	      <td>{$groupUserArray[groupUser].groupname}</td>
-	      <td style="text-align: left;">
-		      	<div style="float: left;">
-			      	<a class="link" href="?action=groupusermanage&groupid={$groupUserArray[groupUser].groupid}">用户管理</a>
-		      	</div>
-			    {if $groupUserArray[groupUser].userList != null}
-			    	<div style="float: left;"><a class="link" href="javascript:void(0);" onclick="showsibling(this);">用户预览>></a></div>
-				    <div style="display: none;">
-			    		<table width="20%" cellpadding="0" cellspacing="0" class="list"> 
-					    	{section name=user loop=$groupUserArray[groupUser].userList}
-					    	<tr>
-					    		<!--<td>{$groupUserArray[groupUser].userList[user].openid}</td>-->
-					    		<td style="text-align: left;">{$groupUserArray[groupUser].userList[user].nickname}</td>
-					    		<td style="text-align: left;">{$groupUserArray[groupUser].userList[user].localnickname}</td>
-					    	</tr>
-					    	{/section}
-					    </table>
-				    </div>
-			    {/if}
-	    
-	    
-	      </td>
-	    </tr>
-    {sectionelse}
-    <tr>
-        <td colspan="4"><div class="notext">没有相关信息</div></td>
-    </tr>
-    {/section}
-    
-  
-     </tbody> 
-    </table> 
-         
-</form> 
-{$pager}
+<table width="100%" cellpadding="0" cellspacing="0" class="list"> 
+	<tr>
+		<td><a href="?action=tonewpage">创建新图文消息</a></td>
+	</tr>
+</table> 
+
 <div class="desc">*</div> 
 </div> 
 
