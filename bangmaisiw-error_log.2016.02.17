@@ -208,3 +208,54 @@
 [Wed Feb 17 16:58:47 2016] [error] [client 101.226.68.141] #2 /var/www/virtual/bangmaisiw/home/wwwroot/wap/smarty/sysplugins/smarty_internal_templateparser.php(2812): Smarty_Internal_Templateparser->yy_r36()
 [Wed Feb 17 16:58:47 2016] [error] [client 101.226.68.141] #3 /var/www/virtual/bangmaisiw/home/wwwroot/wap/smarty/sysplugins/smarty_internal_templateparser.php(2912): Smarty_Internal_Templateparser->yy_reduce(36)
 [Wed Feb 17 16:58:47 2016] [error] [client 101.226.68.141] #4 /var/www/virtual/bangmaisiw/home/wwwroot/wap/smarty/sysplugins/smarty_internal in /var/www/virtual/bangmaisiw/home/wwwroot/wap/smarty/sysplugins/smarty_internal_templatecompilerbase.php on line 431
+[Wed Feb 17 17:07:08 2016] [error] [client 117.185.27.104] PHP Fatal error:  Uncaught exception 'SmartyException' with message 'Unable to load template file 'index.html'' in /var/www/virtual/bangmaisiw/home/wwwroot/smarty/sysplugins/smarty_internal_template.php:163
+[Wed Feb 17 17:07:08 2016] [error] [client 117.185.27.104] Stack trace:
+[Wed Feb 17 17:07:08 2016] [error] [client 117.185.27.104] #0 /var/www/virtual/bangmaisiw/home/wwwroot/smarty/sysplugins/smarty_internal_template.php(550): Smarty_Internal_Template->isExisting(true)
+[Wed Feb 17 17:07:08 2016] [error] [client 117.185.27.104] #1 /var/www/virtual/bangmaisiw/home/wwwroot/smarty/Smarty.class.php(338): Smarty_Internal_Template->getRenderedTemplate()
+[Wed Feb 17 17:07:08 2016] [error] [client 117.185.27.104] #2 /var/www/virtual/bangmaisiw/home/wwwroot/smarty/Smarty.class.php(382): Smarty->fetch('index.html', NULL, NULL, NULL, true)
+[Wed Feb 17 17:07:08 2016] [error] [client 117.185.27.104] #3 /var/www/virtual/bangmaisiw/home/wwwroot/index.php(9): Smarty->display('index.html')
+[Wed Feb 17 17:07:08 2016] [error] [client 117.185.27.104] #4 {main}
+[Wed Feb 17 17:07:08 2016] [error] [client 117.185.27.104]   thrown in /var/www/virtual/bangmaisiw/home/wwwroot/smarty/sysplugins/smarty_internal_template.php on line 163
+[Wed Feb 17 17:07:08 2016] [error] [client 140.207.185.122] PHP Fatal error:  Uncaught exception 'SmartyException' with message 'Unable to load template file 'index.html'' in /var/www/virtual/bangmaisiw/home/wwwroot/smarty/sysplugins/smarty_internal_template.php:163
+[Wed Feb 17 17:07:08 2016] [error] [client 140.207.185.122] Stack trace:
+[Wed Feb 17 17:07:08 2016] [error] [client 140.207.185.122] #0 /var/www/virtual/bangmaisiw/home/wwwroot/smarty/sysplugins/smarty_internal_template.php(550): Smarty_Internal_Template->isExisting(true)
+[Wed Feb 17 17:07:08 2016] [error] [client 140.207.185.122] #1 /var/www/virtual/bangmaisiw/home/wwwroot/smarty/Smarty.class.php(338): Smarty_Internal_Template->getRenderedTemplate()
+[Wed Feb 17 17:07:08 2016] [error] [client 140.207.185.122] #2 /var/www/virtual/bangmaisiw/home/wwwroot/smarty/Smarty.class.php(382): Smarty->fetch('index.html', NULL, NULL, NULL, true)
+[Wed Feb 17 17:07:08 2016] [error] [client 140.207.185.122] #3 /var/www/virtual/bangmaisiw/home/wwwroot/index.php(9): Smarty->display('index.html')
+[Wed Feb 17 17:07:08 2016] [error] [client 140.207.185.122] #4 {main}
+[Wed Feb 17 17:07:08 2016] [error] [client 140.207.185.122]   thrown in /var/www/virtual/bangmaisiw/home/wwwroot/smarty/sysplugins/smarty_internal_template.php on line 163
+[Wed Feb 17 17:07:08 2016] [error] [client 101.226.68.141] PHP Fatal error:  Uncaught exception 'SmartyCompilerException' with message 'Syntax Error in template "/var/www/virtual/bangmaisiw/home/wwwroot/wap/templates/chatingroom/chating.html"  on line 3 "{openid}" unknown tag "openid"' in /var/www/virtual/bangmaisiw/home/wwwroot/wap/smarty/sysplugins/smarty_internal_templatecompilerbase.php:431
+[Wed Feb 17 17:07:08 2016] [error] [client 101.226.68.141] Stack trace:
+[Wed Feb 17 17:07:08 2016] [error] [client 101.226.68.141] #0 /var/www/virtual/bangmaisiw/home/wwwroot/wap/smarty/sysplugins/smarty_internal_templatecompilerbase.php(253): Smarty_Internal_TemplateCompilerBase->trigger_template_error('unknown tag "op...', 3)
+[Wed Feb 17 17:07:08 2016] [error] [client 101.226.68.141] #1 /var/www/virtual/bangmaisiw/home/wwwroot/wap/smarty/sysplugins/smarty_internal_templateparser.php(2322): Smarty_Internal_TemplateCompilerBase->compileTag('openid', Array)
+[Wed Feb 17 17:07:08 2016] [error] [client 101.226.68.141] #2 /var/www/virtual/bangmaisiw/home/wwwroot/wap/smarty/sysplugins/smarty_internal_templateparser.php(2812): Smarty_Internal_Templateparser->yy_r36()
+[Wed Feb 17 17:07:08 2016] [error] [client 101.226.68.141] #3 /var/www/virtual/bangmaisiw/home/wwwroot/wap/smarty/sysplugins/smarty_internal_templateparser.php(2912): Smarty_Internal_Templateparser->yy_reduce(36)
+[Wed Feb 17 17:07:08 2016] [error] [client 101.226.68.141] #4 /var/www/vi in /var/www/virtual/bangmaisiw/home/wwwroot/wap/smarty/sysplugins/smarty_internal_templatecompilerbase.php on line 431
+[Wed Feb 17 17:10:28 2016] [error] [client 101.226.68.141] PHP Fatal error:  Uncaught exception 'SmartyCompilerException' with message 'Syntax Error in template "/var/www/virtual/bangmaisiw/home/wwwroot/wap/templates/chatingroom/chating.html"  on line 1 "aaaaa: {openid}" unknown tag "openid"' in /var/www/virtual/bangmaisiw/home/wwwroot/wap/smarty/sysplugins/smarty_internal_templatecompilerbase.php:431
+[Wed Feb 17 17:10:28 2016] [error] [client 101.226.68.141] Stack trace:
+[Wed Feb 17 17:10:28 2016] [error] [client 101.226.68.141] #0 /var/www/virtual/bangmaisiw/home/wwwroot/wap/smarty/sysplugins/smarty_internal_templatecompilerbase.php(253): Smarty_Internal_TemplateCompilerBase->trigger_template_error('unknown tag "op...', 1)
+[Wed Feb 17 17:10:28 2016] [error] [client 101.226.68.141] #1 /var/www/virtual/bangmaisiw/home/wwwroot/wap/smarty/sysplugins/smarty_internal_templateparser.php(2322): Smarty_Internal_TemplateCompilerBase->compileTag('openid', Array)
+[Wed Feb 17 17:10:28 2016] [error] [client 101.226.68.141] #2 /var/www/virtual/bangmaisiw/home/wwwroot/wap/smarty/sysplugins/smarty_internal_templateparser.php(2812): Smarty_Internal_Templateparser->yy_r36()
+[Wed Feb 17 17:10:28 2016] [error] [client 101.226.68.141] #3 /var/www/virtual/bangmaisiw/home/wwwroot/wap/smarty/sysplugins/smarty_internal_templateparser.php(2912): Smarty_Internal_Templateparser->yy_reduce(36)
+[Wed Feb 17 17:10:28 2016] [error] [client 101.226.68.141] #4 /var in /var/www/virtual/bangmaisiw/home/wwwroot/wap/smarty/sysplugins/smarty_internal_templatecompilerbase.php on line 431
+[Wed Feb 17 17:10:28 2016] [error] [client 101.90.124.192] PHP Notice:  Undefined index: openid in /var/www/virtual/bangmaisiw/home/wwwroot/wap/chatingroom/wxoauth.php on line 18
+[Wed Feb 17 17:50:40 2016] [error] [client 101.226.68.141] PHP Warning:  socket_bind(): unable to bind address [99]: Cannot assign requested address in /var/www/virtual/bangmaisiw/home/wwwroot/wap/chatingroom/WS.php on line 15
+[Wed Feb 17 17:50:40 2016] [error] [client 117.185.27.98] PHP Fatal error:  Uncaught exception 'SmartyException' with message 'Unable to load template file 'index.html'' in /var/www/virtual/bangmaisiw/home/wwwroot/smarty/sysplugins/smarty_internal_template.php:163
+[Wed Feb 17 17:50:40 2016] [error] [client 117.185.27.98] Stack trace:
+[Wed Feb 17 17:50:40 2016] [error] [client 117.185.27.98] #0 /var/www/virtual/bangmaisiw/home/wwwroot/smarty/sysplugins/smarty_internal_template.php(550): Smarty_Internal_Template->isExisting(true)
+[Wed Feb 17 17:50:40 2016] [error] [client 117.185.27.98] #1 /var/www/virtual/bangmaisiw/home/wwwroot/smarty/Smarty.class.php(338): Smarty_Internal_Template->getRenderedTemplate()
+[Wed Feb 17 17:50:40 2016] [error] [client 117.185.27.98] #2 /var/www/virtual/bangmaisiw/home/wwwroot/smarty/Smarty.class.php(382): Smarty->fetch('index.html', NULL, NULL, NULL, true)
+[Wed Feb 17 17:50:40 2016] [error] [client 117.185.27.98] #3 /var/www/virtual/bangmaisiw/home/wwwroot/index.php(9): Smarty->display('index.html')
+[Wed Feb 17 17:50:40 2016] [error] [client 117.185.27.98] #4 {main}
+[Wed Feb 17 17:50:40 2016] [error] [client 117.185.27.98]   thrown in /var/www/virtual/bangmaisiw/home/wwwroot/smarty/sysplugins/smarty_internal_template.php on line 163
+[Wed Feb 17 17:50:40 2016] [error] [client 140.207.54.187] PHP Fatal error:  Uncaught exception 'SmartyException' with message 'Unable to load template file 'index.html'' in /var/www/virtual/bangmaisiw/home/wwwroot/smarty/sysplugins/smarty_internal_template.php:163
+[Wed Feb 17 17:50:40 2016] [error] [client 140.207.54.187] Stack trace:
+[Wed Feb 17 17:50:40 2016] [error] [client 140.207.54.187] #0 /var/www/virtual/bangmaisiw/home/wwwroot/smarty/sysplugins/smarty_internal_template.php(550): Smarty_Internal_Template->isExisting(true)
+[Wed Feb 17 17:50:40 2016] [error] [client 140.207.54.187] #1 /var/www/virtual/bangmaisiw/home/wwwroot/smarty/Smarty.class.php(338): Smarty_Internal_Template->getRenderedTemplate()
+[Wed Feb 17 17:50:40 2016] [error] [client 140.207.54.187] #2 /var/www/virtual/bangmaisiw/home/wwwroot/smarty/Smarty.class.php(382): Smarty->fetch('index.html', NULL, NULL, NULL, true)
+[Wed Feb 17 17:50:40 2016] [error] [client 140.207.54.187] #3 /var/www/virtual/bangmaisiw/home/wwwroot/index.php(9): Smarty->display('index.html')
+[Wed Feb 17 17:50:40 2016] [error] [client 140.207.54.187] #4 {main}
+[Wed Feb 17 17:50:40 2016] [error] [client 140.207.54.187]   thrown in /var/www/virtual/bangmaisiw/home/wwwroot/smarty/sysplugins/smarty_internal_template.php on line 163
+[Wed Feb 17 17:54:13 2016] [error] [client 101.226.68.141] PHP Warning:  socket_bind(): unable to bind address [99]: Cannot assign requested address in /var/www/virtual/bangmaisiw/home/wwwroot/wap/chatingroom/WS.php on line 15
+[Wed Feb 17 17:56:13 2016] [error] [client 101.226.68.141] PHP Warning:  socket_bind(): unable to bind address [99]: Cannot assign requested address in /var/www/virtual/bangmaisiw/home/wwwroot/wap/chatingroom/WS.php on line 15
+[Wed Feb 17 17:57:24 2016] [error] [client 101.90.124.192] PHP Notice:  Undefined index: openid in /var/www/virtual/bangmaisiw/home/wwwroot/wap/chatingroom/wxoauth.php on line 19

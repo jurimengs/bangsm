@@ -76,7 +76,9 @@ class Sock{
 		return $server;
 	}
 	
-	
+	/**
+	 * 握手
+	 */
 	function woshou($k,$buffer){
 		$buf  = substr($buffer,strpos($buffer,'Sec-WebSocket-Key:')+18);
 		$key  = trim(substr($buf,0,strpos($buf,"\r\n")));
@@ -95,6 +97,9 @@ class Sock{
 		
 	}
 	
+	/**
+	 * 信息解码
+	 */
 	function uncode($str){
 		$mask = array();  
 		$data = '';  
@@ -119,7 +124,9 @@ class Sock{
 		return $data;
 	}
 	
-	
+	/**
+	 * 信息编码
+	 */
 	function code($msg){
 		$msg = preg_replace(array('/\r$/','/\n$/','/\r\n$/',), '', $msg);
 		$frame = array();  
@@ -140,6 +147,9 @@ class Sock{
 		return $msg;  
 	}
 	
+	/**
+	 * 发送消息
+	 */
 	function send($k,$msg){
 		/*$this->send1($k,$this->code($msg),'all');*/
 		parse_str($msg,$g);
