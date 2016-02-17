@@ -108,6 +108,13 @@ function wxUploadPicGetPicUrl(){
     return "https://api.weixin.qq.com/cgi-bin/media/uploadimg?access_token=";
 }
  
+/**
+ * upload pic merterials, then return the url from wx
+ */
+function wxOauth(){
+    return "https://api.weixin.qq.com/sns/oauth2/access_token";
+}
+ 
 function getLogFile($fname){
      return dirname(__FILE__).$fname;
 }

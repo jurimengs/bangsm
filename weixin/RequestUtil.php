@@ -21,16 +21,14 @@ class RequestUtil {
 		//4.调用接口 
 		$res = curl_exec($ch);
 		LogUtil::logs(" RequestUtil.php httpGet =====> ".$res, getLogFile('/business.log'));
-		//5.关闭curl
-		curl_close( $ch );
+		
+		//5.判断是否出错
 	    if( curl_errno($ch) ){
 			LogUtil::logs(" RequestUtil.php httpGet =====> 最后一次错误的信息".curl_error($ch), getLogFile('/business.log'));
 	    }
+		//6.关闭curl
+		curl_close( $ch );
 		$arr = json_decode($res, true);
-		if($arr["errcode"] == 40001) {
-			
-		}
-		//var_dump( $arr );
 		return $arr;
 	}
 	

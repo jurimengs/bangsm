@@ -1,9 +1,8 @@
 <?php
 //php 服务器：
-// http://bangmaisiw.w107.mc-test.com/weixin/wxindex.php 
-// http://payment-test.sandpay.com.cn/weixin/wxindex.php
+// http://bangmaisiw.w107.mc-test.com/weixin/wxindex.php
 //java 服务器
-// http://payment-test.sandpay.com.cn/wx/validate.do
+// http://payment-test.sandpay.com.cn/wx/rute.do
 /// TODO 把用户组信息都缓存到文件中
 require_once("globleconfig.php");
 require_once('LogUtil.php');

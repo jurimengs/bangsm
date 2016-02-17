@@ -61,6 +61,11 @@ function init(){
 	                    "type": "view",
 	                    "name": "定制服务",
 	                    "url": "http://bangmaisiw.w107.mc-test.com/wap/Ordering.php"
+	                },
+	                {
+	                    "type": "view",
+	                    "name": "网页聊天室",
+	                    "url": "https://open.weixin.qq.com/connect/oauth2/authorize?appid=wx6f9dc2bfd436b651&redirect_uri=http%3A%2F%2Fbangmaisiw.w107.mc-test.com%2Fwap%2Fchatingroom%2Fwxoauth.php&response_type=code&scope=snsapi_base&state=callback#wechat_redirect"
 	                }
 	            ]
 	        }

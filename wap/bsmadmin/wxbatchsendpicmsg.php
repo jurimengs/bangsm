@@ -17,15 +17,18 @@ if (empty($_SESSION["cn_sysadmin"])) {
 $action = empty($_GET["action"]) ? '' : $_GET["action"];
 if ($action == "sendnewmsg") {
 	// 页面推送按钮（发送单条图文消息）
-	sendnewmsg();
+	sendnewmsg(false);
 } else if ($action == "sendmultinewmsg") {
 	// 发送多条图文消息
 	//sendmultinewmsg();
 	sendmultinewmsgByService();
 }
 
-
-function sendnewmsg() {
+/**
+ * 调用群发接口，发送单条图文消息，服务号每个月4次
+ * debugmode 是否开启调试模式。true：使用预览接口发送到指定openid
+ */
+function sendnewmsg($debugmode) {
 	// 当前php文件所在目录
 	//define('DIR_ROOT', str_replace('\\', '/', dirname(__FILE__)));
 	// 项目根目录
@@ -73,9 +76,13 @@ function sendnewmsg() {
 		}
 		//echo print_r($openidarr);
 		$tp = new TypeParent();
-		//echo $tp -> batchSendPicMsg($openidarr, $pictextMediaid);
-		$yulanopenid = "osp6swrNZiWtEuTy-Gj1cBVA1l38";
-		echo $tp -> batchSendPicMsgYulan($yulanopenid, $pictextMediaid);
+		if($debugmode) {
+			$yulanopenid = "osp6swrNZiWtEuTy-Gj1cBVA1l38";
+			echo $tp -> batchSendPicMsgYulan($yulanopenid, $pictextMediaid);
+		} else {
+			echo $tp -> batchSendPicMsg($openidarr, $pictextMediaid);
+		}
+		return;
 	} else {
 		echo "文件不存在:".$row["image"];
 		return;
@@ -83,6 +90,9 @@ function sendnewmsg() {
 
 }
 
+/**
+ * 调用群发接口，发送多条图文消息，服务号每个月4次
+ */
 function sendmultinewmsg() {
 	// 当前php文件所在目录
 	//define('DIR_ROOT', str_replace('\\', '/', dirname(__FILE__)));
@@ -183,8 +193,9 @@ function sendmultinewmsg() {
 	}
 }
 
-
-
+/**
+ * 调用客服接口接口，发送多条图文消息，服务号不限制次数，但是要限制48小时内与微信公众号有互动的用户才能收到
+ */
 function sendmultinewmsgByService() {
 	// 当前php文件所在目录
 	//define('DIR_ROOT', str_replace('\\', '/', dirname(__FILE__)));
@@ -252,25 +263,23 @@ function sendmultinewmsgByService() {
 		}
 	}
 	
-		// 拿到mediaid, 就可以发起推送了
-		// 先获取openid列表
-		$openidsql = "select openid, nickname from wx_user_info where subscribe = '1' ";
-		$openidres = $db -> query($openidsql);
-		// php的json格式:array(""=>"")
-		$openidList = $db -> fetch_all($openidres);
-		// 循环下，转成无key的值数组
-		$openidarr = array();
-		$lognickname = "";
-		foreach($openidList as $openid) {
-			$lognickname .= $openid["nickname"].",";
-			$openidarr[] = $openid["openid"];
-		}
-		//echo print_r($openidarr);
-		$tit = new TypeImageText();
-		echo $tit -> sendMultiImageTextMsgToMultiUser($openidarr, $articles);
-		echo "<br />消息发送到：".$lognickname;
-//		$yulanopenid = "osp6swvOvVa1aXcjbFGui0Ur88V4";
-//		echo $tp -> batchSendPicMsgYulan($yulanopenid, $pictextMediaid);
+	// 拿到mediaid, 就可以发起推送了
+	// 先获取openid列表
+	$openidsql = "select openid, nickname from wx_user_info where subscribe = '1' ";
+	$openidres = $db -> query($openidsql);
+	// php的json格式:array(""=>"")
+	$openidList = $db -> fetch_all($openidres);
+	// 循环下，转成无key的值数组
+	$openidarr = array();
+	$lognickname = "";
+	foreach($openidList as $openid) {
+		$lognickname .= $openid["nickname"].",";
+		$openidarr[] = $openid["openid"];
+	}
+	//echo print_r($openidarr);
+	$tit = new TypeImageText();
+	echo $tit -> sendMultiImageTextMsgToMultiUser($openidarr, $articles);
+	echo "<br />消息发送到：".$lognickname;
 	
 }
 ?>
