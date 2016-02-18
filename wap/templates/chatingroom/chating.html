@@ -1,19 +1,23 @@
-{$openid}
-
-{literal} 
+ 
 <script type="text/javascript">
-alert("========");
-var ws = new WebSocket("ws://bangmaisiw.w107.cndns5.com:8000");
+var ws = new WebSocket("ws://192.168.22.171:8000");
 ws.onopen = function(){
-	//console.log("握手成功");
-	alert("握手成功");
+	send("from page");
 };
-ws.onerror = function(e){
-	var str = "";
-	for(var k in e) {
-		str += k + ":" + e[k];
-	}
-	alert("error"+str);
+ws.onerror = function(){
+	alert("error");
 };
+ws.onmessage = function(e) { 
+    alert(e.data);
+};
+ws.onclose = function(e) { 
+    alert("close");
+};
+
+function send(msg){
+	ws.send(msg);
+}
+
+
 </script> 
-{/literal}
+ 
