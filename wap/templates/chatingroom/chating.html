@@ -2,12 +2,18 @@
 
 {literal} 
 <script type="text/javascript">
-var ws = new WebSocket("ws://localhost:4000");
+alert("========");
+var ws = new WebSocket("ws://bangmaisiw.w107.cndns5.com:8000");
 ws.onopen = function(){
-    console.log("握手成功");
+	//console.log("握手成功");
+	alert("握手成功");
 };
-ws.onerror = function(){
-    console.log("error");
+ws.onerror = function(e){
+	var str = "";
+	for(var k in e) {
+		str += k + ":" + e[k];
+	}
+	alert("error"+str);
 };
 </script> 
 {/literal}

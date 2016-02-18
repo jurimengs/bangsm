@@ -1,6 +1,12 @@
 <?php
 
 // http://www.jb51.net/article/48019.htm
+
+require_once '../../weixin/LogUtil.php';
+
+// 开始一个端口，用于做聊天室
+$ws = new WS('bangmaisiw.w107.cndns5.com', 8000);
+		
 Class WS {
     var $master;  // 连接 server 的 client
     var $sockets = array(); // 不同状态的 socket 管理
@@ -12,7 +18,7 @@ Class WS {
             or die("socket_create() failed");
         socket_set_option($this->master, SOL_SOCKET, SO_REUSEADDR, 1) 
             or die("socket_option() failed");
-        socket_bind($this->master, $address, $port)                   
+        socket_bind($this->master, $address, $port)
             or die("socket_bind() failed".socket_strerror(socket_last_error()));
         socket_listen($this->master, 2)                              
             or die("socket_listen() failed");
@@ -58,5 +64,7 @@ Class WS {
             }
         }
     }
+
+	
 }
 ?>

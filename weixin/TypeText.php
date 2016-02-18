@@ -24,8 +24,8 @@ class TypeText extends TypeParent{
 			exit();
 		}
 		
-		$userGroupId = $this -> isInGroup($FromUserName);
-		if($userGroupId != null) {
+		$userGroup = $this -> isInGroup($FromUserName);
+		if($userGroup != null) {
 			// 表示在组里
 			// 先同步响应
 //			$paramsData['Content'] = "您的消息已发送，请等待回复";
@@ -34,7 +34,7 @@ class TypeText extends TypeParent{
 			echo "success";
 			// 异步处理业务
 			// 查询所有的组员,并向其发送信息
-			$this -> queryGroupUserAndReplyMsg($userGroupId, $postData);
+			$this -> queryGroupUserAndReplyMsg($userGroup, $postData);
 		} else {
 			// 不在组中
 			// 回复预定义消息
@@ -53,7 +53,7 @@ class TypeText extends TypeParent{
 		global $db;
 		$duplicateMsgFlag = $db->fetch($db->query("SELECT id FROM wx_duplicate_msg_flag where concat(openid, wxcreatetime) = '$flagStr'"));
 		if($duplicateMsgFlag) {
-			//LogUtil::logs("isInGroup userisin ====>".$duplicateMsgFlag['id'], getLogFile("/business.log"));
+			//LogUtil::logs("isExist userisin ====>".$duplicateMsgFlag['id'], getLogFile("/business.log"));
 			return true;
 		}
 		
@@ -71,12 +71,12 @@ class TypeText extends TypeParent{
 	function isInGroup($openid){
 		//LogUtil::logs("TypeText isInGroup openid ====>".$openid, getLogFile("/business.log"));
 		global $db;
-		$userGroupObj = $db->fetch($db->query("SELECT * FROM wx_group_user where openid = '$openid'"));
+		$userGroupObj = $db->fetch($db->query("SELECT a.*, b.nickname FROM wx_group_user a left join wx_user_info b on a.openid = b.openid where a.openid = '$openid'"));
 		if($userGroupObj) {
 			$userisin = $userGroupObj['userisin'];
 			//LogUtil::logs("isInGroup userisin ====>".$userisin, getLogFile("/business.log"));
 			if($userisin == '0') {
-				return $userGroupObj['groupid'];
+				return $userGroupObj;
 			}
 		}
 		return null;
@@ -85,7 +85,7 @@ class TypeText extends TypeParent{
 	/**
 	 * 查到用户组里面的所有组员，再向其发送消息 
 	 */
-	function queryGroupUserAndReplyMsg($userGroupId, $postData){
+	function queryGroupUserAndReplyMsg($userGroup, $postData){
 		global $db;
 		// 发消息的人自己 
 		$userSelfOpenid = $postData["FromUserName"];
@@ -99,6 +99,9 @@ class TypeText extends TypeParent{
 		// 查询所有的组员
 		$arr = array();
 		
+		$userGroupId = $userGroup['groupid'];
+		$nickname = $userGroup['nickname'];
+		
 		// TODO 这个$res可以缓存到文件中
 		$res=$db->query("SELECT a.*, b.nickname, b.headimgurl FROM wx_group_user a left join wx_user_info b 
 		 on a.openid = b.openid 
@@ -109,16 +112,16 @@ class TypeText extends TypeParent{
 			//LogUtil::logs("ppppppp ====>".print_r($val,true), getLogFile("/business.log"));
 			// 循环每个人推送一条消息 
 			$openid = $val['openid'];
-			//if($userSelfOpenid != $openid) {
+			if($userSelfOpenid != $openid) {
 				// 从组中除去发信息者自己
 				$headimgurl = $val['headimgurl'];
-				$contentTemp = array("content"=>$val['nickname']."说:\r\n".$content);
+				$contentTemp = array("content"=>$nickname."说:\r\n".$content);
 				$paramContent = array("touser" => $openid, "msgtype"=>"text", "text"=>$contentTemp);
 				$data = JsonUtil::getJsonStrFromArray($paramContent);
-				//LogUtil::logs("queryGroupUserAndReplyMsg data ====>".$data, getLogFile("/business.log"));
+				LogUtil::logs("queryGroupUserAndReplyMsg data ====>".$data, getLogFile("/business.log"));
 				
 				parent::sendMsgByService($data);
-			//}
+			}
 		}
 		return getSuccessStr();
 	}
@@ -142,9 +145,9 @@ class TypeText extends TypeParent{
 				LogUtil::logs("autoReplay content ====>".$content, getLogFile("/business.log"));
 				$arr = explode("+", $content);
 				$returnmsg = "";
-				$localnickname = $arr[1];
+				$backup = $arr[1];
 				$mobile = $arr[2];
-				if(!preg_match("/^.{0,10}$/", $localnickname)){
+				if(!preg_match("/^.{0,10}$/", $backup)){
 					$returnmsg .= " 昵称不超过10个字符";
 				}
 				
@@ -158,7 +161,8 @@ class TypeText extends TypeParent{
 				
 				global $db;
 				
-				$db -> exec("update wx_user_info set localnickname='$localnickname', mobile='$mobile' where openid='$openid'");
+				//$db -> exec("update wx_user_info set localnickname='$localnickname', mobile='$mobile' where openid='$openid'");
+				$db -> exec("update wx_user_info set backup='$backup', mobile='$mobile' where openid='$openid'");
 	
 				// 用户申请更新信息
 				$paramsData['Content'] = $returnmsg;

@@ -60,7 +60,7 @@ function showlist(){
 	}
 	$in = StringUtil::sublaststr($groupids);
 	
-	$userlistsql = "SELECT a.openid , a.groupid , b.nickname, b.localnickname
+	$userlistsql = "SELECT a.openid , a.groupid , b.nickname, b.localnickname, b.backup
 			FROM wx_group_user a 
 			left join wx_user_info b 
 			on a.openid = b.openid 
@@ -151,7 +151,7 @@ function groupusermanage(){
 	global $db;
 	global $smarty;
 	// 先查本组员
-	$userlistsql = "SELECT a.openid , a.groupid , b.nickname, b.localnickname FROM wx_group_user a 
+	$userlistsql = "SELECT a.openid , a.groupid , b.nickname, b.localnickname, b.backup FROM wx_group_user a 
 			left join wx_user_info b 
 			on a.openid = b.openid 
 			where b.openid is not null and a.groupid ='$groupid'";

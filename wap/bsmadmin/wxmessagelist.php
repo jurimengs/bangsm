@@ -27,7 +27,8 @@ function showlist(){
 	$current_page = empty($_GET["p"]) ? "1" : $_GET["p"]; // 当前被选中的页
 	
 	// 消息类型: 0表示用户发送  1表示管理员回复 2表示管理员群发消息 3 自动回复  4聊天室信息
-	$sql = "SELECT a.*, b.nickname, CONCAT(SUBSTR(b.headimgurl,1,(LENGTH(b.headimgurl) - 1)),'46') as headimgurl, c.content as replycontent , TIMESTAMPDIFF(SECOND  ,a.createtime, date_format(now(),'%Y%m%d%h%m%s')) timeInterval
+	$sql = "SELECT a.*, b.nickname, b.localnickname, b.backup,  
+		CONCAT(SUBSTR(b.headimgurl,1,(LENGTH(b.headimgurl) - 1)),'46') as headimgurl, c.content as replycontent , TIMESTAMPDIFF(SECOND  ,a.createtime, date_format(now(),'%Y%m%d%h%m%s')) timeInterval
     	from wx_user_msg a 
 		left join wx_user_info b
 			on a.createby = b.openid 

@@ -40,9 +40,13 @@
     {section name=message loop=$messageArray}
     <tr> 
       <td><input type="checkbox" name="id[]" value="{$messageArray[message].id}" />&nbsp;</td>
-      <td>
+      <td class="text-left">
       	<img src="{$messageArray[message].headimgurl}" />
       	{$messageArray[message].nickname}
+      	
+      	{if $messageArray[message].backup ne ""}
+      		({$messageArray[message].backup})
+      	{/if}
       </td>
       <td class="text-left">{$messageArray[message].content}</td> 
       <td>

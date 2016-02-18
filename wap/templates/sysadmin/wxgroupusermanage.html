@@ -16,7 +16,12 @@
 				{section name=groupUser loop=$groupUserList}
 					<tr>
 						<td><input type="checkbox" name="openid[]" value="{$groupUserList[groupUser].openid}" /></td>
-						<td>{$groupUserList[groupUser].nickname}</td>
+						<td>
+							{$groupUserList[groupUser].nickname}
+						    {if $groupUserList[groupUser].backup ne ""}
+					      		({$groupUserList[groupUser].backup})
+					      	{/if}
+						</td>
 					</tr>
 			    {/section}
 			    </table>

@@ -54,7 +54,11 @@
 					    	<tr>
 					    		<!--<td>{$groupUserArray[groupUser].userList[user].openid}</td>-->
 					    		<td style="text-align: left;">{$groupUserArray[groupUser].userList[user].nickname}</td>
-					    		<td style="text-align: left;">{$groupUserArray[groupUser].userList[user].localnickname}</td>
+					    		<td style="text-align: left;">
+					    			{if $groupUserArray[groupUser].userList[user].backup ne ""}
+							      		({$groupUserArray[groupUser].userList[user].backup})
+							      	{/if}
+					    		</td>
 					    	</tr>
 					    	{/section}
 					    </table>

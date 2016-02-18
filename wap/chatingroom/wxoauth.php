@@ -4,7 +4,6 @@ require_once '../../weixin/DateUtil.php';
 require_once '../../weixin/globleconfig.php';
 require_once '../../weixin/LogUtil.php';
 require_once '../configs/smarty.inc.php';
-require_once 'WS.php';
 
 // http://www.jb51.net/article/48019.htm
 if(isset($_GET["code"])) {
@@ -20,11 +19,7 @@ if(isset($_GET["code"])) {
 	$openid = $returnJson["openid"];
 	if(!empty($returnJson["openid"])) {
 		$smarty->assign('openid',$openid);
-		//echo "========".$openid;
-		// 开始一个端口，用于做聊天室
-		$ws = new WS('bangmaisiw.w107.cndns5.com', 8000);
-		
-		//$smarty->display('chatingroom/chating.html');
+		$smarty->display('chatingroom/chating.html');
 	}
 }
 
