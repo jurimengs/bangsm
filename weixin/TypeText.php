@@ -138,22 +138,27 @@ class TypeText extends TypeParent{
 		$msgData = array();
 		if( $postData['MsgType'] == 'text' && !empty($content) ){
 			// 判断是否修改信息
-			$strrule = "/^更新信息+.*/";
+//			$strrule = "/^更新信息+.*/";
+			$strrule = "/^备注#.*/";
 			LogUtil::logs("autoReplay content ====>".$content, getLogFile("/business.log"));
 			
 			if(preg_match($strrule, $content)) {
 				LogUtil::logs("autoReplay content ====>".$content, getLogFile("/business.log"));
-				$arr = explode("+", $content);
+				//$arr = explode("+", $content);
+				$arr = explode("#", $content);
 				$returnmsg = "";
 				$backup = $arr[1];
-				$mobile = $arr[2];
-				if(!preg_match("/^.{0,10}$/", $backup)){
-					$returnmsg .= " 昵称不超过10个字符";
+				if(!preg_match("/^.{0,30}$/", $backup)){
+					$returnmsg .= " 亲备注信息不要超过30个字符哦/:,@-D";
+					$paramsData['Content'] = $returnmsg;
+					$paramsData['MsgType'] = 'text';
+					return parent::packageData($postData,$paramsData);
 				}
 				
+				/*$mobile = $arr[2];
 				if(!preg_match("/^1[3|4|5|7|8][0-9]\\d{8}$/", $mobile)){
 					$returnmsg .= " 手机号格式不正确";
-				}
+				}*/
 				
 				if(empty($returnmsg)) {
 					$returnmsg = "信息更新申请成功";
