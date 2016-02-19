@@ -41,7 +41,12 @@
 				{section name=otheruser loop=$otheruserlist}
 					<tr>
 						<td><input type="checkbox" name="openid[]" value="{$otheruserlist[otheruser].openid}" /></td>
-						<td>{$otheruserlist[otheruser].nickname}</td>
+						<td>
+							{$otheruserlist[otheruser].nickname}
+						    {if $otheruserlist[otheruser].backup ne ""}
+					      		({$otheruserlist[otheruser].backup})
+					      	{/if}
+						</td>
 					</tr>
 			    {/section}
 			    </table>

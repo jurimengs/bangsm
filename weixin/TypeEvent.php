@@ -79,13 +79,15 @@ class TypeEvent extends TypeParent{
 			$nickname = $userInfo["nickname"];
 			$nickname = str_replace("🌻", "*", $nickname);
 			$sex = $userInfo["sex"];
+			$headimgurl = $userInfo["headimgurl"];
+			
 			$sql = $sql.", nickname='$nickname', sex='$sex'";
 			LogUtil::logs("TypeEvent.php synchronizedUserInfo  ：nickname ====>".$nickname, getLogFile('/business.log'));
 			
 			// 关注的情况有关注和重新关注，所以使用on duplicate的方法
-			$sql = "INSERT INTO `wx_user_info` (openid, nickname, sex, subscribe, subscribe_time) 
-			VALUES ('$openid', '$nickname', '$sex', '$subscribe', '$currtime') 
-			ON DUPLICATE KEY UPDATE subscribe='$subscribe', nickname='$nickname', subscribe_time='$currtime'";
+			$sql = "INSERT INTO `wx_user_info` (openid, nickname, sex, subscribe, subscribe_time, headimgurl) 
+			VALUES ('$openid', '$nickname', '$sex', '$subscribe', '$currtime', '$headimgurl') 
+			ON DUPLICATE KEY UPDATE subscribe='$subscribe', nickname='$nickname', subscribe_time='$currtime', headimgurl='$headimgurl'";
 			
 		} else {
 			// 取消关注
