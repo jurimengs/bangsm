@@ -79,6 +79,8 @@ function showlist(){
 		foreach($groupUserList as $groupUser){
 			if($groupUser["groupid"] == $groupid) {
 				// TODO 可以考虑移除已归纳过的元素
+				$nicknametemp = $groupUser["nickname"];
+				$groupUser["nickname"] = base64_decode($nicknametemp);
 				$userlistTemp[] = $groupUser;
 			}
 		}
@@ -157,10 +159,28 @@ function groupusermanage(){
 			where b.openid is not null and a.groupid ='$groupid'";
 	$groupUserList = $db->fetch_all($db->query($userlistsql));
 	
+	
+	$page_size = getPageSize(); // 每页显示的条目数
+	$sub_pages = getSubPages(); // 每次显示的页数
+	$current_page = empty($_GET["p"]) ? "1" : $_GET["p"]; // 当前被选中的页
+	
 	// 再查所有不在本组的微信用户
 	$otherusersql = "select * from wx_user_info where openid not in 
-	(select openid from wx_group_user where groupid = '$groupid')";
-	$otheruserlist = $db->fetch_all($db->query($otherusersql));
+					(select openid from wx_group_user where groupid = '$groupid')";
+	//$otheruserlist = $db->fetch_all($db->query($otherusersql));
+	
+	$res = $db->query_page_list2($otherusersql,$page_size,$current_page);
+	$otheruserlist=$db->fetch_all($res);
+	
+	$countres = $db->query("SELECT count(1) as totalcount from wx_user_info where openid not in 
+					(select openid from wx_group_user where groupid = '$groupid')");
+	$countObj = $db->fetch($countres); // 总条目数
+	$nums = $countObj["totalcount"];
+	
+	$pager = new Pager($page_size , $nums , $current_page , $sub_pages, false);
+	$pagerlinker = $pager -> mod5();
+	
+	$smarty->assign('pager',$pagerlinker);
 	
 	// 本组已有的用户列表
 	$smarty->assign('groupUserList',$groupUserList);
@@ -175,7 +195,7 @@ function deletefromgroup(){
 	$groupid = $_POST["groupid"];
 	$openids = $_POST["openid"];
 	//echo print_r($groupid);
-	echo print_r($openids);
+	//echo print_r($openids);
 	
 	$inTemp = "";
 	foreach($openids as $openid){
@@ -186,7 +206,7 @@ function deletefromgroup(){
 	if($in != "") {
 		global $db;
 		$sql = "delete from wx_group_user where openid in (".$in.")";
-		echo $sql;
+		//echo $sql;
 		//echo "===>sql".$sql;
 		$db->exec($sql);
 		// 删除后，重新再查一遍
@@ -237,71 +257,105 @@ function initUser(){
 		if(!empty($remoteUsers)) {
 			
 			global $db;
-			global $smarty;
 			$res = $db->query("SELECT openid FROM wx_user_info ");
 			$rowList=$db->fetch_all($res);
 			
-			$user_list = array();
-			foreach($remoteUsers["openid"] as $openid) {
+			$user_info_list = array();
+			// 每次最多查询100个用户
+			$itemp = 0;
+			$openidArray = $remoteUsers["openid"];
+			LogUtil::logs("微信总用户数: ====> ".count($openidArray), getLogFile("/business.log"));
+			$saveTimes = 1;
+			foreach($openidArray as $openid) {
 				if(!in_array(array("openid"=>$openid), $rowList)){
 					//echo $openid." is not in<br />";
 					// 组装一个信息
-					$toqueryuser = array("openid"=>$openid, "lang" => "zh-CN");
-					$user_list[] = $toqueryuser;
-				}
-			}
-			$pdata = JsonUtil::getJsonStrFromArray(array("user_list"=>$user_list));
-			
-			$batchUserInfo = WxUtil::getBatchUserInfo($pdata);
-			
-			$user_info_list = $batchUserInfo["user_info_list"];
-			if(empty($user_info_list)) {
-				return "所有用户已同步，无需再次同步";
-			}
-			//echo print_r($user_info_list);
-			
-			mysql_query('START TRANSACTION');
-			
-			$errorOpenids = "";
-			$successcount = 0;
-			$failcount = 0;
-			foreach($user_info_list as $userinfo){
-				
-				/*if(($successcount + $failcount) % 5000 == 0) {
-					mysql_query('START TRANSACTION');
-				}*/
-				
-				$openid = $userinfo["openid"];
-				if(!empty($openid)) {
-					//echo print_r($userinfo);
-					$nickname = $userinfo["nickname"];
-					// 默认是/0 表示640*640的尺寸    有0、46、64、96、132
-					$headimgurl = $userinfo["headimgurl"];
-					$sex = $userinfo["sex"];
-					$subscribe = $userinfo["subscribe"];
-					$currtime = DateUtil::getCurrentTime();
-					$sql = "INSERT INTO `wx_user_info` (openid, nickname, sex, subscribe, subscribe_time, headimgurl) 
-						VALUES ('$openid', '$nickname', '$sex', '$subscribe', '$currtime', '$headimgurl') ";
-					$execres = $db -> exec($sql);
-					if(!$execres) {
-						$errorOpenids = $errorOpenids."; ".$openid.":".$nickname;
-						$failcount = $failcount + 1;
-					} else {
-						$successcount = $successcount +1;
+					if(($itemp % 100) == 0) {
+						$user_to_query = array();
 					}
+					
+					$toqueryuser = array("openid"=>$openid, "lang" => "zh-CN");
+					$user_to_query[] = $toqueryuser;
+					//LogUtil::logs("itemp====> ".$itemp, getLogFile("/business.log"));
+					if(count($user_to_query) == 100 || $itemp == (count($openidArray) -1)) {
+						// 每满100条，查询一次
+						
+						$pdata = JsonUtil::getJsonStrFromArray(array("user_list"=>$user_to_query));
+						$batchUserInfo = WxUtil::getBatchUserInfo($pdata);
+						$user_info_list = $batchUserInfo["user_info_list"];
+						if(!empty($batchUserInfo) && !empty($user_info_list)) {
+							transactionSave($user_info_list);
+						
+							$countres = $db->query("SELECT count(1) as totalcount from wx_user_info a");
+							$countObj = $db->fetch($countres); 
+							// 总条目数
+							$nums = $countObj["totalcount"];
+							//LogUtil::logs("已保存用户数 ====> ".$nums, getLogFile("/business.log"));
+						} else {
+							LogUtil::logs("====> 第".$saveTimes."次发起微信查询出错", getLogFile("/business.log"));
+							LogUtil::logs("查询的用户openid请求参数====> ".$pdata, getLogFile("/business.log"));
+							LogUtil::logs("查询的用户openid结果====>".JsonUtil::getJsonStrFromArray($batchUserInfo), getLogFile("/business.log"));
+							LogUtil::logs("异常：====>====>====>user_info_list返回空 ", getLogFile("/business.log"));
+						}
+						
+						$saveTimes ++;
+					}
+					$itemp ++;
 				}
-				
-				/*if(($successcount + $failcount) % 5000 == 0) {
-					mysql_query('COMMIT');
-				}*/
 			}
-			if(!empty($errorOpenids)) {
-				LogUtil::logs("====>同步错误用户名单：".$errorOpenids, getLogFile("/db.log"));
-			}
-			// mysql_query('ROLLBACK ');
-			mysql_query('COMMIT');
-			return "同步完成, 成功".$successcount."条, 失败".$failcount."条;";
+			
+			return "同步完成";
 		}
+	}
+}
+
+
+function transactionSave($user_info_list){
+	$errorOpenids = "";
+	$successcount = 0;
+	$failcount = 0;
+			
+	//LogUtil::logs("要保存到数据库的用户信息数量====> ".count($user_info_list), getLogFile("/business.log"));
+			//echo print_r($user_info_list);
+	global $db;
+	if(!empty($user_info_list)) {
+		mysql_query('START TRANSACTION');
+		foreach($user_info_list as $userinfo){
+			
+			/*if(($successcount + $failcount) % 5000 == 0) {
+				mysql_query('START TRANSACTION');
+			}*/
+			
+			$openid = $userinfo["openid"];
+			if(!empty($openid)) {
+				//echo print_r($userinfo);
+				$nickname = base64_encode($userinfo["nickname"]);
+				// 默认是/0 表示640*640的尺寸    有0、46、64、96、132
+				$headimgurl = $userinfo["headimgurl"];
+				$sex = $userinfo["sex"];
+				$subscribe = $userinfo["subscribe"];
+				$currtime = DateUtil::getCurrentTime();
+				$sql = "INSERT INTO `wx_user_info` (openid, nickname, sex, subscribe, subscribe_time, headimgurl) 
+					VALUES ('$openid', '$nickname', '$sex', '$subscribe', '$currtime', '$headimgurl') ";
+				$execres = $db -> exec($sql);
+				if(!$execres) {
+					$errorOpenids = $errorOpenids."; ".$openid.":".$nickname;
+					$failcount = $failcount + 1;
+				} else {
+					$successcount = $successcount +1;
+				}
+			}
+			
+			/*if(($successcount + $failcount) % 5000 == 0) {
+				mysql_query('COMMIT');
+			}*/
+		}
+		if(!empty($errorOpenids)) {
+			LogUtil::logs("====>同步错误用户名单：".$errorOpenids, getLogFile("/db.log"));
+		}
+		// mysql_query('ROLLBACK ');
+		mysql_query('COMMIT');
+		//LogUtil::logs("事务提交：成功".$successcount."条，失败".$failcount."条", getLogFile("/business.log"));
 	}
 }
 

@@ -1,17 +1,17 @@
 <?php
-// http://bangmaisiw.w107.mc-test.com/sysadmin/wxindex.php
+// http://bangmaisiw.w107.mc-test.com/weixin/wxindex.php
 function localToken(){
-    return "571ae9d6c3aedssq75c408jdsws2257d";
+    return "571ae9d6c3aedssq75c408jdsws2257d"; //
 }
 
 function appid(){
-     //return "wx97a3cc925c96766d"; // webrsbk
-	 return "wx6f9dc2bfd436b651"; // alsovalue
+	//return "wx6f9dc2bfd436b651"; // alsovalue
+	return "wx9dab8ea11c82230f"; // 
 }
 
 function secret(){
-     //return "e2a5f37ca754357530619dbbb3fed90b"; // webrsbk
-	 return "297c3a7c8305ce568e84407e3cd4e288"; // alsovalue
+	//return "297c3a7c8305ce568e84407e3cd4e288"; // alsovalue
+	return "c21322d024a5b7eaefc5425afcdb4db8"; // 
 }
 
 function grantType(){
