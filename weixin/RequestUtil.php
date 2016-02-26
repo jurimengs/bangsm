@@ -20,7 +20,7 @@ class RequestUtil {
 		curl_setopt($ch , CURLOPT_RETURNTRANSFER, 1);
 		//4.调用接口 
 		$res = curl_exec($ch);
-		LogUtil::logs(" RequestUtil.php httpGet =====> ".$res, getLogFile('/business.log'));
+		//LogUtil::logs(" RequestUtil.php httpGet =====> ".$res, getLogFile('/business.log'));
 		
 		//5.判断是否出错
 	    if( curl_errno($ch) ){
@@ -58,13 +58,18 @@ class RequestUtil {
         curl_setopt($curl, CURLOPT_RETURNTRANSFER, 1); // 获取的信息以文件流的形式返回
         $tmpInfo = curl_exec($curl); // 执行操作
         LogUtil::logs(" RequestUtil.php httpPost =====> ".$tmpInfo, getLogFile('/business.log'));
-		
+		/*
 		if (curl_errno($curl)) {
             LogUtil::logs(" RequestUtil.php httpGet =====> 最后一次错误的信息".curl_error($curl), getLogFile('/business.log'));
-        }
+        }*/
 			 
         curl_close($curl); // 关闭CURL会话
 		$arr = json_decode($tmpInfo, true);
+		if(empty($arr)) {
+			// 解决特殊字符问题
+	        $tmpInfo = substr(str_replace('\"','"',json_encode($tmpInfo)),1,-1);
+			$arr = json_decode($tmpInfo, true); 
+		}
         return $arr; // 返回数据
     }
 	
