@@ -11,6 +11,7 @@ require_once("TypeParent.php");
 require_once("TypeEvent.php");
 require_once("TypeText.php");
 require_once("TypeImage.php");
+require_once("TypeVoice.php");
 
 $echostr = "";
 if(isset($_GET["echostr"])) {
@@ -55,6 +56,9 @@ function dealRequest($postXml){
 		$tt -> deal($postData);
 	} elseif($postData['MsgType'] == "image"){
 		$tt = new TypeImage();
+		$tt -> deal($postData);
+	} elseif($postData['MsgType'] == "voice"){
+		$tt = new TypeVoice();
 		$tt -> deal($postData);
 	}
 }
