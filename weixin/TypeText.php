@@ -76,6 +76,8 @@ class TypeText extends TypeParent{
 			$userisin = $userGroupObj['userisin'];
 			//LogUtil::logs("isInGroup userisin ====>".$userisin, getLogFile("/business.log"));
 			if($userisin == '0') {
+				$nicknametemp = $userGroupObj["nickname"];
+				$userGroupObj["nickname"] = base64_decode($nicknametemp);
 				return $userGroupObj;
 			}
 		}

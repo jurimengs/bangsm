@@ -178,12 +178,20 @@ function groupusermanage(){
 	$res = $db->query_page_list2($otherusersql,$page_size,$current_page);
 	$otheruserlist=$db->fetch_all($res);
 	
+	$userlistTemp = array();
+	foreach($otheruserlist as $user){
+		$nicknametemp = $user["nickname"];
+		$user["nickname"] = base64_decode($nicknametemp);
+		$userlistTemp[] = $user;
+	}
+		
+	
 	$countres = $db->query("SELECT count(1) as totalcount from wx_user_info where openid not in 
 					(select openid from wx_group_user where groupid = '$groupid')");
 	$countObj = $db->fetch($countres); // 总条目数
 	$nums = $countObj["totalcount"];
 	
-	$pager = new Pager($page_size , $nums , $current_page , $sub_pages, false);
+	$pager = new Pager($page_size , $nums , $current_page , $sub_pages, true);
 	$pagerlinker = $pager -> mod5();
 	
 	$smarty->assign('pager',$pagerlinker);
@@ -191,7 +199,7 @@ function groupusermanage(){
 	// 本组已有的用户列表
 	$smarty->assign('groupUserList',$groupUserList);
 	// 所有用户列表
-	$smarty->assign('otheruserlist',$otheruserlist);
+	$smarty->assign('otheruserlist',$userlistTemp);
 	// 目标组id
 	$smarty->assign('groupid',$groupid);
 	$smarty->display('sysadmin/wxgroupusermanage.html');

@@ -77,7 +77,9 @@ class TypeEvent extends TypeParent{
 		if($Event == "subscribe") {
 			LogUtil::logs("TypeEvent synchronizedUserInfo insert=====> ", getLogFile("/business.log"));
 			$nickname = $userInfo["nickname"];
-			$nickname = str_replace("🌻", "*", $nickname);
+			$nickname = base64_encode($nickname);
+			
+			//$nickname = str_replace("🌻", "*", $nickname);
 			$sex = $userInfo["sex"];
 			$headimgurl = $userInfo["headimgurl"];
 			
